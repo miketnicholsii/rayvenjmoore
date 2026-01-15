@@ -10,14 +10,15 @@ interface NavLink {
   isAnchor: boolean;
 }
 
+// Phase 2 Navigation Structure
 const navLinks: NavLink[] = [
   { name: 'Home', href: '#hero', isAnchor: true },
   { name: 'About', href: '#about', isAnchor: true },
-  { name: 'Career', href: '#career', isAnchor: true },
-  { name: 'Services', href: '#services', isAnchor: true },
-  { name: 'Ventures', href: '#ventures', isAnchor: true },
+  { name: 'Work & Ventures', href: '#ventures', isAnchor: true },
+  { name: 'Leadership', href: '#leadership', isAnchor: true },
+  { name: 'Case Studies', href: '/case-studies', isAnchor: false },
+  { name: 'Resources', href: '/resources', isAnchor: false },
   { name: 'Speaking', href: '/speaking', isAnchor: false },
-  { name: 'Contact', href: '#contact', isAnchor: true },
 ];
 
 const socialLinks = [
@@ -38,7 +39,7 @@ export default function Header() {
       setIsScrolled(window.scrollY > 20);
 
       if (isHomePage) {
-        const sections = ['contact', 'cta', 'philosophy', 'manifesto', 'stories', 'ventures', 'services', 'career', 'about', 'hero'];
+        const sections = ['contact', 'speaking', 'leadership', 'ventures', 'credentials', 'about', 'hero'];
         const scrollPosition = window.scrollY + 150;
 
         for (const sectionId of sections) {
@@ -86,7 +87,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-background/98 backdrop-blur-lg shadow-sm py-3'
+          ? 'bg-background/98 backdrop-blur-lg shadow-soft py-3'
           : 'bg-transparent py-5'
       }`}
     >
@@ -102,7 +103,7 @@ export default function Header() {
             transition={{ duration: 0.2 }}
           >
             Rayven J. Moore
-            <span className="text-evergreen">,</span>
+            <span className="text-accent">,</span>
             <span className="text-muted-foreground font-body text-sm ml-1 font-normal">CPA</span>
           </motion.span>
         </button>
@@ -117,14 +118,14 @@ export default function Header() {
                 className={`relative font-body text-sm px-4 py-2 rounded-lg transition-all duration-300 ${
                   isActive(link)
                     ? 'text-foreground'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
                 }`}
               >
                 {link.name}
                 {isActive(link) && (
                   <motion.span
                     layoutId="activeNav"
-                    className="absolute bottom-0 left-4 right-4 h-0.5 bg-evergreen rounded-full"
+                    className="absolute bottom-0 left-4 right-4 h-0.5 bg-accent rounded-full"
                     transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                   />
                 )}
@@ -136,14 +137,14 @@ export default function Header() {
                 className={`relative font-body text-sm px-4 py-2 rounded-lg transition-all duration-300 ${
                   isActive(link)
                     ? 'text-foreground'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
                 }`}
               >
                 {link.name}
                 {isActive(link) && (
                   <motion.span
                     layoutId="activeNav"
-                    className="absolute bottom-0 left-4 right-4 h-0.5 bg-evergreen rounded-full"
+                    className="absolute bottom-0 left-4 right-4 h-0.5 bg-accent rounded-full"
                     transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                   />
                 )}
@@ -161,7 +162,7 @@ export default function Header() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg flex items-center justify-center text-muted-foreground hover:text-evergreen hover:bg-evergreen/10 transition-all duration-300"
+                className="w-9 h-9 rounded-lg flex items-center justify-center text-muted-foreground hover:text-accent hover:bg-accent/10 transition-all duration-300"
                 aria-label={social.name}
               >
                 <social.icon size={18} />
@@ -175,7 +176,7 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="xl:hidden p-2 text-foreground hover:bg-muted/50 rounded-lg transition-colors"
+          className="xl:hidden p-2 text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -211,8 +212,8 @@ export default function Header() {
                       onClick={() => scrollToSection(link.href)}
                       className={`block w-full text-left font-body text-base py-3 px-4 rounded-lg transition-all duration-300 ${
                         isActive(link)
-                          ? 'text-evergreen bg-evergreen/10'
-                          : 'text-foreground hover:text-evergreen hover:bg-muted/50'
+                          ? 'text-accent bg-accent/10'
+                          : 'text-foreground hover:text-accent hover:bg-secondary/50'
                       }`}
                     >
                       {link.name}
@@ -222,8 +223,8 @@ export default function Header() {
                       to={link.href}
                       className={`block font-body text-base py-3 px-4 rounded-lg transition-all duration-300 ${
                         isActive(link)
-                          ? 'text-evergreen bg-evergreen/10'
-                          : 'text-foreground hover:text-evergreen hover:bg-muted/50'
+                          ? 'text-accent bg-accent/10'
+                          : 'text-foreground hover:text-accent hover:bg-secondary/50'
                       }`}
                     >
                       {link.name}
@@ -240,7 +241,7 @@ export default function Header() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-lg flex items-center justify-center text-muted-foreground hover:text-evergreen hover:bg-evergreen/10 transition-all duration-300 border border-border"
+                    className="w-10 h-10 rounded-lg flex items-center justify-center text-muted-foreground hover:text-accent hover:bg-accent/10 transition-all duration-300 border border-border"
                     aria-label={social.name}
                   >
                     <social.icon size={18} />

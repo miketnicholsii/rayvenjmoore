@@ -5,29 +5,34 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 font-body",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 font-body",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-midnight-light",
+        default: "bg-primary text-primary-foreground hover:bg-forest-moss",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        outline: "border border-input bg-background hover:bg-secondary hover:text-secondary-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        // Premium Brand Variants - Midnight Blue + Evergreen
-        hero: "bg-primary text-primary-foreground hover:bg-midnight-light shadow-lg hover:shadow-xl hover:-translate-y-0.5",
-        heroOutline: "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground",
-        gold: "bg-gold text-charcoal font-semibold shadow-md hover:bg-gold-light hover:shadow-lg hover:-translate-y-0.5",
-        goldOutline: "border-2 border-gold bg-transparent text-gold hover:bg-gold hover:text-charcoal",
-        evergreen: "bg-evergreen text-primary-foreground font-semibold shadow-md hover:bg-evergreen-light hover:shadow-lg hover:-translate-y-0.5",
-        evergreenOutline: "border-2 border-evergreen bg-transparent text-evergreen hover:bg-evergreen hover:text-primary-foreground",
-        minimal: "text-foreground hover:text-gold underline-offset-4 hover:underline decoration-gold",
+        ghost: "hover:bg-secondary hover:text-secondary-foreground",
+        link: "text-primary underline-offset-4 hover:underline hover:text-accent",
+        // Premium Brand Variants - Forest Green + Orange Accent
+        hero: "bg-primary text-primary-foreground font-semibold shadow-lg hover:shadow-orange hover:bg-forest-moss hover:-translate-y-0.5 btn-glow",
+        heroOutline: "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground hover:border-accent",
+        accent: "bg-accent text-accent-foreground font-semibold shadow-md hover:bg-orange-warm hover:shadow-lg hover:-translate-y-0.5",
+        accentOutline: "border-2 border-accent bg-transparent text-accent hover:bg-accent hover:text-accent-foreground",
+        forest: "bg-forest text-primary-foreground font-semibold shadow-md hover:bg-forest-moss hover:shadow-lg hover:-translate-y-0.5",
+        forestOutline: "border-2 border-forest bg-transparent text-forest hover:bg-forest hover:text-primary-foreground",
+        minimal: "text-foreground hover:text-accent underline-offset-4 hover:underline decoration-accent",
+        // Legacy support
+        gold: "bg-accent text-accent-foreground font-semibold shadow-md hover:bg-orange-warm hover:shadow-lg hover:-translate-y-0.5",
+        goldOutline: "border-2 border-accent bg-transparent text-accent hover:bg-accent hover:text-accent-foreground",
+        evergreen: "bg-forest-evergreen text-primary-foreground font-semibold shadow-md hover:bg-forest-moss hover:shadow-lg hover:-translate-y-0.5",
+        evergreenOutline: "border-2 border-forest-evergreen bg-transparent text-forest-evergreen hover:bg-forest-evergreen hover:text-primary-foreground",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
+        default: "h-10 px-5 py-2",
+        sm: "h-9 rounded-md px-4",
+        lg: "h-12 rounded-lg px-8",
         xl: "h-14 rounded-lg px-10 text-base",
         icon: "h-10 w-10",
       },

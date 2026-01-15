@@ -51,19 +51,29 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Brand Colors - Midnight Blue + Evergreen
-        midnight: {
-          DEFAULT: "hsl(var(--midnight))",
-          light: "hsl(var(--midnight-light))",
+        // Brand Colors - Forest Green Palette
+        forest: {
+          DEFAULT: "hsl(var(--deep-forest))",
+          deep: "hsl(var(--deep-forest))",
+          evergreen: "hsl(var(--evergreen))",
+          moss: "hsl(var(--moss))",
         },
+        // Orange Accents
+        orange: {
+          DEFAULT: "hsl(var(--gold-orange))",
+          gold: "hsl(var(--gold-orange))",
+          warm: "hsl(var(--warm-orange))",
+          burnt: "hsl(var(--burnt-orange))",
+        },
+        // Legacy support
         evergreen: {
           DEFAULT: "hsl(var(--evergreen))",
-          light: "hsl(var(--evergreen-light))",
+          light: "hsl(var(--moss))",
         },
         gold: {
-          DEFAULT: "hsl(var(--gold))",
-          light: "hsl(var(--gold-light))",
-          dark: "hsl(var(--gold-dark))",
+          DEFAULT: "hsl(var(--gold-orange))",
+          light: "hsl(var(--warm-orange))",
+          dark: "hsl(var(--burnt-orange))",
         },
         charcoal: {
           DEFAULT: "hsl(var(--charcoal))",
@@ -117,13 +127,17 @@ export default {
           "0%": { opacity: "0", transform: "scale(0.95)" },
           "100%": { opacity: "1", transform: "scale(1)" },
         },
-        "pulse-gold": {
-          "0%, 100%": { boxShadow: "0 0 0 0 hsl(42 45% 57% / 0.4)" },
-          "50%": { boxShadow: "0 0 0 12px hsl(42 45% 57% / 0)" },
+        "pulse-orange": {
+          "0%, 100%": { boxShadow: "0 0 0 0 hsl(38 92% 50% / 0.4)" },
+          "50%": { boxShadow: "0 0 0 12px hsl(38 92% 50% / 0)" },
         },
         "gentle-float": {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-8px)" },
+        },
+        "shimmer": {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
         },
       },
       animation: {
@@ -134,8 +148,15 @@ export default {
         "slide-in-left": "slide-in-left 0.8s ease-out forwards",
         "slide-in-right": "slide-in-right 0.8s ease-out forwards",
         "scale-in": "scale-in 0.6s ease-out forwards",
-        "pulse-gold": "pulse-gold 2s ease-in-out infinite",
+        "pulse-orange": "pulse-orange 2s ease-in-out infinite",
         "gentle-float": "gentle-float 6s ease-in-out infinite",
+        "shimmer": "shimmer 0.8s ease-out",
+      },
+      boxShadow: {
+        'soft': '0 4px 20px -4px hsl(100 8% 18% / 0.08)',
+        'elevated': '0 12px 40px -8px hsl(100 8% 18% / 0.12)',
+        'orange': '0 8px 30px -6px hsl(38 92% 50% / 0.25)',
+        'card': '0 1px 3px hsl(100 8% 18% / 0.05), 0 4px 12px hsl(100 8% 18% / 0.08)',
       },
     },
   },
