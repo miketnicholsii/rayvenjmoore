@@ -6,6 +6,7 @@ import CareerSection from '@/components/home/CareerSection';
 import ServicesSection from '@/components/home/ServicesSection';
 import VenturesSection from '@/components/home/VenturesSection';
 import StoriesSection from '@/components/home/StoriesSection';
+import ManifestoPreview from '@/components/home/ManifestoPreview';
 import PhilosophySection from '@/components/home/PhilosophySection';
 import CTASection from '@/components/home/CTASection';
 import ContactSection from '@/components/home/ContactSection';
@@ -21,6 +22,7 @@ const Index = () => {
         <ServicesSection />
         <VenturesSection />
         <StoriesSection />
+        <ManifestoPreview />
         <PhilosophySection />
         <CTASection />
         <ContactSection />
