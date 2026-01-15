@@ -6,25 +6,29 @@ import { Button } from '@/components/ui/button';
 
 const ventures = [
   {
-    title: 'Universal Wealth Care Initiative',
-    category: 'Community',
-    description: 'A movement to make financial literacy accessible to all, regardless of background or circumstance.',
+    id: 'count-it-all-joy',
+    title: 'Count It All Joy Tax Group',
+    category: 'Tax & Accounting',
+    description: 'Tailored tax and accounting services in Houston since 1999. Large enough to offer full professional services, small enough for personalized attention.',
     featured: true,
   },
   {
-    title: 'Financial Clarity Workshops',
+    id: 'moore-manor',
+    title: 'Moore Manor Hospitality',
+    category: 'Hospitality',
+    description: 'Enhancing travel experiences in Houston for business and leisure guests with thoughtfully curated properties.',
+  },
+  {
+    id: 'riverside-civic',
+    title: 'Riverside Civic Association',
+    category: 'Nonprofit',
+    description: 'Supporting the Riverside Terrace community in Houston\'s Third Ward through volunteer efforts and historic preservation.',
+  },
+  {
+    id: 'universal-wealthcare',
+    title: 'Universal WealthCare',
     category: 'Education',
-    description: 'Interactive sessions breaking down complex financial concepts into actionable knowledge.',
-  },
-  {
-    title: 'CPA Advisory Services',
-    category: 'Business',
-    description: 'Strategic financial guidance for growing businesses and entrepreneurs.',
-  },
-  {
-    title: 'Wealth Building Masterclass',
-    category: 'Program',
-    description: 'Comprehensive curriculum for building sustainable, generational wealth.',
+    description: 'Your resource for Bitcoin, personal finance, and wealth-building strategies with clarity and data-driven analysis.',
   },
 ];
 
@@ -32,7 +36,7 @@ export default function VenturesSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section className="section-padding bg-background">
+    <section id="ventures" className="section-padding bg-background">
       <div className="container-wide" ref={ref}>
         {/* Header */}
         <motion.div
@@ -43,7 +47,7 @@ export default function VenturesSection() {
         >
           <div>
             <span className="font-body text-sm font-semibold tracking-widest uppercase text-gold mb-4 block">
-              Ventures & Initiatives
+              Ventures & Community
             </span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground max-w-xl">
               Building Toward Universal Wealth Care
@@ -58,7 +62,7 @@ export default function VenturesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {ventures.map((venture, index) => (
             <motion.div
-              key={venture.title}
+              key={venture.id}
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -68,42 +72,44 @@ export default function VenturesSection() {
                   : 'bg-card border border-border hover:border-gold/30'
               }`}
             >
-              <div className="p-8 h-full flex flex-col">
-                <span
-                  className={`inline-block font-body text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full mb-4 w-fit ${
-                    venture.featured
-                      ? 'bg-gold/20 text-gold'
-                      : 'bg-gold/10 text-gold'
-                  }`}
-                >
-                  {venture.category}
-                </span>
-                <h3
-                  className={`font-display text-xl font-semibold mb-3 ${
-                    venture.featured ? 'text-primary-foreground' : 'text-foreground'
-                  }`}
-                >
-                  {venture.title}
-                </h3>
-                <p
-                  className={`font-body text-sm leading-relaxed flex-grow ${
-                    venture.featured ? 'text-primary-foreground/70' : 'text-muted-foreground'
-                  }`}
-                >
-                  {venture.description}
-                </p>
-                <div className="mt-6 flex items-center gap-2 font-body text-sm font-medium group-hover:text-gold transition-colors">
-                  <span className={venture.featured ? 'text-gold' : 'text-foreground'}>
-                    Learn More
-                  </span>
-                  <ArrowUpRight
-                    size={16}
-                    className={`transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${
-                      venture.featured ? 'text-gold' : ''
+              <Link to={`/ventures/${venture.id}`} className="block p-8 h-full">
+                <div className="flex flex-col h-full">
+                  <span
+                    className={`inline-block font-body text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full mb-4 w-fit ${
+                      venture.featured
+                        ? 'bg-gold/20 text-gold'
+                        : 'bg-gold/10 text-gold'
                     }`}
-                  />
+                  >
+                    {venture.category}
+                  </span>
+                  <h3
+                    className={`font-display text-xl font-semibold mb-3 ${
+                      venture.featured ? 'text-primary-foreground' : 'text-foreground'
+                    }`}
+                  >
+                    {venture.title}
+                  </h3>
+                  <p
+                    className={`font-body text-sm leading-relaxed flex-grow ${
+                      venture.featured ? 'text-primary-foreground/70' : 'text-muted-foreground'
+                    }`}
+                  >
+                    {venture.description}
+                  </p>
+                  <div className="mt-6 flex items-center gap-2 font-body text-sm font-medium group-hover:text-gold transition-colors">
+                    <span className={venture.featured ? 'text-gold' : 'text-foreground'}>
+                      Learn More
+                    </span>
+                    <ArrowUpRight
+                      size={16}
+                      className={`transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${
+                        venture.featured ? 'text-gold' : ''
+                      }`}
+                    />
+                  </div>
                 </div>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>

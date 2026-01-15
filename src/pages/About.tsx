@@ -67,12 +67,17 @@ export default function About() {
                   About Rayven
                 </span>
                 <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-6">
-                  Converting Complexity Into{' '}
-                  <span className="text-gradient-gold">Clarity</span>
+                  Guiding You Through{' '}
+                  <span className="text-gradient-gold">Financial Complexity</span>
                 </h1>
+                <p className="font-body text-lg text-muted-foreground leading-relaxed mb-4">
+                  Rayven J. Moore is a <span className="text-foreground font-medium">Certified Public Accountant</span>, 
+                  entrepreneur, and financial educator with over a decade of experience guiding 
+                  individuals and businesses through the complexities of finance.
+                </p>
                 <p className="font-body text-lg text-muted-foreground leading-relaxed">
-                  For over a decade, I've dedicated my career to one mission: making 
-                  financial wisdom accessible to everyone who seeks it.
+                  His specialty: <span className="text-foreground font-medium">breaking down complex concepts 
+                  into actionable insights</span> so people can confidently take control of their financial futures.
                 </p>
               </motion.div>
               <motion.div

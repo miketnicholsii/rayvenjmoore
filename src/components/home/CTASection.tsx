@@ -26,13 +26,13 @@ export default function CTASection() {
           className="text-center"
         >
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 leading-tight">
-            Let's Build{' '}
+            Let's Create{' '}
             <span className="text-gold">Universal Wealth Care</span>
             <span className="text-gold">.</span>
           </h2>
           <p className="font-body text-lg text-primary-foreground/70 max-w-xl mx-auto mb-10 leading-relaxed">
-            Whether you're seeking clarity for your personal finances, your business, 
-            or your community—I'm here to help. Let's start a conversation.
+            Together, we can build clarity, confidence, and a pathway to financial freedom. 
+            Whether you're ready to start your journey or want to learn more—let's connect.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="gold" size="xl" asChild>
@@ -42,7 +42,7 @@ export default function CTASection() {
               </Link>
             </Button>
             <Button variant="goldOutline" size="xl" asChild>
-              <Link to="/manifesto">Read My Manifesto</Link>
+              <Link to="/ventures">Explore Ventures</Link>
             </Button>
           </div>
         </motion.div>

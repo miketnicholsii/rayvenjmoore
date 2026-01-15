@@ -6,22 +6,22 @@ const services = [
   {
     icon: BookOpen,
     title: 'Financial Education & Literacy',
-    description: 'Workshops, seminars, and resources designed to demystify financial concepts and empower informed decision-making.',
+    description: 'Workshops, seminars, and resources that demystify financial concepts—making knowledge accessible so you can make informed decisions with confidence.',
   },
   {
     icon: Compass,
-    title: 'Strategic Advisory & Guidance',
-    description: 'Personalized consultation for individuals and businesses navigating complex financial landscapes with clarity.',
+    title: 'Advisory & Strategy',
+    description: 'Personalized consultation for individuals and businesses navigating complex financial landscapes. From tax strategy to growth planning, get clarity on your path forward.',
   },
   {
     icon: TrendingUp,
     title: 'Wealth-Building Frameworks',
-    description: 'Proven methodologies and systems for sustainable wealth creation, tailored to your unique circumstances.',
+    description: 'Proven methodologies and clarity systems for sustainable wealth creation—tailored to your unique circumstances and long-term goals.',
   },
   {
     icon: Users,
-    title: 'Community Financial Empowerment',
-    description: 'Initiatives focused on bringing financial education to underserved communities and creating universal access.',
+    title: 'Community Impact & Empowerment',
+    description: 'Initiatives focused on bringing financial education to underserved communities, creating universal access to the tools and knowledge that build generational wealth.',
   },
 ];
 
@@ -29,7 +29,7 @@ export default function ServicesSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section className="section-padding bg-muted/50">
+    <section id="services" className="section-padding bg-muted/50">
       <div className="container-wide" ref={ref}>
         {/* Header */}
         <motion.div
@@ -39,11 +39,15 @@ export default function ServicesSection() {
           className="text-center max-w-2xl mx-auto mb-16"
         >
           <span className="font-body text-sm font-semibold tracking-widest uppercase text-gold mb-4 block">
-            What I Do
+            How I Help
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground">
             Clarity Across Every Dimension
           </h2>
+          <p className="font-body text-muted-foreground mt-4">
+            Whether you're an individual seeking financial clarity or a business ready to scale, 
+            these are the ways I can support your journey.
+          </p>
         </motion.div>
 
         {/* Services Grid */}
