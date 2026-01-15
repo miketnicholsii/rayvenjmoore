@@ -101,7 +101,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <p className="font-body text-sm font-medium text-foreground mb-1">Email</p>
-                        <p className="font-body text-sm text-muted-foreground">hello@rayvenjmoore.com</p>
+                        <a href="mailto:rayvenjmoore@gmail.com" className="font-body text-sm text-muted-foreground hover:text-accent transition-colors">rayvenjmoore@gmail.com</a>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
