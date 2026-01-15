@@ -1,16 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ChevronRight, FileText, Calculator, Layers, TrendingUp, Bitcoin, Cpu, Briefcase } from 'lucide-react';
-import { signatureSkills } from '@/data/career';
-
-const iconMap: Record<string, React.ElementType> = {
-  FileText,
-  Calculator,
-  Layers,
-  TrendingUp,
-  Bitcoin,
-  Cpu
-};
+import { ChevronRight, Briefcase } from 'lucide-react';
+import SkillsVisualization from '@/components/ui/SkillsVisualization';
 
 const careerHighlights = [
   { company: "Abyss Solutions", role: "Global Finance Controller", period: "2025–Present" },
@@ -34,7 +25,7 @@ const CareerSection = () => {
             Career & Expertise
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            A Decade of <span className="text-primary">Financial Leadership</span>
+            12+ Years of <span className="text-primary">Financial Leadership</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Building expertise across SEC reporting, technical accounting, FP&A, and emerging technologies.
@@ -97,56 +88,14 @@ const CareerSection = () => {
             </Link>
           </motion.div>
 
-          {/* Signature Skills */}
+          {/* Signature Skills - Visual Representation */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
             <h3 className="text-xl font-semibold text-foreground mb-6">Signature Skills</h3>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {signatureSkills.map((category, index) => {
-                const IconComponent = iconMap[category.icon];
-                return (
-                  <motion.div
-                    key={category.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.08 }}
-                    whileHover={{ y: -4, scale: 1.02 }}
-                    className="bg-card border border-border rounded-xl p-4 hover:border-primary/50 transition-all duration-300 group cursor-pointer hover:shadow-md"
-                  >
-                    <div className="flex items-center gap-3 mb-3">
-                      <motion.div 
-                        className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors"
-                        whileHover={{ rotate: 6, scale: 1.1 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                      >
-                        <IconComponent className="w-5 h-5 text-primary transition-transform group-hover:scale-110" />
-                      </motion.div>
-                      <h4 className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors">{category.name}</h4>
-                    </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {category.skills.slice(0, 3).map((skill) => (
-                        <span
-                          key={skill}
-                          className="px-2 py-0.5 bg-secondary text-secondary-foreground text-xs rounded-full transition-all duration-200 hover:bg-primary/10 hover:text-primary cursor-default"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                      {category.skills.length > 3 && (
-                        <span className="text-muted-foreground text-xs px-1 group-hover:text-primary transition-colors">
-                          +{category.skills.length - 3}
-                        </span>
-                      )}
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
+            <SkillsVisualization />
           </motion.div>
         </div>
       </div>
