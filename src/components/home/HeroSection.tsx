@@ -1,8 +1,15 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight, ChevronDown, Shield, TrendingUp, Users, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import heroBg from '@/assets/hero-bg.jpg';
+
+const credentialBadges = [
+  { icon: Shield, label: 'Certified Public Accountant' },
+  { icon: TrendingUp, label: '10+ Years Experience' },
+  { icon: Users, label: '1000+ Clients Served' },
+  { icon: Award, label: 'Financial Educator' },
+];
 
 export default function HeroSection() {
   const scrollToAbout = () => {
@@ -13,58 +20,67 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-cream/80 via-background/90 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-cream/90 via-background/95 to-background" />
       
       {/* Decorative Elements */}
       <motion.div
-        className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full opacity-20"
+        className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full opacity-20 blur-3xl"
         style={{
-          background: 'radial-gradient(circle, hsl(42 75% 55% / 0.3) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, hsl(42 75% 55% / 0.4) 0%, transparent 70%)',
         }}
-        animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.3, 0.2] }}
-        transition={{ duration: 8, repeat: Infinity }}
+        animate={{ scale: [1, 1.15, 1], opacity: [0.15, 0.25, 0.15] }}
+        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <motion.div
+        className="absolute bottom-1/3 left-1/4 w-[300px] h-[300px] rounded-full opacity-10 blur-2xl"
+        style={{
+          background: 'radial-gradient(circle, hsl(220 20% 12% / 0.3) 0%, transparent 70%)',
+        }}
+        animate={{ scale: [1, 1.1, 1] }}
+        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
       />
 
       {/* Content */}
-      <div className="relative z-10 container-wide text-center pt-24 pb-16">
+      <div className="relative z-10 container-wide text-center pt-28 pb-20">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.9, ease: 'easeOut' }}
         >
-          {/* Badge */}
+          {/* Role Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted/80 backdrop-blur-sm border border-border mb-8"
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-card/80 backdrop-blur-md border border-border shadow-sm mb-10"
           >
             <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-            <span className="font-body text-sm text-muted-foreground">
+            <span className="font-body text-sm font-medium text-muted-foreground tracking-wide">
               CPA · Entrepreneur · Financial Educator · Wealth Advocate
             </span>
           </motion.div>
 
-          {/* Headline */}
+          {/* Main Headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground max-w-4xl mx-auto leading-tight"
+            transition={{ delay: 0.4, duration: 0.9 }}
+            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold text-foreground max-w-5xl mx-auto leading-[1.1] mb-8"
           >
             I Convert{' '}
             <span className="relative inline-block">
               <span className="relative z-10">Complexity</span>
               <motion.span
-                className="absolute bottom-2 left-0 h-3 bg-gold/30 -z-0"
+                className="absolute bottom-2 md:bottom-4 left-0 h-3 md:h-4 bg-gold/25 -z-0 rounded-sm"
                 initial={{ width: 0 }}
                 animate={{ width: '100%' }}
-                transition={{ delay: 1, duration: 0.6 }}
+                transition={{ delay: 1.2, duration: 0.7, ease: 'easeOut' }}
               />
-            </span>{' '}
+            </span>
+            <br className="hidden sm:block" />
             Into{' '}
             <span className="text-gradient-gold">Clarity</span>
             <span className="text-gold">.</span>
@@ -74,29 +90,52 @@ export default function HeroSection() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="font-body text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mt-6 leading-relaxed"
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="font-body text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-12"
           >
-            Financial clarity is not a luxury — it's a pathway to freedom, 
-            confidence, and long-term opportunity.
+            Financial clarity is not a luxury — it's a pathway to{' '}
+            <span className="text-foreground font-medium">freedom</span>,{' '}
+            <span className="text-foreground font-medium">confidence</span>, and{' '}
+            <span className="text-foreground font-medium">long-term opportunity</span>.
           </motion.p>
 
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10"
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
           >
-            <Button variant="hero" size="xl" asChild>
+            <Button variant="hero" size="xl" className="min-w-[180px]" asChild>
               <Link to="/contact" className="group">
                 Let's Chat
-                <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={18} />
+                <ArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-1" size={20} />
               </Link>
             </Button>
-            <Button variant="heroOutline" size="xl" asChild>
+            <Button variant="heroOutline" size="xl" className="min-w-[180px]" asChild>
               <Link to="/ventures">Explore the Work</Link>
             </Button>
+          </motion.div>
+
+          {/* Credential Badges */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.8 }}
+            className="flex flex-wrap items-center justify-center gap-4 md:gap-6"
+          >
+            {credentialBadges.map((badge, index) => (
+              <motion.div
+                key={badge.label}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.1 + index * 0.1, duration: 0.5 }}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-muted/60 backdrop-blur-sm"
+              >
+                <badge.icon size={16} className="text-gold" />
+                <span className="font-body text-xs md:text-sm text-muted-foreground">{badge.label}</span>
+              </motion.div>
+            ))}
           </motion.div>
         </motion.div>
 
@@ -105,16 +144,17 @@ export default function HeroSection() {
           onClick={scrollToAbout}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-gold transition-colors cursor-pointer"
+          transition={{ delay: 1.5, duration: 0.6 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-gold transition-colors duration-300 cursor-pointer group"
           aria-label="Scroll to About section"
         >
-          <span className="font-body text-xs tracking-wider uppercase">Discover</span>
+          <span className="font-body text-xs tracking-widest uppercase">Discover</span>
           <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+            className="p-2 rounded-full border border-border group-hover:border-gold/50 transition-colors"
           >
-            <ChevronDown size={20} />
+            <ChevronDown size={18} />
           </motion.div>
         </motion.button>
       </div>

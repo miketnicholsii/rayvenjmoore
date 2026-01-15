@@ -124,9 +124,30 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  /* Improved focus states for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-background;
+  }
+
+  /* Typography hierarchy with bold sizes */
+  h1 {
     font-family: 'Playfair Display', Georgia, serif;
-    @apply font-medium tracking-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-tight;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight;
+  }
+
+  h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    @apply text-xl md:text-2xl font-semibold tracking-tight;
+  }
+
+  h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    @apply font-semibold tracking-tight;
   }
 }
 
