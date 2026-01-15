@@ -1,23 +1,27 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Linkedin, Facebook, Twitter, Music } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const footerLinks = {
   main: [
+    { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Ventures', href: '/ventures' },
-    { name: 'Resources', href: '/resources' },
-    { name: 'Speaking', href: '/speaking' },
+    { name: 'Case Studies', href: '/case-studies' },
   ],
   secondary: [
-    { name: 'Manifesto', href: '/manifesto' },
+    { name: 'Resources', href: '/resources' },
+    { name: 'Speaking & Media', href: '/speaking' },
     { name: 'Contact', href: '/contact' },
+    { name: 'Manifesto', href: '/manifesto' },
   ],
 };
 
 const socialLinks = [
-  { name: 'LinkedIn', icon: Linkedin, href: '#' },
-  { name: 'Twitter', icon: Twitter, href: '#' },
-  { name: 'Instagram', icon: Instagram, href: '#' },
+  { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/rayvenjmoore/' },
+  { name: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/rayvenjmoorecpa' },
+  { name: 'X', icon: Twitter, href: 'https://x.com/rayvenmoore' },
+  { name: 'Spotify', icon: Music, href: 'https://open.spotify.com/playlist/6MptPHpTE9KRwh4KczLfEW?si=4d2b42488c17408a' },
 ];
 
 export default function Footer() {
@@ -27,30 +31,43 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <h3 className="font-display text-2xl font-semibold mb-4">
+            <motion.h3 
+              className="font-display text-2xl font-semibold mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
               Rayven J. Moore<span className="text-gold">,</span> CPA
-            </h3>
+            </motion.h3>
             <p className="text-primary-foreground/70 font-body text-sm leading-relaxed max-w-md mb-6">
               Converting complexity into clarity. Dedicated to financial education, 
               community development, and creating universal access to wealth-building knowledge.
             </p>
-            <div className="flex gap-4">
-              {socialLinks.map((social) => (
-                <a
+            <div className="flex gap-3">
+              {socialLinks.map((social, index) => (
+                <motion.a
                   key={social.name}
                   href={social.href}
-                  className="w-10 h-10 rounded-full border border-primary-foreground/20 flex items-center justify-center transition-all duration-300 hover:bg-gold hover:border-gold hover:text-charcoal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-11 h-11 rounded-xl border border-primary-foreground/20 flex items-center justify-center transition-all duration-300 hover:bg-gold hover:border-gold hover:text-charcoal group"
                   aria-label={social.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05, y: -2 }}
                 >
-                  <social.icon size={18} />
-                </a>
+                  <social.icon size={18} className="transition-transform group-hover:scale-110" />
+                </motion.a>
               ))}
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-body text-sm font-semibold tracking-wide uppercase mb-4 text-gold">
+            <h4 className="font-body text-sm font-semibold tracking-wide uppercase mb-5 text-gold">
               Explore
             </h4>
             <ul className="space-y-3">
@@ -58,8 +75,9 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="font-body text-sm text-primary-foreground/70 hover:text-gold transition-colors duration-200"
+                    className="font-body text-sm text-primary-foreground/70 hover:text-gold transition-colors duration-200 inline-flex items-center gap-1 group"
                   >
+                    <span className="w-0 h-px bg-gold transition-all duration-300 group-hover:w-3" />
                     {link.name}
                   </Link>
                 </li>
@@ -69,7 +87,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <h4 className="font-body text-sm font-semibold tracking-wide uppercase mb-4 text-gold">
+            <h4 className="font-body text-sm font-semibold tracking-wide uppercase mb-5 text-gold">
               Connect
             </h4>
             <ul className="space-y-3">
@@ -77,8 +95,9 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="font-body text-sm text-primary-foreground/70 hover:text-gold transition-colors duration-200"
+                    className="font-body text-sm text-primary-foreground/70 hover:text-gold transition-colors duration-200 inline-flex items-center gap-1 group"
                   >
+                    <span className="w-0 h-px bg-gold transition-all duration-300 group-hover:w-3" />
                     {link.name}
                   </Link>
                 </li>
@@ -92,11 +111,12 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="font-body text-xs text-primary-foreground/50">
+          <p className="font-body text-sm text-primary-foreground/60">
             © {new Date().getFullYear()} Rayven J. Moore, CPA. All rights reserved.
           </p>
-          <p className="font-body text-xs text-primary-foreground/50">
-            Building Universal Wealth Care.
+          <p className="font-body text-sm text-primary-foreground/60 flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-gold/50" />
+            Building Universal Wealth Care
           </p>
         </div>
       </div>
