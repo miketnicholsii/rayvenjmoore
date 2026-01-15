@@ -135,8 +135,8 @@ export default function ContactSection() {
                 </motion.div>
                 <div>
                   <p className="font-body text-sm text-muted-foreground">Email</p>
-                  <a href="mailto:hello@rayvenmoore.com" className="font-body font-medium text-foreground hover:text-accent transition-colors">
-                    hello@rayvenmoore.com
+                  <a href="mailto:rayvenjmoore@gmail.com" className="font-body font-medium text-foreground hover:text-accent transition-colors">
+                    rayvenjmoore@gmail.com
                   </a>
                 </div>
               </motion.div>
