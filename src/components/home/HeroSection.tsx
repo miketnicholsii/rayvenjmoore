@@ -207,7 +207,7 @@ export default function HeroSection() {
               style={{ y: floatingCardY }}
               className="absolute -top-2 -right-2 md:right-8 bg-evergreen text-primary-foreground rounded-xl px-4 py-3 shadow-lg"
             >
-              <p className="font-display text-2xl font-bold">10+</p>
+              <p className="font-display text-2xl font-bold">12+</p>
               <p className="font-body text-xs opacity-80">Years</p>
             </motion.div>
           </motion.div>
