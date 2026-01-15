@@ -187,19 +187,56 @@ export default function HeroSection() {
               {credentialBadges.map((badge, index) => (
                 <motion.div
                   key={badge.label}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.1 + index * 0.1, duration: 0.5 }}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-secondary/60 backdrop-blur-sm border border-border/50 cursor-default hover:border-accent/30 hover:bg-secondary/80 transition-colors duration-300"
+                  initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ delay: 1.1 + index * 0.1, duration: 0.5, type: "spring", stiffness: 200 }}
+                  whileHover={{ 
+                    scale: 1.08, 
+                    y: -4,
+                    boxShadow: "0 8px 25px -5px hsl(var(--accent) / 0.25)",
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group relative flex items-center gap-2.5 px-4 py-2 rounded-xl bg-secondary/70 backdrop-blur-md border border-border/50 cursor-pointer hover:border-accent/40 hover:bg-secondary/90 transition-all duration-300 overflow-hidden"
                 >
+                  {/* Subtle glow effect on hover */}
                   <motion.div
-                    whileHover={{ rotate: 12 }}
+                    className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/10 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    initial={false}
+                  />
+                  
+                  {/* Icon container with enhanced animations */}
+                  <motion.div
+                    className="relative z-10 flex items-center justify-center w-6 h-6 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors duration-300"
+                    whileHover={{ rotate: 12, scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   >
-                    <badge.icon size={14} className="text-accent" />
+                    <motion.div
+                      animate={{ 
+                        rotate: [0, 0, 0],
+                      }}
+                      whileHover={{
+                        rotate: [0, -10, 10, 0],
+                        transition: { duration: 0.5, ease: "easeInOut" }
+                      }}
+                    >
+                      <badge.icon size={14} className="text-accent group-hover:text-accent transition-colors" />
+                    </motion.div>
                   </motion.div>
-                  <span className="font-body text-xs text-muted-foreground">{badge.label}</span>
+                  
+                  {/* Label with subtle slide effect */}
+                  <motion.span 
+                    className="relative z-10 font-body text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300"
+                  >
+                    {badge.label}
+                  </motion.span>
+                  
+                  {/* Animated underline on hover */}
+                  <motion.div
+                    className="absolute bottom-0 left-4 right-4 h-[2px] bg-gradient-to-r from-transparent via-accent/50 to-transparent"
+                    initial={{ scaleX: 0, opacity: 0 }}
+                    whileHover={{ scaleX: 1, opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
                 </motion.div>
               ))}
             </motion.div>
