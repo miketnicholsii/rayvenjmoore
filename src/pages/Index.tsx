@@ -5,12 +5,11 @@ import ScrollProgress from '@/components/ui/ScrollProgress';
 import SectionNav from '@/components/ui/SectionNav';
 import HeroSection from '@/components/home/HeroSection';
 import AboutSection from '@/components/home/AboutSection';
-import CareerSection from '@/components/home/CareerSection';
-import ServicesSection from '@/components/home/ServicesSection';
+import CredentialsSection from '@/components/home/CredentialsSection';
 import VenturesSection from '@/components/home/VenturesSection';
-import StoriesSection from '@/components/home/StoriesSection';
-import ManifestoPreview from '@/components/home/ManifestoPreview';
-import PhilosophySection from '@/components/home/PhilosophySection';
+import LeadershipSection from '@/components/home/LeadershipSection';
+import CaseStudiesPreview from '@/components/home/CaseStudiesPreview';
+import SpeakingSection from '@/components/home/SpeakingSection';
 import CTASection from '@/components/home/CTASection';
 import ContactSection from '@/components/home/ContactSection';
 
@@ -19,7 +18,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <SEO 
         canonical="/"
-        description="Rayven J. Moore, CPA - Converting complexity into clarity. Financial educator, entrepreneur, and wealth-building strategist helping individuals and businesses achieve financial freedom."
+        description="Rayven J. Moore, CPA - Clarity for complex financial decisions. Finance leader, entrepreneur, and Houston businessman helping organizations, entrepreneurs, and communities navigate complexity and build durable value."
       />
       <ScrollProgress />
       <Header />
@@ -27,12 +26,11 @@ const Index = () => {
       <main>
         <HeroSection />
         <AboutSection />
-        <CareerSection />
-        <ServicesSection />
+        <CredentialsSection />
         <VenturesSection />
-        <StoriesSection />
-        <ManifestoPreview />
-        <PhilosophySection />
+        <LeadershipSection />
+        <CaseStudiesPreview />
+        <SpeakingSection />
         <CTASection />
         <ContactSection />
       </main>
