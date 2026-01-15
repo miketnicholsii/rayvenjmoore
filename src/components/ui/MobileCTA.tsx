@@ -61,10 +61,10 @@ export default function MobileCTA() {
 
               <div className="flex-grow min-w-0">
                 <p className="text-primary-foreground font-semibold text-sm">
-                  Ready to get clarity?
+                  Financial strategy to business ideation
                 </p>
                 <p className="text-primary-foreground/70 text-xs truncate">
-                  Let's start the conversation
+                  Let's chat
                 </p>
               </div>
 
