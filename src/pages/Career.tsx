@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { MapPin, Calendar, Briefcase, ChevronRight, FileText, Calculator, Layers, TrendingUp, Bitcoin, Cpu, Building2, GraduationCap } from 'lucide-react';
 import SEO from '@/components/SEO';
-import Header from '@/components/layout/Header';
+import BreakoutNav from '@/components/layout/BreakoutNav';
 import Footer from '@/components/layout/Footer';
 import { careerRoles, earlierRoles, signatureSkills } from '@/data/career';
 
@@ -22,8 +22,8 @@ const Career = () => {
         description="Explore Rayven J. Moore's professional journey - from Big Four foundations to global finance leadership across SEC reporting, technical accounting, FP&A, and emerging technologies."
         canonical="/career"
       />
-      <Header />
-      <main>
+      <BreakoutNav title="Career & Expertise" backLabel="Back to Home" sectionId="career" />
+      <main className="pt-16">
         {/* Hero Section */}
         <section className="relative py-24 md:py-32 bg-gradient-to-b from-primary/5 to-background overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.08),transparent_50%)]" />

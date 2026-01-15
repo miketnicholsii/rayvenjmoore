@@ -21,7 +21,7 @@ const careerHighlights = [
 
 const CareerSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-secondary/30">
+    <section id="career" className="py-20 md:py-28 bg-secondary/30">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div

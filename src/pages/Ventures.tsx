@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '@/components/SEO';
-import Header from '@/components/layout/Header';
+import BreakoutNav from '@/components/layout/BreakoutNav';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 import { ventures } from '@/data/ventures';
@@ -15,8 +15,8 @@ export default function Ventures() {
         description="Explore Rayven J. Moore's ventures including tax services, hospitality, community development, fashion, and cryptocurrency research. Building wealth and impact across multiple industries."
         canonical="/ventures"
       />
-      <Header />
-      <main>
+      <BreakoutNav title="Ventures & Community" backLabel="Back to Home" sectionId="ventures" />
+      <main className="pt-16">
         {/* Hero */}
         <section className="pt-32 pb-20 bg-gradient-to-b from-cream to-background">
           <div className="container-wide">

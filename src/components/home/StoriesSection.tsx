@@ -27,7 +27,7 @@ export default function StoriesSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section className="section-padding bg-muted/30">
+    <section id="stories" className="section-padding bg-muted/30">
       <div className="container-wide" ref={ref}>
         {/* Header */}
         <motion.div

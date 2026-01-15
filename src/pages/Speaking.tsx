@@ -5,7 +5,7 @@ import {
   MapPin, Users, Play, ExternalLink, Clock, Send
 } from 'lucide-react';
 import SEO from '@/components/SEO';
-import Header from '@/components/layout/Header';
+import BreakoutNav from '@/components/layout/BreakoutNav';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 
@@ -161,8 +161,8 @@ export default function Speaking() {
         description="Book Rayven J. Moore, CPA for keynotes, panels, workshops, and podcast appearances. Bringing financial clarity to stages and audiences worldwide."
         canonical="/speaking"
       />
-      <Header />
-      <main>
+      <BreakoutNav title="Speaking & Media" backLabel="Back to Home" sectionId="services" />
+      <main className="pt-16">
         {/* Hero */}
         <section className="pt-32 pb-20 bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4">

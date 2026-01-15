@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Briefcase, GraduationCap, Award, Users, Lightbulb, Target } from 'lucide-react';
 import SEO from '@/components/SEO';
-import Header from '@/components/layout/Header';
+import BreakoutNav from '@/components/layout/BreakoutNav';
 import Footer from '@/components/layout/Footer';
 import rayvenPortrait from '@/assets/rayven-portrait.jpg';
 
@@ -58,8 +58,8 @@ export default function About() {
         description="Learn about Rayven J. Moore, CPA - a financial educator, entrepreneur, and wealth-building strategist with over a decade of experience guiding individuals and businesses to financial clarity."
         canonical="/about"
       />
-      <Header />
-      <main>
+      <BreakoutNav title="About" backLabel="Back to Home" sectionId="about" />
+      <main className="pt-16">
         {/* Hero */}
         <section className="pt-32 pb-20 bg-gradient-to-b from-cream to-background">
           <div className="container-wide">

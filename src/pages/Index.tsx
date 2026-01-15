@@ -1,6 +1,8 @@
 import SEO from '@/components/SEO';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import ScrollProgress from '@/components/ui/ScrollProgress';
+import SectionNav from '@/components/ui/SectionNav';
 import HeroSection from '@/components/home/HeroSection';
 import AboutSection from '@/components/home/AboutSection';
 import CareerSection from '@/components/home/CareerSection';
@@ -19,7 +21,9 @@ const Index = () => {
         canonical="/"
         description="Rayven J. Moore, CPA - Converting complexity into clarity. Financial educator, entrepreneur, and wealth-building strategist helping individuals and businesses achieve financial freedom."
       />
+      <ScrollProgress />
       <Header />
+      <SectionNav />
       <main>
         <HeroSection />
         <AboutSection />

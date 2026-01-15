@@ -1,7 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ExternalLink, CheckCircle } from 'lucide-react';
-import Header from '@/components/layout/Header';
+import BreakoutNav from '@/components/layout/BreakoutNav';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 import { getVentureById, ventures } from '@/data/ventures';
@@ -19,8 +19,8 @@ export default function VentureDetail() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-      <main>
+      <BreakoutNav title={venture.title} backLabel="Back to Ventures" backTo="/ventures" />
+      <main className="pt-16">
         {/* Hero */}
         <section className="pt-32 pb-16 bg-gradient-to-b from-cream to-background">
           <div className="container-wide">

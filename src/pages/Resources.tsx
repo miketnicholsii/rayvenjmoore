@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Search, Filter, ChevronRight, Clock, FileText, Video, Wrench, BookOpen, Bell, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '@/components/SEO';
-import Header from '@/components/layout/Header';
+import BreakoutNav from '@/components/layout/BreakoutNav';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 import { resourceCategories, resources, iconMap } from '@/data/resources';
@@ -37,8 +37,8 @@ export default function Resources() {
         description="Free financial education resources, guides, and tools. Learn about Bitcoin, personal finance, wealth building, business accounting, and more."
         canonical="/resources"
       />
-      <Header />
-      <main>
+      <BreakoutNav title="Resources" backLabel="Back to Home" sectionId="services" />
+      <main className="pt-16">
         {/* Hero */}
         <section className="pt-32 pb-16 bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4">
