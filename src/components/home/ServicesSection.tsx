@@ -29,7 +29,7 @@ export default function ServicesSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="services" className="section-padding bg-muted/50">
+    <section id="services" className="section-padding bg-sage/30">
       <div className="container-wide" ref={ref}>
         {/* Header */}
         <motion.div
@@ -38,7 +38,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <span className="font-body text-sm font-semibold tracking-widest uppercase text-gold mb-4 block">
+          <span className="font-body text-sm font-semibold tracking-widest uppercase text-evergreen mb-4 block">
             How I Help
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground">
@@ -58,11 +58,11 @@ export default function ServicesSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="card-elevated p-8 group"
+              className="card-elevated p-8 group border border-border hover:border-evergreen/30"
             >
               <div className="flex items-start gap-5">
-                <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors duration-300">
-                  <service.icon className="w-7 h-7 text-gold" />
+                <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-evergreen/10 flex items-center justify-center group-hover:bg-evergreen/20 transition-colors duration-300">
+                  <service.icon className="w-7 h-7 text-evergreen" />
                 </div>
                 <div>
                   <h3 className="font-display text-xl font-semibold text-foreground mb-2">

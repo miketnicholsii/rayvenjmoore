@@ -7,8 +7,7 @@ import { Button } from '@/components/ui/button';
 const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
-  { name: 'Career', href: '/career' },
-  { name: 'Ventures', href: '/ventures' },
+  { name: 'Work & Ventures', href: '/ventures' },
   { name: 'Case Studies', href: '/case-studies' },
   { name: 'Resources', href: '/resources' },
   { name: 'Speaking & Media', href: '/speaking' },
@@ -64,7 +63,7 @@ export default function Header() {
             transition={{ duration: 0.2 }}
           >
             Rayven J. Moore
-            <span className="text-gold">,</span>
+            <span className="text-evergreen">,</span>
             <span className="text-muted-foreground font-body text-sm ml-1 font-normal">CPA</span>
           </motion.span>
         </Link>
@@ -86,7 +85,7 @@ export default function Header() {
               {location.pathname === link.href && (
                 <motion.span
                   layoutId="activeNav"
-                  className="absolute bottom-0 left-4 right-4 h-0.5 bg-gold rounded-full"
+                  className="absolute bottom-0 left-4 right-4 h-0.5 bg-evergreen rounded-full"
                   transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                 />
               )}
@@ -103,7 +102,7 @@ export default function Header() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg flex items-center justify-center text-muted-foreground hover:text-gold hover:bg-gold/10 transition-all duration-300"
+                className="w-9 h-9 rounded-lg flex items-center justify-center text-muted-foreground hover:text-evergreen hover:bg-evergreen/10 transition-all duration-300"
                 aria-label={social.name}
               >
                 <social.icon size={18} />
@@ -111,7 +110,7 @@ export default function Header() {
             ))}
           </div>
           <Button variant="hero" size="default" asChild>
-            <Link to="/contact">Let's Connect</Link>
+            <Link to="/contact">Let's Talk</Link>
           </Button>
         </div>
 
@@ -152,8 +151,8 @@ export default function Header() {
                     to={link.href}
                     className={`block font-body text-base py-3 px-4 rounded-lg transition-all duration-300 ${
                       location.pathname === link.href
-                        ? 'text-gold bg-gold/10'
-                        : 'text-foreground hover:text-gold hover:bg-muted/50'
+                        ? 'text-evergreen bg-evergreen/10'
+                        : 'text-foreground hover:text-evergreen hover:bg-muted/50'
                     }`}
                   >
                     {link.name}
@@ -169,7 +168,7 @@ export default function Header() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-lg flex items-center justify-center text-muted-foreground hover:text-gold hover:bg-gold/10 transition-all duration-300 border border-border"
+                    className="w-10 h-10 rounded-lg flex items-center justify-center text-muted-foreground hover:text-evergreen hover:bg-evergreen/10 transition-all duration-300 border border-border"
                     aria-label={social.name}
                   >
                     <social.icon size={18} />
@@ -178,7 +177,7 @@ export default function Header() {
               </div>
 
               <Button variant="hero" size="lg" className="mt-4 mx-4" asChild>
-                <Link to="/contact">Let's Connect</Link>
+                <Link to="/contact">Let's Talk</Link>
               </Button>
             </div>
           </motion.div>
