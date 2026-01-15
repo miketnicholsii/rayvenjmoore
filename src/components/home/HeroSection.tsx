@@ -6,9 +6,9 @@ import heroBg from '@/assets/hero-bg.jpg';
 
 const credentialBadges = [
   { icon: Shield, label: 'Certified Public Accountant' },
-  { icon: TrendingUp, label: '10+ Years Experience' },
-  { icon: Users, label: '1000+ Clients Served' },
-  { icon: Award, label: 'Financial Educator' },
+  { icon: Award, label: 'Notre Dame Alumnus' },
+  { icon: TrendingUp, label: 'Finance Executive' },
+  { icon: Users, label: 'Civic Leader' },
 ];
 
 export default function HeroSection() {
@@ -59,7 +59,7 @@ export default function HeroSection() {
           >
             <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
             <span className="font-body text-sm font-medium text-muted-foreground tracking-wide">
-              CPA · Entrepreneur · Financial Educator · Wealth Advocate
+              CPA · Entrepreneur · Strategic Advisor · Houston, TX
             </span>
           </motion.div>
 
@@ -93,10 +93,10 @@ export default function HeroSection() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="font-body text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-12"
           >
-            Financial clarity is not a luxury — it's a pathway to{' '}
-            <span className="text-foreground font-medium">freedom</span>,{' '}
-            <span className="text-foreground font-medium">confidence</span>, and{' '}
-            <span className="text-foreground font-medium">long-term opportunity</span>.
+            Trusted advisor to business owners, executives, and institutions — 
+            building{' '}
+            <span className="text-foreground font-medium">long-term partnerships</span>{' '}
+            through integrity, expertise, and people-first leadership.
           </motion.p>
 
           {/* CTAs */}
