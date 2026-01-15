@@ -6,121 +6,133 @@
 
 @layer base {
   :root {
-    /* PHASE 2: Midnight Blue + Evergreen Hybrid Palette */
+    /* ========================================
+       RAYVEN J. MOORE - BRAND COLOR SYSTEM
+       Forest Green + Orange Accent Palette
+       ======================================== */
     
     /* Warm Ivory - Primary Background */
-    --background: 60 12% 96%;
-    --foreground: 210 25% 7%;
+    --background: 45 20% 97%;
+    --foreground: 100 8% 16%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 25% 7%;
+    --card-foreground: 100 8% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 25% 7%;
+    --popover-foreground: 100 8% 16%;
 
-    /* Midnight Blue - Primary Authority Color */
-    --primary: 207 60% 11%;
-    --primary-foreground: 60 20% 95%;
+    /* Deep Forest Green - Primary Authority Color */
+    --primary: 100 8% 18%;
+    --primary-foreground: 45 20% 97%;
 
-    /* Antique Gold - Accent (micro-accent only) */
-    --secondary: 42 45% 57%;
-    --secondary-foreground: 210 25% 7%;
+    /* Soft Sage Secondary */
+    --secondary: 110 12% 92%;
+    --secondary-foreground: 100 8% 16%;
 
-    /* Soft Neutrals */
-    --muted: 60 10% 94%;
-    --muted-foreground: 207 15% 40%;
+    /* Muted Neutrals */
+    --muted: 45 12% 94%;
+    --muted-foreground: 100 6% 45%;
 
-    /* Antique Gold Accent */
-    --accent: 42 45% 57%;
-    --accent-foreground: 210 25% 7%;
+    /* Gold Orange - Accent (micro-interactions, emphasis) */
+    --accent: 38 92% 50%;
+    --accent-foreground: 100 8% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Steel Slate for borders */
-    --border: 210 10% 85%;
-    --input: 210 10% 85%;
-    --ring: 42 45% 57%;
+    /* Borders - Soft, professional */
+    --border: 100 6% 88%;
+    --input: 100 6% 88%;
+    --ring: 38 92% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.625rem;
 
-    /* Custom Brand Extensions - Midnight Blue + Evergreen */
-    --midnight: 207 60% 11%;
-    --midnight-light: 207 45% 20%;
-    --evergreen: 160 60% 15%;
-    --evergreen-light: 160 40% 25%;
-    --charcoal: 210 25% 7%;
-    --charcoal-light: 210 20% 18%;
+    /* ========================================
+       BRAND EXTENSIONS - Forest Green Palette
+       ======================================== */
     
-    /* Antique Gold (subtle, not loud) */
-    --gold: 42 45% 57%;
-    --gold-light: 45 50% 68%;
-    --gold-dark: 40 50% 42%;
+    /* Primary Greens */
+    --deep-forest: 100 8% 18%;        /* #2A312A */
+    --evergreen: 120 15% 19%;          /* #28382B */
+    --moss: 115 12% 31%;               /* #455B46 */
     
-    /* Warm Ivory & Sage */
-    --cream: 60 20% 96%;
-    --warm-white: 60 12% 98%;
-    --sage: 140 20% 88%;
-    --steel: 210 12% 45%;
+    /* Orange Accents - Sparing Use */
+    --gold-orange: 38 92% 50%;         /* #F4900E */
+    --warm-orange: 20 92% 54%;         /* #F7631C */
+    --burnt-orange: 17 95% 47%;        /* #ED5005 */
+    
+    /* Neutral Extensions */
+    --charcoal: 100 8% 12%;
+    --charcoal-light: 100 6% 20%;
+    --cream: 45 20% 97%;
+    --warm-white: 45 15% 99%;
+    --sage: 110 15% 90%;
+    --steel: 100 5% 50%;
 
-    /* Gradients - Subtle, no loud gradients */
-    --gradient-gold: linear-gradient(135deg, hsl(42 45% 57%), hsl(45 50% 68%));
-    --gradient-midnight: linear-gradient(135deg, hsl(207 60% 11%), hsl(207 45% 20%));
-    --gradient-evergreen: linear-gradient(135deg, hsl(160 60% 15%), hsl(160 40% 25%));
-    --gradient-hero: linear-gradient(180deg, hsl(60 20% 96%) 0%, hsl(60 12% 98%) 100%);
+    /* ========================================
+       GRADIENTS - Subtle, Professional
+       ======================================== */
+    --gradient-forest: linear-gradient(135deg, hsl(100 8% 18%), hsl(120 15% 19%));
+    --gradient-orange: linear-gradient(135deg, hsl(38 92% 50%), hsl(20 92% 54%));
+    --gradient-hero: linear-gradient(180deg, hsl(45 20% 97%) 0%, hsl(110 12% 92% / 0.3) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(45 20% 97%) 100%);
 
-    /* Shadows - Elegant, not dramatic */
-    --shadow-soft: 0 4px 20px -4px hsl(207 60% 11% / 0.08);
-    --shadow-elevated: 0 12px 40px -8px hsl(207 60% 11% / 0.12);
-    --shadow-gold: 0 8px 30px -6px hsl(42 45% 57% / 0.2);
+    /* ========================================
+       SHADOWS - Elegant, calm
+       ======================================== */
+    --shadow-soft: 0 4px 20px -4px hsl(100 8% 18% / 0.08);
+    --shadow-elevated: 0 12px 40px -8px hsl(100 8% 18% / 0.12);
+    --shadow-orange: 0 8px 30px -6px hsl(38 92% 50% / 0.25);
+    --shadow-card: 0 1px 3px hsl(100 8% 18% / 0.05), 0 4px 12px hsl(100 8% 18% / 0.08);
 
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 207 60% 11%;
-    --sidebar-primary-foreground: 60 20% 95%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 42 45% 57%;
+    --sidebar-foreground: 100 8% 16%;
+    --sidebar-primary: 100 8% 18%;
+    --sidebar-primary-foreground: 45 20% 97%;
+    --sidebar-accent: 110 12% 92%;
+    --sidebar-accent-foreground: 100 8% 16%;
+    --sidebar-border: 100 6% 88%;
+    --sidebar-ring: 38 92% 50%;
   }
 
   .dark {
-    --background: 207 50% 6%;
-    --foreground: 60 15% 92%;
+    --background: 100 10% 8%;
+    --foreground: 45 15% 92%;
 
-    --card: 207 45% 9%;
-    --card-foreground: 60 15% 92%;
+    --card: 100 8% 12%;
+    --card-foreground: 45 15% 92%;
 
-    --popover: 207 45% 9%;
-    --popover-foreground: 60 15% 92%;
+    --popover: 100 8% 12%;
+    --popover-foreground: 45 15% 92%;
 
-    --primary: 60 15% 92%;
-    --primary-foreground: 207 60% 11%;
+    --primary: 45 15% 92%;
+    --primary-foreground: 100 8% 18%;
 
-    --secondary: 42 45% 57%;
-    --secondary-foreground: 207 60% 11%;
+    --secondary: 100 8% 18%;
+    --secondary-foreground: 45 15% 92%;
 
-    --muted: 207 35% 14%;
-    --muted-foreground: 60 8% 60%;
+    --muted: 100 8% 15%;
+    --muted-foreground: 45 8% 60%;
 
-    --accent: 42 45% 57%;
-    --accent-foreground: 207 60% 11%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 100 8% 10%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 207 30% 18%;
-    --input: 207 30% 18%;
-    --ring: 42 45% 57%;
+    --border: 100 8% 20%;
+    --input: 100 8% 20%;
+    --ring: 38 92% 50%;
 
-    --sidebar-background: 207 45% 9%;
-    --sidebar-foreground: 60 15% 92%;
-    --sidebar-primary: 42 45% 57%;
-    --sidebar-primary-foreground: 207 60% 11%;
-    --sidebar-accent: 207 35% 14%;
-    --sidebar-accent-foreground: 60 15% 92%;
-    --sidebar-border: 207 30% 18%;
-    --sidebar-ring: 42 45% 57%;
+    --sidebar-background: 100 8% 12%;
+    --sidebar-foreground: 45 15% 92%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 100 8% 10%;
+    --sidebar-accent: 100 8% 15%;
+    --sidebar-accent-foreground: 45 15% 92%;
+    --sidebar-border: 100 8% 20%;
+    --sidebar-ring: 38 92% 50%;
   }
 }
 
@@ -138,9 +150,9 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
 
-  /* Improved focus states for accessibility */
+  /* Improved focus states - Orange ring for accessibility */
   *:focus-visible {
-    @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-background;
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
   }
 
   /* Typography hierarchy - Editorial, refined */
@@ -166,7 +178,9 @@
 }
 
 @layer utilities {
-  /* Typography Utilities */
+  /* ========================================
+     TYPOGRAPHY UTILITIES
+     ======================================== */
   .font-display {
     font-family: 'Playfair Display', Georgia, serif;
   }
@@ -175,17 +189,31 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
 
-  /* Gradient Text - Subtle Gold */
-  .text-gradient-gold {
-    background: linear-gradient(135deg, hsl(42 45% 57%), hsl(45 50% 68%));
+  /* Gradient Text - Orange accent */
+  .text-gradient-orange {
+    background: linear-gradient(135deg, hsl(38 92% 50%), hsl(20 92% 54%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Section Spacing - Editorial rhythm */
+  /* Gradient Text - Forest */
+  .text-gradient-forest {
+    background: linear-gradient(135deg, hsl(100 8% 18%), hsl(115 12% 31%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ========================================
+     LAYOUT UTILITIES - Editorial Spacing
+     ======================================== */
   .section-padding {
     @apply py-20 md:py-28 lg:py-36;
+  }
+
+  .section-padding-sm {
+    @apply py-12 md:py-16 lg:py-20;
   }
 
   .container-narrow {
@@ -196,7 +224,9 @@
     @apply max-w-7xl mx-auto px-6;
   }
 
-  /* Animation Classes - Calm, intentional */
+  /* ========================================
+     ANIMATION CLASSES - Calm, Intentional
+     ======================================== */
   .animate-fade-up {
     animation: fadeUp 0.8s ease-out forwards;
   }
@@ -224,7 +254,9 @@
   .delay-400 { animation-delay: 400ms; }
   .delay-500 { animation-delay: 500ms; }
 
-  /* Hover Effects - Quiet but present */
+  /* ========================================
+     HOVER EFFECTS - Quiet but present
+     ======================================== */
   .hover-lift {
     @apply transition-all duration-300 ease-out;
   }
@@ -234,54 +266,132 @@
     box-shadow: var(--shadow-elevated);
   }
 
-  /* Interactive Card - Enhanced micro-interactions */
+  /* Interactive Card - Enhanced with orange glow on hover */
   .interactive-card {
-    @apply relative overflow-hidden transition-all duration-300 ease-out;
+    @apply relative overflow-hidden transition-all duration-300 ease-out bg-card border border-border rounded-xl;
   }
 
   .interactive-card::before {
     content: '';
     @apply absolute inset-0 opacity-0 transition-opacity duration-300;
-    background: linear-gradient(135deg, hsl(42 45% 57% / 0.05), hsl(160 60% 15% / 0.05));
+    background: linear-gradient(135deg, hsl(38 92% 50% / 0.03), hsl(100 8% 18% / 0.02));
     pointer-events: none;
   }
 
   .interactive-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
     box-shadow: var(--shadow-elevated);
+    border-color: hsl(38 92% 50% / 0.3);
   }
 
   .interactive-card:hover::before {
     @apply opacity-100;
   }
 
-  /* Icon Container - Bouncy hover */
-  .icon-container {
-    @apply transition-all duration-300 ease-out;
+  /* ========================================
+     BUTTON GLOW - Orange accent
+     ======================================== */
+  .btn-glow {
+    @apply transition-all duration-300;
   }
 
-  .icon-container:hover {
-    transform: scale(1.08);
+  .btn-glow:hover {
+    box-shadow: 0 0 20px hsl(38 92% 50% / 0.35), 0 4px 20px hsl(100 8% 18% / 0.15);
   }
 
-  .group:hover .icon-container {
-    transform: scale(1.08);
+  /* ========================================
+     DIVIDERS & ACCENT LINES
+     ======================================== */
+  .divider-orange {
+    @apply h-px w-full;
+    background: linear-gradient(90deg, transparent, hsl(38 92% 50% / 0.5), transparent);
   }
 
-  /* Magnetic Button Effect */
-  .magnetic-hover {
-    @apply transition-all duration-200 ease-out;
+  .accent-bar {
+    @apply h-1 w-12 rounded-full bg-accent;
   }
 
-  .magnetic-hover:hover {
-    transform: translateY(-2px);
+  .accent-bar-vertical {
+    @apply w-1 h-12 rounded-full bg-accent;
   }
 
-  .magnetic-hover:active {
-    transform: translateY(0) scale(0.98);
+  /* Orange underline */
+  .orange-underline {
+    position: relative;
   }
 
-  /* Shimmer Effect for premium elements */
+  .orange-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, hsl(38 92% 50%), hsl(20 92% 54%));
+    border-radius: 2px;
+  }
+
+  /* ========================================
+     CARD STYLES - Professional
+     ======================================== */
+  .card-elevated {
+    @apply bg-card rounded-xl transition-all duration-300 ease-out border border-border;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .card-elevated:hover {
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-4px);
+    border-color: hsl(38 92% 50% / 0.25);
+  }
+
+  /* Card with orange accent on hover */
+  .card-accent {
+    @apply bg-card rounded-xl border border-border transition-all duration-300 relative overflow-hidden;
+  }
+
+  .card-accent::after {
+    content: '';
+    @apply absolute bottom-0 left-0 right-0 h-1 bg-accent transform scale-x-0 transition-transform duration-300 origin-left;
+  }
+
+  .card-accent:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .card-accent:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* ========================================
+     LINK ANIMATIONS
+     ======================================== */
+  .link-hover {
+    @apply relative inline-block;
+  }
+
+  .link-hover::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-px origin-right scale-x-0 transition-transform duration-300 bg-accent;
+  }
+
+  .link-hover:hover::after {
+    @apply origin-left scale-x-100;
+  }
+
+  /* Arrow slide on hover */
+  .arrow-slide {
+    @apply transition-transform duration-300;
+  }
+
+  .group:hover .arrow-slide {
+    transform: translateX(4px);
+  }
+
+  /* ========================================
+     SHIMMER EFFECT
+     ======================================== */
   .shimmer {
     @apply relative overflow-hidden;
   }
@@ -292,7 +402,7 @@
     background: linear-gradient(
       90deg,
       transparent 0%,
-      hsl(60 20% 98% / 0.4) 50%,
+      hsl(45 20% 98% / 0.5) 50%,
       transparent 100%
     );
     transform: translateX(-100%);
@@ -308,30 +418,36 @@
     to { transform: translateX(100%); }
   }
 
-  /* Glow Effect */
-  .glow-hover {
-    @apply transition-all duration-300;
+  /* ========================================
+     MAGNETIC BUTTON EFFECT
+     ======================================== */
+  .magnetic-hover {
+    @apply transition-all duration-200 ease-out;
   }
 
-  .glow-hover:hover {
-    box-shadow: 0 0 20px hsl(42 45% 57% / 0.2), 0 0 40px hsl(42 45% 57% / 0.1);
+  .magnetic-hover:hover {
+    transform: translateY(-2px);
   }
 
-  /* Border Animation */
-  .border-animate {
-    @apply relative;
+  .magnetic-hover:active {
+    transform: translateY(0) scale(0.98);
   }
 
-  .border-animate::after {
-    content: '';
-    @apply absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-gold to-evergreen transition-all duration-300;
+  /* ========================================
+     ICON EFFECTS
+     ======================================== */
+  .icon-container {
+    @apply transition-all duration-300 ease-out;
   }
 
-  .border-animate:hover::after {
-    @apply w-full;
+  .icon-container:hover,
+  .group:hover .icon-container {
+    transform: scale(1.08);
   }
 
-  /* Scale Pop */
+  /* ========================================
+     SCALE & TILT EFFECTS
+     ======================================== */
   .scale-pop {
     @apply transition-transform duration-200 ease-out;
   }
@@ -344,107 +460,6 @@
     transform: scale(0.98);
   }
 
-  /* Gold Underline - Refined */
-  .gold-underline {
-    position: relative;
-  }
-
-  .gold-underline::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(90deg, hsl(42 45% 57%), hsl(45 50% 68%));
-    border-radius: 1px;
-  }
-
-  /* Card Styles - Clean, minimal shadows */
-  .card-elevated {
-    @apply bg-card rounded-xl transition-all duration-300 ease-out;
-    box-shadow: var(--shadow-soft);
-  }
-
-  .card-elevated:hover {
-    box-shadow: var(--shadow-elevated);
-    transform: translateY(-3px);
-  }
-
-  /* Card with border glow */
-  .card-glow {
-    @apply bg-card rounded-xl border border-border transition-all duration-300;
-  }
-
-  .card-glow:hover {
-    border-color: hsl(42 45% 57% / 0.4);
-    box-shadow: 0 0 0 1px hsl(42 45% 57% / 0.1), var(--shadow-elevated);
-  }
-
-  /* Link underline animation */
-  .link-hover {
-    @apply relative inline-block;
-  }
-
-  .link-hover::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-full h-px origin-right scale-x-0 transition-transform duration-300;
-    background: currentColor;
-  }
-
-  .link-hover:hover::after {
-    @apply origin-left scale-x-100;
-  }
-
-  /* Arrow slide */
-  .arrow-slide {
-    @apply transition-transform duration-300;
-  }
-
-  .group:hover .arrow-slide {
-    transform: translateX(4px);
-  }
-
-  /* Divider - Subtle gold */
-  .divider-gold {
-    @apply h-px w-full;
-    background: linear-gradient(90deg, transparent, hsl(42 45% 57% / 0.4), transparent);
-  }
-
-  /* Evergreen accent bar */
-  .evergreen-bar {
-    @apply h-1 w-16 rounded-full transition-all duration-300;
-    background: hsl(var(--evergreen));
-  }
-
-  .group:hover .evergreen-bar {
-    @apply w-24;
-  }
-
-  /* Pulse ring effect */
-  .pulse-ring {
-    @apply relative;
-  }
-
-  .pulse-ring::before {
-    content: '';
-    @apply absolute inset-0 rounded-full opacity-0;
-    background: hsl(42 45% 57% / 0.3);
-    animation: pulseRing 2s ease-out infinite;
-  }
-
-  @keyframes pulseRing {
-    0% {
-      transform: scale(1);
-      opacity: 0.4;
-    }
-    100% {
-      transform: scale(1.4);
-      opacity: 0;
-    }
-  }
-
-  /* Tilt Effect */
   .tilt-hover {
     @apply transition-transform duration-300;
     transform-style: preserve-3d;
@@ -454,8 +469,49 @@
   .tilt-hover:hover {
     transform: rotateX(2deg) rotateY(-2deg);
   }
+
+  /* ========================================
+     PULSE EFFECTS
+     ======================================== */
+  .pulse-orange {
+    @apply relative;
+  }
+
+  .pulse-orange::before {
+    content: '';
+    @apply absolute inset-0 rounded-full opacity-0;
+    background: hsl(38 92% 50% / 0.4);
+    animation: pulseRing 2s ease-out infinite;
+  }
+
+  @keyframes pulseRing {
+    0% {
+      transform: scale(1);
+      opacity: 0.4;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  /* ========================================
+     FOREST ACCENT BAR
+     ======================================== */
+  .forest-bar {
+    @apply h-1 w-16 rounded-full transition-all duration-300;
+    background: hsl(var(--deep-forest));
+  }
+
+  .group:hover .forest-bar {
+    @apply w-24;
+    background: hsl(var(--accent));
+  }
 }
 
+/* ========================================
+   KEYFRAMES
+   ======================================== */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -505,30 +561,40 @@
   }
 }
 
-/* Scroll Animation Trigger Classes */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+/* ========================================
+   SCROLLBAR STYLING
+   ======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-/* Progress Arc Animation */
-@keyframes progressArc {
-  from { stroke-dashoffset: 283; }
-  to { stroke-dashoffset: var(--progress); }
+::-webkit-scrollbar-track {
+  background: hsl(var(--secondary));
 }
 
-.progress-arc {
-  animation: progressArc 1.5s ease-out forwards;
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
 }
 
-/* Selection Color - Gold tint */
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* ========================================
+   SELECTION STYLING
+   ======================================== */
 ::selection {
-  background: hsl(42 45% 57% / 0.25);
-  color: hsl(210 25% 7%);
+  background: hsl(38 92% 50% / 0.2);
+  color: hsl(var(--foreground));
 }
