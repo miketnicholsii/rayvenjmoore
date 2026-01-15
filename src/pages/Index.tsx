@@ -8,6 +8,7 @@ import Preloader from '@/components/ui/Preloader';
 import PageLoadAnimation, { AnimatedSection } from '@/components/ui/PageLoadAnimation';
 import HeroSection from '@/components/home/HeroSection';
 import AboutSection from '@/components/home/AboutSection';
+import StatsSection from '@/components/home/StatsSection';
 import CredentialsSection from '@/components/home/CredentialsSection';
 import VenturesSection from '@/components/home/VenturesSection';
 import LeadershipSection from '@/components/home/LeadershipSection';
@@ -36,6 +37,9 @@ const Index = () => {
           </AnimatedSection>
           <AnimatedSection>
             <AboutSection />
+          </AnimatedSection>
+          <AnimatedSection>
+            <StatsSection />
           </AnimatedSection>
           <AnimatedSection>
             <CredentialsSection />
