@@ -1,29 +1,65 @@
 import { motion } from 'framer-motion';
-import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { Users, Heart, Award } from 'lucide-react';
 
-export default function LeadershipSection() {
-  const { ref, isVisible } = useScrollReveal();
+const cardVariants = {
+  hidden: { opacity: 0, x: 30, scale: 0.95 },
+  visible: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      delay: 0.3 + i * 0.15,
+      ease: "easeOut" as const,
+    },
+  }),
+};
 
+export default function LeadershipSection() {
   return (
     <section id="leadership" className="section-padding bg-secondary/30">
-      <div className="container-wide" ref={ref}>
+      <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4 block">
+            <motion.span 
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4 block"
+            >
               Leadership & Service
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6 leading-tight">
+            </motion.span>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6 leading-tight"
+            >
               Leadership Beyond Business
-            </h2>
-            <div className="accent-bar mb-8" />
+            </motion.h2>
+            <motion.div 
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="accent-bar mb-8 origin-left" 
+            />
 
-            <div className="space-y-6 font-body text-muted-foreground leading-relaxed text-lg">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="space-y-6 font-body text-muted-foreground leading-relaxed text-lg"
+            >
               <p>
                 Rayven believes leadership extends beyond the workplace.
               </p>
@@ -38,12 +74,13 @@ export default function LeadershipSection() {
                 Earlier in his career, Rayven served as a <span className="text-foreground font-medium">Volunteer Tax Preparer</span> through 
                 Notre Dame's Tax Assistance Program, helping families understand and navigate the tax system.
               </p>
-            </div>
+            </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              initial={{ opacity: 0, y: 30, scale: 0.98 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="mt-8 p-6 bg-card border border-border rounded-xl"
             >
               <p className="font-display text-xl font-semibold text-foreground italic">
@@ -53,21 +90,27 @@ export default function LeadershipSection() {
           </motion.div>
 
           {/* Visual Cards */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6"
-          >
+          <div className="space-y-6">
             {/* Card 1 - Civic Leadership */}
             <motion.div
-              whileHover={{ y: -4 }}
+              custom={0}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
               className="group card-accent p-6"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-forest flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors duration-300">
+                <motion.div 
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.5, type: "spring", stiffness: 200 }}
+                  className="w-12 h-12 rounded-xl bg-forest flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors duration-300"
+                >
                   <Users className="w-6 h-6 text-primary-foreground group-hover:text-accent transition-colors duration-300" />
-                </div>
+                </motion.div>
                 <div>
                   <h3 className="font-display text-lg font-semibold text-foreground mb-1 group-hover:text-accent transition-colors duration-300">
                     Riverside Civic Association
@@ -82,13 +125,24 @@ export default function LeadershipSection() {
 
             {/* Card 2 - Community Service */}
             <motion.div
-              whileHover={{ y: -4 }}
+              custom={1}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
               className="group card-accent p-6"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-forest flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors duration-300">
+                <motion.div 
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.65, type: "spring", stiffness: 200 }}
+                  className="w-12 h-12 rounded-xl bg-forest flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors duration-300"
+                >
                   <Heart className="w-6 h-6 text-primary-foreground group-hover:text-accent transition-colors duration-300" />
-                </div>
+                </motion.div>
                 <div>
                   <h3 className="font-display text-lg font-semibold text-foreground mb-1 group-hover:text-accent transition-colors duration-300">
                     Volunteer Tax Preparer
@@ -103,13 +157,24 @@ export default function LeadershipSection() {
 
             {/* Card 3 - Impact Focus */}
             <motion.div
-              whileHover={{ y: -4 }}
+              custom={2}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
               className="group card-accent p-6"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-forest flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors duration-300">
+                <motion.div 
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.8, type: "spring", stiffness: 200 }}
+                  className="w-12 h-12 rounded-xl bg-forest flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors duration-300"
+                >
                   <Award className="w-6 h-6 text-primary-foreground group-hover:text-accent transition-colors duration-300" />
-                </div>
+                </motion.div>
                 <div>
                   <h3 className="font-display text-lg font-semibold text-foreground mb-1 group-hover:text-accent transition-colors duration-300">
                     Community Impact
@@ -121,7 +186,7 @@ export default function LeadershipSection() {
                 </div>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

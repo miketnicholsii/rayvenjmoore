@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { ArrowRight, TrendingUp, Shield, Lightbulb } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -31,29 +30,66 @@ const caseStudies = [
   },
 ];
 
-export default function CaseStudiesPreview() {
-  const { ref, isVisible } = useScrollReveal();
+const cardVariants = {
+  hidden: { opacity: 0, y: 50, scale: 0.95 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      delay: 0.2 + i * 0.15,
+      ease: "easeOut" as const,
+    },
+  }),
+};
 
+export default function CaseStudiesPreview() {
   return (
     <section id="case-studies" className="section-padding bg-background">
-      <div className="container-wide" ref={ref}>
+      <div className="container-wide">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4 block">
+          <motion.span
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4 block"
+          >
             Case Studies
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-4">
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-4"
+          >
             From Complexity to Clarity
-          </h2>
-          <p className="font-body text-muted-foreground text-lg">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="font-body text-muted-foreground text-lg"
+          >
             Real stories of confidence gained, risk reduced, and decisions clarified.
-          </p>
-          <div className="accent-bar mx-auto mt-6" />
+          </motion.p>
+          <motion.div 
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="accent-bar mx-auto mt-6 origin-center" 
+          />
         </motion.div>
 
         {/* Case Studies Grid */}
@@ -61,14 +97,20 @@ export default function CaseStudiesPreview() {
           {caseStudies.map((study, index) => (
             <motion.div
               key={study.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              whileHover={{ y: -6 }}
+              custom={index}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
               className="group card-accent p-8"
             >
               {/* Icon */}
               <motion.div
+                initial={{ scale: 0, rotate: -10 }}
+                whileInView={{ scale: 1, rotate: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 + index * 0.15, type: "spring", stiffness: 200 }}
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors duration-300"
               >
@@ -105,8 +147,9 @@ export default function CaseStudiesPreview() {
 
         {/* CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center mt-12"
         >
