@@ -9,17 +9,19 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground hover:bg-midnight-light",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        // Premium Brand Variants
-        hero: "bg-primary text-primary-foreground hover:bg-charcoal-light shadow-lg hover:shadow-xl hover:-translate-y-0.5",
+        // Premium Brand Variants - Midnight Blue + Evergreen
+        hero: "bg-primary text-primary-foreground hover:bg-midnight-light shadow-lg hover:shadow-xl hover:-translate-y-0.5",
         heroOutline: "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground",
-        gold: "bg-gradient-to-r from-gold to-gold-light text-charcoal font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5",
+        gold: "bg-gold text-charcoal font-semibold shadow-md hover:bg-gold-light hover:shadow-lg hover:-translate-y-0.5",
         goldOutline: "border-2 border-gold bg-transparent text-gold hover:bg-gold hover:text-charcoal",
+        evergreen: "bg-evergreen text-primary-foreground font-semibold shadow-md hover:bg-evergreen-light hover:shadow-lg hover:-translate-y-0.5",
+        evergreenOutline: "border-2 border-evergreen bg-transparent text-evergreen hover:bg-evergreen hover:text-primary-foreground",
         minimal: "text-foreground hover:text-gold underline-offset-4 hover:underline decoration-gold",
       },
       size: {

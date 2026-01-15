@@ -51,6 +51,15 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Brand Colors - Midnight Blue + Evergreen
+        midnight: {
+          DEFAULT: "hsl(var(--midnight))",
+          light: "hsl(var(--midnight-light))",
+        },
+        evergreen: {
+          DEFAULT: "hsl(var(--evergreen))",
+          light: "hsl(var(--evergreen-light))",
+        },
         gold: {
           DEFAULT: "hsl(var(--gold))",
           light: "hsl(var(--gold-light))",
@@ -61,6 +70,8 @@ export default {
           light: "hsl(var(--charcoal-light))",
         },
         cream: "hsl(var(--cream))",
+        sage: "hsl(var(--sage))",
+        steel: "hsl(var(--steel))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -107,8 +118,12 @@ export default {
           "100%": { opacity: "1", transform: "scale(1)" },
         },
         "pulse-gold": {
-          "0%, 100%": { boxShadow: "0 0 0 0 hsl(42 75% 55% / 0.4)" },
-          "50%": { boxShadow: "0 0 0 12px hsl(42 75% 55% / 0)" },
+          "0%, 100%": { boxShadow: "0 0 0 0 hsl(42 45% 57% / 0.4)" },
+          "50%": { boxShadow: "0 0 0 12px hsl(42 45% 57% / 0)" },
+        },
+        "gentle-float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" },
         },
       },
       animation: {
@@ -120,6 +135,7 @@ export default {
         "slide-in-right": "slide-in-right 0.8s ease-out forwards",
         "scale-in": "scale-in 0.6s ease-out forwards",
         "pulse-gold": "pulse-gold 2s ease-in-out infinite",
+        "gentle-float": "gentle-float 6s ease-in-out infinite",
       },
     },
   },

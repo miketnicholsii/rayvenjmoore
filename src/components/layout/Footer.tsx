@@ -6,7 +6,7 @@ const footerLinks = {
   main: [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
-    { name: 'Ventures', href: '/ventures' },
+    { name: 'Work & Ventures', href: '/ventures' },
     { name: 'Case Studies', href: '/case-studies' },
   ],
   secondary: [
@@ -38,11 +38,11 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              Rayven J. Moore<span className="text-gold">,</span> CPA
+              Rayven J. Moore<span className="text-evergreen-light">,</span> CPA
             </motion.h3>
             <p className="text-primary-foreground/70 font-body text-sm leading-relaxed max-w-md mb-6">
-              Converting complexity into clarity. Dedicated to financial education, 
-              community development, and creating universal access to wealth-building knowledge.
+              Converting complexity into clarity. Helping individuals, businesses, and communities 
+              make confident decisions through financial education and strategic guidance.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social, index) => (
@@ -51,7 +51,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-xl border border-primary-foreground/20 flex items-center justify-center transition-all duration-300 hover:bg-gold hover:border-gold hover:text-charcoal group"
+                  className="w-11 h-11 rounded-xl border border-primary-foreground/20 flex items-center justify-center transition-all duration-300 hover:bg-evergreen hover:border-evergreen hover:text-charcoal group"
                   aria-label={social.name}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-body text-sm font-semibold tracking-wide uppercase mb-5 text-gold">
+            <h4 className="font-body text-sm font-semibold tracking-wide uppercase mb-5 text-evergreen-light">
               Explore
             </h4>
             <ul className="space-y-3">
@@ -75,9 +75,9 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="font-body text-sm text-primary-foreground/70 hover:text-gold transition-colors duration-200 inline-flex items-center gap-1 group"
+                    className="font-body text-sm text-primary-foreground/70 hover:text-evergreen-light transition-colors duration-200 inline-flex items-center gap-1 group"
                   >
-                    <span className="w-0 h-px bg-gold transition-all duration-300 group-hover:w-3" />
+                    <span className="w-0 h-px bg-evergreen-light transition-all duration-300 group-hover:w-3" />
                     {link.name}
                   </Link>
                 </li>
@@ -87,7 +87,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <h4 className="font-body text-sm font-semibold tracking-wide uppercase mb-5 text-gold">
+            <h4 className="font-body text-sm font-semibold tracking-wide uppercase mb-5 text-evergreen-light">
               Connect
             </h4>
             <ul className="space-y-3">
@@ -95,9 +95,9 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="font-body text-sm text-primary-foreground/70 hover:text-gold transition-colors duration-200 inline-flex items-center gap-1 group"
+                    className="font-body text-sm text-primary-foreground/70 hover:text-evergreen-light transition-colors duration-200 inline-flex items-center gap-1 group"
                   >
-                    <span className="w-0 h-px bg-gold transition-all duration-300 group-hover:w-3" />
+                    <span className="w-0 h-px bg-evergreen-light transition-all duration-300 group-hover:w-3" />
                     {link.name}
                   </Link>
                 </li>
@@ -115,8 +115,8 @@ export default function Footer() {
             © {new Date().getFullYear()} Rayven J. Moore, CPA. All rights reserved.
           </p>
           <p className="font-body text-sm text-primary-foreground/60 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-gold/50" />
-            Building Universal Wealth Care
+            <span className="w-2 h-2 rounded-full bg-evergreen/50" />
+            Clarity · Confidence · Action
           </p>
         </div>
       </div>
