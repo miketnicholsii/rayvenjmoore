@@ -23,6 +23,13 @@ export default function HeroSection() {
   const portraitY = useTransform(scrollYProgress, [0, 1], [0, 80]);
   const decorFrameY = useTransform(scrollYProgress, [0, 1], [0, 40]);
   const floatingCardY = useTransform(scrollYProgress, [0, 1], [0, 60]);
+  
+  // Background parallax - slower movement for depth
+  const bgGradient1Y = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  const bgGradient2Y = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const bgGradient3Y = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+  const bgOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.6]);
 
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
@@ -30,11 +37,21 @@ export default function HeroSection() {
 
   return (
     <section id="hero" ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-cream via-background to-sage/30">
-      {/* Subtle background decorations - Forest Green */}
+      {/* Parallax background layer - slowest */}
+      <motion.div 
+        className="absolute inset-0 pointer-events-none"
+        style={{ y: bgGradient3Y, opacity: bgOpacity }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-forest/5 via-transparent to-accent/5" />
+      </motion.div>
+
+      {/* Subtle background decorations - Forest Green with parallax */}
       <motion.div
         className="absolute top-20 right-0 w-[800px] h-[800px] rounded-full opacity-[0.06] blur-3xl"
         style={{
           background: 'radial-gradient(circle, hsl(100 8% 18%) 0%, transparent 70%)',
+          y: bgGradient1Y,
+          scale: bgScale,
         }}
         animate={{ scale: [1, 1.05, 1], opacity: [0.04, 0.07, 0.04] }}
         transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
@@ -43,9 +60,19 @@ export default function HeroSection() {
         className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full opacity-[0.05] blur-3xl"
         style={{
           background: 'radial-gradient(circle, hsl(120 15% 19%) 0%, transparent 70%)',
+          y: bgGradient2Y,
         }}
         animate={{ scale: [1, 1.08, 1] }}
         transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+      />
+      
+      {/* Additional parallax accent orb */}
+      <motion.div
+        className="absolute top-1/3 left-1/4 w-[400px] h-[400px] rounded-full opacity-[0.04] blur-3xl"
+        style={{
+          background: 'radial-gradient(circle, hsl(var(--accent)) 0%, transparent 70%)',
+          y: bgGradient1Y,
+        }}
       />
 
       {/* Content */}
