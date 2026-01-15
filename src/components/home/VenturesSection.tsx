@@ -66,6 +66,7 @@ export default function VenturesSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ y: -6 }}
               className={`group relative overflow-hidden rounded-2xl transition-all duration-300 ${
                 venture.featured
                   ? 'md:col-span-2 lg:col-span-1 bg-primary text-primary-foreground'
@@ -74,18 +75,19 @@ export default function VenturesSection() {
             >
               <Link to={`/ventures/${venture.id}`} className="block p-8 h-full">
                 <div className="flex flex-col h-full">
-                  <span
-                    className={`inline-block font-body text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full mb-4 w-fit ${
+                  <motion.span
+                    whileHover={{ scale: 1.05 }}
+                    className={`inline-block font-body text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full mb-4 w-fit transition-all duration-300 ${
                       venture.featured
                         ? 'bg-gold/20 text-gold'
-                        : 'bg-gold/10 text-gold'
+                        : 'bg-gold/10 text-gold group-hover:bg-gold/20'
                     }`}
                   >
                     {venture.category}
-                  </span>
+                  </motion.span>
                   <h3
-                    className={`font-display text-xl font-semibold mb-3 ${
-                      venture.featured ? 'text-primary-foreground' : 'text-foreground'
+                    className={`font-display text-xl font-semibold mb-3 transition-colors duration-300 ${
+                      venture.featured ? 'text-primary-foreground' : 'text-foreground group-hover:text-gold'
                     }`}
                   >
                     {venture.title}
@@ -103,13 +105,17 @@ export default function VenturesSection() {
                     </span>
                     <ArrowUpRight
                       size={16}
-                      className={`transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${
+                      className={`transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 ${
                         venture.featured ? 'text-gold' : ''
                       }`}
                     />
                   </div>
                 </div>
               </Link>
+              {/* Shimmer effect on hover */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+              </div>
             </motion.div>
           ))}
         </div>

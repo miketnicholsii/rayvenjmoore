@@ -55,16 +55,21 @@ export default function StoriesSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="bg-card rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300"
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="bg-card rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 group cursor-pointer border border-transparent hover:border-gold/20"
             >
-              <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center mb-6">
-                <Quote className="w-5 h-5 text-gold" />
-              </div>
+              <motion.div 
+                className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center mb-6"
+                whileHover={{ rotate: 12 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              >
+                <Quote className="w-5 h-5 text-gold transition-transform group-hover:scale-110" />
+              </motion.div>
               <blockquote className="font-body text-foreground leading-relaxed mb-6">
                 "{story.quote}"
               </blockquote>
               <div className="border-t border-border pt-6">
-                <p className="font-body text-xs font-semibold tracking-wider uppercase text-gold mb-2">
+                <p className="font-body text-xs font-semibold tracking-wider uppercase text-gold mb-2 transition-all duration-300 group-hover:tracking-widest">
                   {story.transformation}
                 </p>
                 <p className="font-display text-lg font-semibold text-foreground">
