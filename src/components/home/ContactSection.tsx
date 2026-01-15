@@ -78,11 +78,11 @@ export default function ContactSection() {
             Get In Touch
           </span>
           <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
-            Let's Connect
+            Let's Build Something Together
           </h2>
-          <p className="font-body text-muted-foreground max-w-lg mx-auto">
-            Have a question, want to collaborate, or ready to start your clarity journey? 
-            I'd love to hear from you.
+          <p className="font-body text-muted-foreground max-w-xl mx-auto text-lg">
+            Ready to create Universal Wealth Care and take control of your financial future? 
+            Let's start the conversation.
           </p>
         </motion.div>
 
@@ -97,7 +97,7 @@ export default function ContactSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
               <label htmlFor="name" className="font-body text-sm font-medium text-foreground mb-2 block">
-                Your Name
+                Name
               </label>
               <Input
                 id="name"
@@ -106,13 +106,13 @@ export default function ContactSection() {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="John Smith"
+                placeholder="Your full name"
                 className="h-12"
               />
             </div>
             <div>
               <label htmlFor="email" className="font-body text-sm font-medium text-foreground mb-2 block">
-                Email Address
+                Email
               </label>
               <Input
                 id="email"
@@ -121,7 +121,7 @@ export default function ContactSection() {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="john@example.com"
+                placeholder="you@example.com"
                 className="h-12"
               />
             </div>
@@ -143,7 +143,7 @@ export default function ContactSection() {
           </div>
           <div className="mb-8">
             <label htmlFor="message" className="font-body text-sm font-medium text-foreground mb-2 block">
-              Your Message
+              Message
             </label>
             <Textarea
               id="message"
@@ -151,7 +151,7 @@ export default function ContactSection() {
               required
               value={formData.message}
               onChange={handleChange}
-              placeholder="Tell me a bit about your situation and how I can help..."
+              placeholder="Tell me about your goals and how I can help..."
               rows={5}
               className="resize-none"
             />
@@ -173,7 +173,7 @@ export default function ContactSection() {
             )}
           </Button>
           <p className="font-body text-xs text-muted-foreground text-center mt-4">
-            I typically respond within 2-3 business days.
+            I typically respond within 2-3 business days. Looking forward to connecting!
           </p>
         </motion.form>
       </div>

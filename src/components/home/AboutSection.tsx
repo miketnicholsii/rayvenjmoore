@@ -48,29 +48,34 @@ export default function AboutSection() {
               About Rayven
             </span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6 leading-tight">
-              Dedicated to Making Financial Wisdom Accessible
+              Guiding You Through Financial Complexity
             </h2>
             <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
               <p>
-                As a Certified Public Accountant with over a decade of experience, I've dedicated 
-                my career to one mission: transforming the way individuals and businesses understand 
-                and navigate complex financial systems.
+                Rayven J. Moore is a <span className="text-foreground font-medium">Certified Public Accountant</span>, 
+                entrepreneur, and financial educator with over a decade of experience guiding individuals 
+                and businesses through the complexities of finance.
               </p>
               <p>
-                I believe that financial literacy isn't just about numbers—it's about empowerment, 
-                confidence, and creating pathways to generational wealth. Too often, financial knowledge 
-                is gatekept behind jargon and complexity. My work is about breaking down those barriers.
+                His passion lies at the intersection of <span className="text-foreground font-medium">financial literacy</span>, 
+                community development, and creating opportunities for everyone—regardless of background—to 
+                build and sustain lasting wealth.
               </p>
               <p>
-                Through strategic advisory, educational initiatives, and community-focused programs, 
-                I help people move from confusion to clarity, from anxiety to confidence, and from 
-                surviving to thriving.
+                What sets Rayven apart is his specialty in <span className="text-foreground font-medium">breaking down 
+                complex concepts into actionable insights</span>, empowering people to confidently take control 
+                of their financial futures. No jargon, no gatekeeping—just clarity.
               </p>
             </div>
             
-            {/* Values */}
+            {/* Expertise Areas */}
             <div className="mt-8 grid grid-cols-2 gap-4">
-              {['Trust', 'Clarity', 'Community', 'Growth'].map((value, index) => (
+              {[
+                'Financial Literacy',
+                'Community Development',
+                'Wealth Building',
+                'Strategic Clarity'
+              ].map((value, index) => (
                 <motion.div
                   key={value}
                   initial={{ opacity: 0, y: 10 }}

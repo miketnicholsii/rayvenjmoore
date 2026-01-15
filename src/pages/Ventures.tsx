@@ -1,43 +1,10 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Target, Users, Briefcase, GraduationCap } from 'lucide-react';
+import { ArrowUpRight, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-
-const ventures = [
-  {
-    title: 'Universal Wealth Care Initiative',
-    icon: Users,
-    category: 'Community Impact',
-    description: 'A movement dedicated to making financial literacy accessible to all, regardless of background, education, or circumstance. Through partnerships with schools, community organizations, and local governments, we bring wealth-building knowledge directly to those who need it most.',
-    impact: 'Reaching underserved communities with accessible financial education',
-    status: 'Active & Growing',
-    featured: true,
-  },
-  {
-    title: 'Financial Clarity Workshops',
-    icon: GraduationCap,
-    category: 'Education',
-    description: 'Interactive, hands-on workshops designed for individuals and small groups. From understanding credit to building investment portfolios, these sessions transform complex concepts into actionable knowledge.',
-    impact: 'Empowering individuals with practical financial skills',
-    status: 'Ongoing',
-  },
-  {
-    title: 'CPA Advisory Services',
-    icon: Briefcase,
-    category: 'Professional Services',
-    description: 'Strategic financial guidance for growing businesses and ambitious entrepreneurs. From tax strategy to financial planning, I help businesses make informed decisions that support sustainable growth.',
-    impact: 'Helping businesses build solid financial foundations',
-    status: 'By Consultation',
-  },
-  {
-    title: 'Wealth Building Masterclass',
-    icon: Target,
-    category: 'Digital Program',
-    description: 'A comprehensive curriculum covering everything from emergency funds to estate planning. This self-paced program is designed for those ready to take control of their financial future.',
-    impact: 'Creating systematic pathways to generational wealth',
-    status: 'Coming Soon',
-  },
-];
+import { Button } from '@/components/ui/button';
+import { ventures } from '@/data/ventures';
 
 export default function Ventures() {
   return (
@@ -54,16 +21,16 @@ export default function Ventures() {
               className="max-w-3xl"
             >
               <span className="font-body text-sm font-semibold tracking-widest uppercase text-gold mb-4 block">
-                Ventures & Initiatives
+                Ventures & Community Engagement
               </span>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-6">
                 Building Toward <br />
                 <span className="text-gradient-gold">Universal Wealth Care</span>
               </h1>
               <p className="font-body text-lg text-muted-foreground leading-relaxed">
-                Every initiative I lead is connected by a common thread: the belief that 
-                financial clarity should be universal, not exclusive. Here's how I'm working 
-                to make that vision a reality.
+                Every venture I'm involved with shares a common thread: creating value, 
+                serving communities, and building pathways to prosperity. From tax services 
+                to hospitality, fashion to financial education—here's the work that drives me.
               </p>
             </motion.div>
           </div>
@@ -72,80 +39,78 @@ export default function Ventures() {
         {/* Ventures Grid */}
         <section className="section-padding">
           <div className="container-wide">
-            <div className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {ventures.map((venture, index) => (
-                <motion.div
-                  key={venture.title}
+                <motion.article
+                  key={venture.id}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`group rounded-2xl overflow-hidden transition-all duration-300 ${
+                  className={`group rounded-2xl overflow-hidden transition-all duration-300 flex flex-col ${
                     venture.featured
                       ? 'bg-primary text-primary-foreground'
                       : 'bg-card border border-border hover:border-gold/30'
                   }`}
                 >
-                  <div className="p-8 md:p-12">
-                    <div className="flex flex-col md:flex-row md:items-start gap-6">
-                      {/* Icon */}
-                      <div
-                        className={`flex-shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center ${
-                          venture.featured ? 'bg-gold/20' : 'bg-gold/10'
-                        }`}
-                      >
-                        <venture.icon className={`w-8 h-8 ${venture.featured ? 'text-gold' : 'text-gold'}`} />
+                  <div className="p-8 flex flex-col flex-grow">
+                    {/* Header */}
+                    <div className="flex items-start justify-between gap-4 mb-4">
+                      <div className={`w-14 h-14 rounded-xl flex items-center justify-center ${
+                        venture.featured ? 'bg-gold/20' : 'bg-gold/10'
+                      }`}>
+                        <venture.icon className="w-7 h-7 text-gold" />
                       </div>
+                      {venture.featured && (
+                        <span className="font-body text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full bg-gold/20 text-gold">
+                          Featured
+                        </span>
+                      )}
+                    </div>
 
-                      {/* Content */}
-                      <div className="flex-grow">
-                        <div className="flex flex-wrap items-center gap-3 mb-3">
-                          <span
-                            className={`font-body text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full ${
-                              venture.featured
-                                ? 'bg-gold/20 text-gold'
-                                : 'bg-gold/10 text-gold'
-                            }`}
-                          >
-                            {venture.category}
-                          </span>
-                          <span
-                            className={`font-body text-xs ${
-                              venture.featured ? 'text-primary-foreground/60' : 'text-muted-foreground'
-                            }`}
-                          >
-                            {venture.status}
-                          </span>
-                        </div>
-                        <h2
-                          className={`font-display text-2xl md:text-3xl font-semibold mb-4 ${
-                            venture.featured ? 'text-primary-foreground' : 'text-foreground'
-                          }`}
-                        >
-                          {venture.title}
-                        </h2>
-                        <p
-                          className={`font-body leading-relaxed mb-6 max-w-3xl ${
-                            venture.featured ? 'text-primary-foreground/70' : 'text-muted-foreground'
-                          }`}
-                        >
-                          {venture.description}
-                        </p>
-                        <div className="flex items-center gap-2 font-body text-sm font-medium group-hover:text-gold transition-colors">
-                          <span className={venture.featured ? 'text-gold' : 'text-foreground'}>
-                            {venture.impact}
-                          </span>
-                          <ArrowUpRight
-                            size={16}
-                            className={`transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${
-                              venture.featured ? 'text-gold' : ''
-                            }`}
-                          />
-                        </div>
-                      </div>
+                    {/* Category */}
+                    <span className={`font-body text-xs font-semibold tracking-wider uppercase mb-2 ${
+                      venture.featured ? 'text-gold' : 'text-gold'
+                    }`}>
+                      {venture.category}
+                    </span>
+
+                    {/* Title */}
+                    <h2 className={`font-display text-xl font-semibold mb-2 ${
+                      venture.featured ? 'text-primary-foreground' : 'text-foreground'
+                    }`}>
+                      {venture.title}
+                    </h2>
+
+                    {/* Tagline */}
+                    <p className={`font-body text-sm italic mb-4 ${
+                      venture.featured ? 'text-gold/80' : 'text-gold/80'
+                    }`}>
+                      {venture.tagline}
+                    </p>
+
+                    {/* Description */}
+                    <p className={`font-body text-sm leading-relaxed flex-grow ${
+                      venture.featured ? 'text-primary-foreground/70' : 'text-muted-foreground'
+                    }`}>
+                      {venture.description}
+                    </p>
+
+                    {/* CTA */}
+                    <div className="mt-6 flex items-center gap-4">
+                      <Button 
+                        variant={venture.featured ? "gold" : "heroOutline"} 
+                        size="sm"
+                        asChild
+                      >
+                        <Link to={`/ventures/${venture.id}`}>
+                          {venture.ctaText}
+                          <ArrowUpRight size={16} className="ml-1" />
+                        </Link>
+                      </Button>
                     </div>
                   </div>
-                </motion.div>
+                </motion.article>
               ))}
             </div>
           </div>
@@ -165,16 +130,16 @@ export default function Ventures() {
               </h2>
               <p className="font-body text-lg text-muted-foreground leading-relaxed mb-8">
                 These ventures aren't disconnected efforts—they're pieces of a larger puzzle. 
-                Each workshop, each consultation, each community initiative moves us closer to 
-                a world where financial wellness is the norm, not the exception. That's 
-                Universal Wealth Care in action.
+                Each business, each initiative, each community engagement moves us closer to 
+                a world where financial wellness and opportunity are accessible to everyone. 
+                That's Universal Wealth Care in action.
               </p>
-              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold/10 border border-gold/20">
-                <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-                <span className="font-body text-sm text-gold font-medium">
-                  New initiatives launching throughout 2026
-                </span>
-              </div>
+              <Button variant="hero" size="xl" asChild>
+                <Link to="/contact" className="group">
+                  Let's Work Together
+                  <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={18} />
+                </Link>
+              </Button>
             </motion.div>
           </div>
         </section>
