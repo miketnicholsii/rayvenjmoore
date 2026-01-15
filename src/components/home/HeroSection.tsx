@@ -29,7 +29,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-cream via-background to-sage/20">
+    <section id="hero" ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-cream via-background to-sage/20">
       {/* Subtle background decorations */}
       <motion.div
         className="absolute top-20 right-0 w-[800px] h-[800px] rounded-full opacity-[0.07] blur-3xl"

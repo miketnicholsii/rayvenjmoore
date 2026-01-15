@@ -4,14 +4,20 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Linkedin, Facebook, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const navLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Work & Ventures', href: '/ventures' },
-  { name: 'Case Studies', href: '/case-studies' },
-  { name: 'Resources', href: '/resources' },
-  { name: 'Speaking & Media', href: '/speaking' },
-  { name: 'Contact', href: '/contact' },
+interface NavLink {
+  name: string;
+  href: string;
+  isAnchor: boolean;
+}
+
+const navLinks: NavLink[] = [
+  { name: 'Home', href: '#hero', isAnchor: true },
+  { name: 'About', href: '#about', isAnchor: true },
+  { name: 'Career', href: '#career', isAnchor: true },
+  { name: 'Services', href: '#services', isAnchor: true },
+  { name: 'Ventures', href: '#ventures', isAnchor: true },
+  { name: 'Speaking', href: '/speaking', isAnchor: false },
+  { name: 'Contact', href: '#contact', isAnchor: true },
 ];
 
 const socialLinks = [
@@ -23,27 +29,57 @@ const socialLinks = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
   const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      if (isHomePage) {
+        const sections = ['contact', 'cta', 'philosophy', 'manifesto', 'stories', 'ventures', 'services', 'career', 'about', 'hero'];
+        const scrollPosition = window.scrollY + 150;
+
+        for (const sectionId of sections) {
+          const element = document.getElementById(sectionId);
+          if (element && element.offsetTop <= scrollPosition) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isHomePage]);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location]);
 
-  // Smooth scroll for anchor links on home page
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('/#') && location.pathname === '/') {
-      e.preventDefault();
-      const element = document.getElementById(href.substring(2));
-      element?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToSection = (sectionId: string) => {
+    if (!isHomePage) {
+      window.location.href = `/${sectionId}`;
+      return;
     }
+
+    const element = document.getElementById(sectionId.replace('#', ''));
+    if (element) {
+      const offset = sectionId === '#hero' ? 0 : 80;
+      const top = element.offsetTop - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
+  const isActive = (link: NavLink) => {
+    if (link.isAnchor) {
+      return isHomePage && activeSection === link.href.replace('#', '');
+    }
+    return location.pathname === link.href;
   };
 
   return (
@@ -56,7 +92,10 @@ export default function Header() {
     >
       <nav className="container-wide flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="group flex items-center gap-2">
+        <button
+          onClick={() => scrollToSection('#hero')}
+          className="group flex items-center gap-2"
+        >
           <motion.span 
             className="font-display text-xl md:text-2xl font-semibold text-foreground tracking-tight"
             whileHover={{ scale: 1.02 }}
@@ -66,30 +105,50 @@ export default function Header() {
             <span className="text-evergreen">,</span>
             <span className="text-muted-foreground font-body text-sm ml-1 font-normal">CPA</span>
           </motion.span>
-        </Link>
+        </button>
 
         {/* Desktop Navigation */}
         <div className="hidden xl:flex items-center gap-1">
           {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className={`relative font-body text-sm px-4 py-2 rounded-lg transition-all duration-300 ${
-                location.pathname === link.href
-                  ? 'text-foreground'
-                  : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
-              }`}
-            >
-              {link.name}
-              {location.pathname === link.href && (
-                <motion.span
-                  layoutId="activeNav"
-                  className="absolute bottom-0 left-4 right-4 h-0.5 bg-evergreen rounded-full"
-                  transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-                />
-              )}
-            </Link>
+            link.isAnchor ? (
+              <button
+                key={link.name}
+                onClick={() => scrollToSection(link.href)}
+                className={`relative font-body text-sm px-4 py-2 rounded-lg transition-all duration-300 ${
+                  isActive(link)
+                    ? 'text-foreground'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
+                }`}
+              >
+                {link.name}
+                {isActive(link) && (
+                  <motion.span
+                    layoutId="activeNav"
+                    className="absolute bottom-0 left-4 right-4 h-0.5 bg-evergreen rounded-full"
+                    transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                  />
+                )}
+              </button>
+            ) : (
+              <Link
+                key={link.name}
+                to={link.href}
+                className={`relative font-body text-sm px-4 py-2 rounded-lg transition-all duration-300 ${
+                  isActive(link)
+                    ? 'text-foreground'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
+                }`}
+              >
+                {link.name}
+                {isActive(link) && (
+                  <motion.span
+                    layoutId="activeNav"
+                    className="absolute bottom-0 left-4 right-4 h-0.5 bg-evergreen rounded-full"
+                    transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                  />
+                )}
+              </Link>
+            )
           ))}
         </div>
 
@@ -109,8 +168,8 @@ export default function Header() {
               </a>
             ))}
           </div>
-          <Button variant="hero" size="default" asChild>
-            <Link to="/contact">Let's Talk</Link>
+          <Button variant="hero" size="default" onClick={() => scrollToSection('#contact')}>
+            Let's Talk
           </Button>
         </div>
 
@@ -147,16 +206,29 @@ export default function Header() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
                 >
-                  <Link
-                    to={link.href}
-                    className={`block font-body text-base py-3 px-4 rounded-lg transition-all duration-300 ${
-                      location.pathname === link.href
-                        ? 'text-evergreen bg-evergreen/10'
-                        : 'text-foreground hover:text-evergreen hover:bg-muted/50'
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
+                  {link.isAnchor ? (
+                    <button
+                      onClick={() => scrollToSection(link.href)}
+                      className={`block w-full text-left font-body text-base py-3 px-4 rounded-lg transition-all duration-300 ${
+                        isActive(link)
+                          ? 'text-evergreen bg-evergreen/10'
+                          : 'text-foreground hover:text-evergreen hover:bg-muted/50'
+                      }`}
+                    >
+                      {link.name}
+                    </button>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      className={`block font-body text-base py-3 px-4 rounded-lg transition-all duration-300 ${
+                        isActive(link)
+                          ? 'text-evergreen bg-evergreen/10'
+                          : 'text-foreground hover:text-evergreen hover:bg-muted/50'
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </motion.div>
               ))}
               
@@ -176,8 +248,8 @@ export default function Header() {
                 ))}
               </div>
 
-              <Button variant="hero" size="lg" className="mt-4 mx-4" asChild>
-                <Link to="/contact">Let's Talk</Link>
+              <Button variant="hero" size="lg" className="mt-4 mx-4" onClick={() => scrollToSection('#contact')}>
+                Let's Talk
               </Button>
             </div>
           </motion.div>

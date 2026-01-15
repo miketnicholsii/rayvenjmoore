@@ -8,7 +8,7 @@ export default function CTASection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section className="section-padding bg-primary text-primary-foreground relative overflow-hidden">
+    <section id="cta" className="section-padding bg-primary text-primary-foreground relative overflow-hidden">
       {/* Background decoration - subtle circles */}
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-5">
         <svg viewBox="0 0 200 200" className="w-full h-full">

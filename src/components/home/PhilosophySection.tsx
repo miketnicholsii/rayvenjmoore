@@ -6,7 +6,7 @@ export default function PhilosophySection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section className="section-padding bg-background overflow-hidden">
+    <section id="philosophy" className="section-padding bg-background overflow-hidden">
       <div className="container-wide" ref={ref}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}

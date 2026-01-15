@@ -23,7 +23,7 @@ const manifestoHighlights = [
 
 export default function ManifestoPreview() {
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-background via-primary/5 to-background">
+    <section id="manifesto" className="py-20 md:py-28 bg-gradient-to-b from-background via-primary/5 to-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div

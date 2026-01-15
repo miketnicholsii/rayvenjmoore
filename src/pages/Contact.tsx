@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle, Mail, MapPin } from 'lucide-react';
 import SEO from '@/components/SEO';
-import Header from '@/components/layout/Header';
+import BreakoutNav from '@/components/layout/BreakoutNav';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -45,8 +45,8 @@ export default function Contact() {
         description="Get in touch with Rayven J. Moore, CPA. Schedule a consultation, inquire about speaking engagements, or start your journey to financial clarity."
         canonical="/contact"
       />
-      <Header />
-      <main>
+      <BreakoutNav title="Contact" backLabel="Back to Home" sectionId="contact" />
+      <main className="pt-16">
         {/* Hero */}
         <section className="pt-32 pb-16 bg-gradient-to-b from-cream to-background">
           <div className="container-narrow text-center">

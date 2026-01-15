@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import SEO from '@/components/SEO';
-import Header from '@/components/layout/Header';
+import BreakoutNav from '@/components/layout/BreakoutNav';
 import Footer from '@/components/layout/Footer';
 
 const manifestoSections = [
@@ -42,8 +42,8 @@ export default function Manifesto() {
         description="The Universal Wealth Care Manifesto - principles on money, clarity, education, community, trust, and long-term thinking that guide Rayven J. Moore's mission."
         canonical="/manifesto"
       />
-      <Header />
-      <main>
+      <BreakoutNav title="Manifesto" backLabel="Back to Home" sectionId="manifesto" />
+      <main className="pt-16">
         {/* Hero */}
         <section className="pt-32 pb-20 bg-gradient-to-b from-cream to-background">
           <div className="container-narrow text-center">
