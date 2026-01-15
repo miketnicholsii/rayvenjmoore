@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import SEO from '@/components/SEO';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
@@ -36,6 +37,11 @@ const manifestoSections = [
 export default function Manifesto() {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Manifesto"
+        description="The Universal Wealth Care Manifesto - principles on money, clarity, education, community, trust, and long-term thinking that guide Rayven J. Moore's mission."
+        canonical="/manifesto"
+      />
       <Header />
       <main>
         {/* Hero */}

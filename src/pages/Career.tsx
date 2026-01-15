@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { MapPin, Calendar, Briefcase, ChevronRight, FileText, Calculator, Layers, TrendingUp, Bitcoin, Cpu, Building2, GraduationCap } from 'lucide-react';
+import SEO from '@/components/SEO';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { careerRoles, earlierRoles, signatureSkills } from '@/data/career';
@@ -16,6 +17,11 @@ const iconMap: Record<string, React.ElementType> = {
 const Career = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Career & Expertise"
+        description="Explore Rayven J. Moore's professional journey - from Big Four foundations to global finance leadership across SEC reporting, technical accounting, FP&A, and emerging technologies."
+        canonical="/career"
+      />
       <Header />
       <main>
         {/* Hero Section */}

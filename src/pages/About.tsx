@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Briefcase, GraduationCap, Award, Users, Lightbulb, Target } from 'lucide-react';
+import SEO from '@/components/SEO';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import rayvenPortrait from '@/assets/rayven-portrait.jpg';
@@ -52,6 +53,11 @@ const timelineMilestones = [
 export default function About() {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="About"
+        description="Learn about Rayven J. Moore, CPA - a financial educator, entrepreneur, and wealth-building strategist with over a decade of experience guiding individuals and businesses to financial clarity."
+        canonical="/about"
+      />
       <Header />
       <main>
         {/* Hero */}

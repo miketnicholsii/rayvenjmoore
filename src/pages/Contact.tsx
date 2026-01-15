@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle, Mail, MapPin } from 'lucide-react';
+import SEO from '@/components/SEO';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
@@ -39,6 +40,11 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Contact"
+        description="Get in touch with Rayven J. Moore, CPA. Schedule a consultation, inquire about speaking engagements, or start your journey to financial clarity."
+        canonical="/contact"
+      />
       <Header />
       <main>
         {/* Hero */}

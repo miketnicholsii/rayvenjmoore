@@ -4,6 +4,7 @@ import {
   Mic, Video, Radio, BookOpen, ArrowRight, CheckCircle, Calendar, 
   MapPin, Users, Play, ExternalLink, Clock, Send
 } from 'lucide-react';
+import SEO from '@/components/SEO';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
@@ -155,6 +156,11 @@ export default function Speaking() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Speaking & Media"
+        description="Book Rayven J. Moore, CPA for keynotes, panels, workshops, and podcast appearances. Bringing financial clarity to stages and audiences worldwide."
+        canonical="/speaking"
+      />
       <Header />
       <main>
         {/* Hero */}
