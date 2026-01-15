@@ -72,13 +72,19 @@ export default function ManifestoPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all duration-300"
+              whileHover={{ y: -4, scale: 1.01 }}
+              className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all duration-300 group cursor-pointer hover:shadow-lg"
             >
-              <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center gap-2">
-                <span className="w-2 h-2 bg-primary rounded-full" />
+              <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center gap-2 group-hover:text-primary transition-colors">
+                <motion.span 
+                  className="w-2 h-2 bg-primary rounded-full"
+                  whileHover={{ scale: 1.5 }}
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                />
                 {item.title}
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-foreground/80 transition-colors">
                 {item.text}
               </p>
             </motion.div>
@@ -94,10 +100,12 @@ export default function ManifestoPreview() {
         >
           <Link
             to="/manifesto"
-            className="inline-flex items-center gap-2 text-primary font-medium hover:underline text-lg"
+            className="inline-flex items-center gap-2 text-primary font-medium text-lg group"
           >
-            Read the Full Manifesto
-            <ChevronRight className="w-5 h-5" />
+            <span className="relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-primary after:origin-right after:scale-x-0 group-hover:after:origin-left group-hover:after:scale-x-100 after:transition-transform after:duration-300">
+              Read the Full Manifesto
+            </span>
+            <ChevronRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </motion.div>
       </div>

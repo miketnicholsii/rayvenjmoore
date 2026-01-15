@@ -58,14 +58,19 @@ export default function ServicesSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="card-elevated p-8 group border border-border hover:border-evergreen/30"
+              whileHover={{ y: -4 }}
+              className="card-elevated p-8 group border border-border hover:border-evergreen/30 cursor-pointer"
             >
               <div className="flex items-start gap-5">
-                <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-evergreen/10 flex items-center justify-center group-hover:bg-evergreen/20 transition-colors duration-300">
-                  <service.icon className="w-7 h-7 text-evergreen" />
-                </div>
+                <motion.div 
+                  className="flex-shrink-0 w-14 h-14 rounded-xl bg-evergreen/10 flex items-center justify-center transition-colors duration-300 group-hover:bg-evergreen/20"
+                  whileHover={{ scale: 1.1, rotate: 3 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                >
+                  <service.icon className="w-7 h-7 text-evergreen transition-transform duration-300 group-hover:scale-110" />
+                </motion.div>
                 <div>
-                  <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+                  <h3 className="font-display text-xl font-semibold text-foreground mb-2 group-hover:text-evergreen transition-colors duration-300">
                     {service.title}
                   </h3>
                   <p className="font-body text-muted-foreground leading-relaxed">

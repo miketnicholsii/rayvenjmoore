@@ -137,9 +137,15 @@ export default function HeroSection() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.1 + index * 0.1, duration: 0.5 }}
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-muted/60 backdrop-blur-sm border border-border/50"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-muted/60 backdrop-blur-sm border border-border/50 cursor-default hover:border-gold/30 hover:bg-muted/80 transition-colors duration-300"
                 >
-                  <badge.icon size={14} className="text-gold" />
+                  <motion.div
+                    whileHover={{ rotate: 12 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                  >
+                    <badge.icon size={14} className="text-gold" />
+                  </motion.div>
                   <span className="font-body text-xs text-muted-foreground">{badge.label}</span>
                 </motion.div>
               ))}

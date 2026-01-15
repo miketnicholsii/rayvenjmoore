@@ -65,16 +65,20 @@ const CareerSection = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="relative pl-10"
+                    whileHover={{ x: 4 }}
+                    className="relative pl-10 group cursor-pointer"
                   >
                     {/* Dot */}
-                    <div className="absolute left-0 top-2 w-6 h-6 bg-card border-2 border-primary rounded-full flex items-center justify-center">
-                      <div className="w-2 h-2 bg-primary rounded-full" />
-                    </div>
+                    <motion.div 
+                      className="absolute left-0 top-2 w-6 h-6 bg-card border-2 border-primary rounded-full flex items-center justify-center transition-all duration-300 group-hover:border-gold group-hover:scale-110"
+                      whileHover={{ scale: 1.2 }}
+                    >
+                      <div className="w-2 h-2 bg-primary rounded-full group-hover:bg-gold transition-colors" />
+                    </motion.div>
 
-                    <div className="bg-card border border-border rounded-lg p-4 hover:border-primary/50 transition-all duration-300">
+                    <div className="bg-card border border-border rounded-lg p-4 hover:border-primary/50 hover:shadow-md transition-all duration-300">
                       <span className="text-xs text-muted-foreground">{item.period}</span>
-                      <h4 className="font-semibold text-foreground">{item.company}</h4>
+                      <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{item.company}</h4>
                       <p className="text-sm text-primary">{item.role}</p>
                     </div>
                   </motion.div>
@@ -84,10 +88,12 @@ const CareerSection = () => {
 
             <Link
               to="/career"
-              className="inline-flex items-center gap-2 mt-8 text-primary font-medium hover:underline"
+              className="inline-flex items-center gap-2 mt-8 text-primary font-medium group"
             >
-              View Full Career Timeline
-              <ChevronRight className="w-4 h-4" />
+              <span className="relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-primary after:origin-right after:scale-x-0 group-hover:after:origin-left group-hover:after:scale-x-100 after:transition-transform after:duration-300">
+                View Full Career Timeline
+              </span>
+              <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </motion.div>
 
@@ -109,25 +115,30 @@ const CareerSection = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.08 }}
-                    className="bg-card border border-border rounded-xl p-4 hover:border-primary/50 transition-all duration-300 group"
+                    whileHover={{ y: -4, scale: 1.02 }}
+                    className="bg-card border border-border rounded-xl p-4 hover:border-primary/50 transition-all duration-300 group cursor-pointer hover:shadow-md"
                   >
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <IconComponent className="w-5 h-5 text-primary" />
-                      </div>
-                      <h4 className="font-semibold text-foreground text-sm">{category.name}</h4>
+                      <motion.div 
+                        className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors"
+                        whileHover={{ rotate: 6, scale: 1.1 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                      >
+                        <IconComponent className="w-5 h-5 text-primary transition-transform group-hover:scale-110" />
+                      </motion.div>
+                      <h4 className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors">{category.name}</h4>
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {category.skills.slice(0, 3).map((skill) => (
                         <span
                           key={skill}
-                          className="px-2 py-0.5 bg-secondary text-secondary-foreground text-xs rounded-full"
+                          className="px-2 py-0.5 bg-secondary text-secondary-foreground text-xs rounded-full transition-all duration-200 hover:bg-primary/10 hover:text-primary cursor-default"
                         >
                           {skill}
                         </span>
                       ))}
                       {category.skills.length > 3 && (
-                        <span className="text-muted-foreground text-xs px-1">
+                        <span className="text-muted-foreground text-xs px-1 group-hover:text-primary transition-colors">
                           +{category.skills.length - 3}
                         </span>
                       )}
