@@ -1,7 +1,53 @@
 import { motion } from 'framer-motion';
+import { Briefcase, GraduationCap, Award, Users, Lightbulb, Target } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import rayvenPortrait from '@/assets/rayven-portrait.jpg';
+
+const timelineMilestones = [
+  {
+    year: '2012',
+    title: 'The Foundation',
+    description: 'Earned CPA certification and began career in public accounting, learning the fundamentals of financial systems and client service.',
+    icon: GraduationCap,
+    highlight: 'CPA Certification',
+  },
+  {
+    year: '2015',
+    title: 'The Realization',
+    description: 'Recognized a gap in financial literacy access. Started volunteering to teach basic financial concepts in community settings.',
+    icon: Lightbulb,
+    highlight: 'Community Education Begins',
+  },
+  {
+    year: '2017',
+    title: 'Strategic Advisory',
+    description: 'Expanded into strategic financial advisory, helping small businesses and entrepreneurs build sustainable financial foundations.',
+    icon: Briefcase,
+    highlight: 'Advisory Practice Launch',
+  },
+  {
+    year: '2019',
+    title: 'Education at Scale',
+    description: 'Launched formal financial literacy workshop series, reaching hundreds of participants across community organizations and corporate settings.',
+    icon: Users,
+    highlight: '500+ Workshop Participants',
+  },
+  {
+    year: '2021',
+    title: 'Thought Leadership',
+    description: 'Began speaking engagements and media appearances, sharing the message of financial clarity with broader audiences.',
+    icon: Award,
+    highlight: 'Speaking & Media',
+  },
+  {
+    year: '2024',
+    title: 'Universal Wealth Care',
+    description: 'Formalized the vision: building a movement to ensure financial education, tools, and support are available to everyone.',
+    icon: Target,
+    highlight: 'Movement Founded',
+  },
+];
 
 export default function About() {
   return (
@@ -82,14 +128,134 @@ export default function About() {
                 everyone, regardless of their starting point.
               </p>
             </motion.div>
+          </div>
+        </section>
 
-            {/* Values */}
+        {/* Timeline Section */}
+        <section className="section-padding bg-muted/30">
+          <div className="container-wide">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <span className="font-body text-sm font-semibold tracking-widest uppercase text-gold mb-4 block">
+                The Journey
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground">
+                Career Milestones
+              </h2>
+            </motion.div>
+
+            {/* Desktop Timeline */}
+            <div className="hidden lg:block relative">
+              {/* Center Line */}
+              <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold/20 via-gold/40 to-gold/20" />
+              
+              <div className="space-y-0">
+                {timelineMilestones.map((milestone, index) => {
+                  const isLeft = index % 2 === 0;
+                  return (
+                    <motion.div
+                      key={milestone.year}
+                      initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      className={`relative flex items-center ${isLeft ? 'justify-end' : 'justify-start'}`}
+                      style={{ minHeight: '180px' }}
+                    >
+                      {/* Content Card */}
+                      <div 
+                        className={`w-[45%] ${isLeft ? 'pr-12 text-right' : 'pl-12 text-left'}`}
+                      >
+                        <div className={`bg-card rounded-2xl p-6 border border-border hover:border-gold/30 transition-all duration-300 hover:shadow-lg ${isLeft ? 'ml-auto' : 'mr-auto'}`}>
+                          <div className={`flex items-center gap-3 mb-3 ${isLeft ? 'justify-end' : 'justify-start'}`}>
+                            <span className="font-display text-2xl font-bold text-gold">{milestone.year}</span>
+                          </div>
+                          <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+                            {milestone.title}
+                          </h3>
+                          <p className="font-body text-sm text-muted-foreground leading-relaxed mb-3">
+                            {milestone.description}
+                          </p>
+                          <span className="inline-block font-body text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full bg-gold/10 text-gold">
+                            {milestone.highlight}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Center Icon */}
+                      <div className="absolute left-1/2 -translate-x-1/2 z-10">
+                        <motion.div 
+                          className="w-14 h-14 rounded-full bg-card border-2 border-gold flex items-center justify-center shadow-lg"
+                          whileHover={{ scale: 1.1 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <milestone.icon className="w-6 h-6 text-gold" />
+                        </motion.div>
+                      </div>
+
+                      {/* Empty space for other side */}
+                      <div className="w-[45%]" />
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Mobile Timeline */}
+            <div className="lg:hidden relative">
+              {/* Left Line */}
+              <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-gold/20 via-gold/40 to-gold/20" />
+              
+              <div className="space-y-8">
+                {timelineMilestones.map((milestone, index) => (
+                  <motion.div
+                    key={milestone.year}
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="relative flex items-start gap-6 pl-16"
+                  >
+                    {/* Icon */}
+                    <div className="absolute left-0 z-10">
+                      <div className="w-12 h-12 rounded-full bg-card border-2 border-gold flex items-center justify-center shadow-md">
+                        <milestone.icon className="w-5 h-5 text-gold" />
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="bg-card rounded-xl p-5 border border-border flex-grow">
+                      <span className="font-display text-xl font-bold text-gold">{milestone.year}</span>
+                      <h3 className="font-display text-lg font-semibold text-foreground mt-1 mb-2">
+                        {milestone.title}
+                      </h3>
+                      <p className="font-body text-sm text-muted-foreground leading-relaxed mb-3">
+                        {milestone.description}
+                      </p>
+                      <span className="inline-block font-body text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full bg-gold/10 text-gold">
+                        {milestone.highlight}
+                      </span>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Values */}
+        <section className="section-padding">
+          <div className="container-narrow">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="mt-20"
             >
               <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-8 gold-underline inline-block">
                 Core Values
@@ -113,8 +279,15 @@ export default function About() {
                     description: 'True wealth includes the prosperity of those around us.',
                   },
                 ].map((value, index) => (
-                  <div key={value.title} className="flex gap-4">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center text-gold font-display font-semibold">
+                  <motion.div 
+                    key={value.title} 
+                    className="flex gap-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                  >
+                    <span className="flex-shrink-0 w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold font-display font-semibold">
                       {index + 1}
                     </span>
                     <div>
@@ -125,7 +298,7 @@ export default function About() {
                         {value.description}
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
@@ -142,18 +315,23 @@ export default function About() {
                 Credentials
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-                <div className="bg-muted/50 rounded-xl p-6">
-                  <p className="font-display text-3xl font-semibold text-foreground mb-2">CPA</p>
-                  <p className="font-body text-sm text-muted-foreground">Certified Public Accountant</p>
-                </div>
-                <div className="bg-muted/50 rounded-xl p-6">
-                  <p className="font-display text-3xl font-semibold text-foreground mb-2">10+</p>
-                  <p className="font-body text-sm text-muted-foreground">Years of Experience</p>
-                </div>
-                <div className="bg-muted/50 rounded-xl p-6">
-                  <p className="font-display text-3xl font-semibold text-foreground mb-2">1000+</p>
-                  <p className="font-body text-sm text-muted-foreground">Clients & Participants Served</p>
-                </div>
+                {[
+                  { value: 'CPA', label: 'Certified Public Accountant' },
+                  { value: '10+', label: 'Years of Experience' },
+                  { value: '1000+', label: 'Clients & Participants Served' },
+                ].map((stat, index) => (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    className="bg-muted/50 rounded-xl p-6 text-center hover:bg-muted/70 transition-colors"
+                  >
+                    <p className="font-display text-4xl font-semibold text-foreground mb-2">{stat.value}</p>
+                    <p className="font-body text-sm text-muted-foreground">{stat.label}</p>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           </div>
