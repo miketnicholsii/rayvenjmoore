@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronDown, Shield, TrendingUp, Users, Award, GraduationCap, Building2 } from 'lucide-react';
+import { ArrowRight, ChevronDown, Shield, TrendingUp, Users, GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import heroBg from '@/assets/hero-bg.jpg';
+import rayvenPortrait from '@/assets/rayven-portrait.webp';
 
 const credentialBadges = [
   { icon: Shield, label: 'Certified Public Accountant' },
@@ -17,146 +17,189 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background - Subtle, not distracting */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-cream via-background/98 to-background" />
-      
-      {/* Decorative Elements - Midnight & Evergreen subtle glows */}
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-cream via-background to-sage/20">
+      {/* Subtle background decorations */}
       <motion.div
-        className="absolute top-1/4 right-1/4 w-[600px] h-[600px] rounded-full opacity-10 blur-3xl"
+        className="absolute top-20 right-0 w-[800px] h-[800px] rounded-full opacity-[0.07] blur-3xl"
         style={{
-          background: 'radial-gradient(circle, hsl(207 60% 11% / 0.3) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, hsl(207 60% 11%) 0%, transparent 70%)',
         }}
-        animate={{ scale: [1, 1.1, 1], opacity: [0.08, 0.15, 0.08] }}
-        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+        animate={{ scale: [1, 1.05, 1], opacity: [0.05, 0.08, 0.05] }}
+        transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] rounded-full opacity-10 blur-2xl"
+        className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full opacity-[0.06] blur-3xl"
         style={{
-          background: 'radial-gradient(circle, hsl(160 60% 15% / 0.25) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, hsl(160 60% 15%) 0%, transparent 70%)',
         }}
         animate={{ scale: [1, 1.08, 1] }}
-        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
+        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
       />
 
       {/* Content */}
-      <div className="relative z-10 container-wide text-center pt-28 pb-20">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: 'easeOut' }}
-        >
-          {/* Role Badge */}
+      <div className="relative z-10 container-wide pt-28 pb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left: Text Content */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-card/80 backdrop-blur-md border border-border shadow-sm mb-10"
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, ease: 'easeOut' }}
+            className="order-2 lg:order-1"
           >
-            <span className="w-2 h-2 rounded-full bg-evergreen animate-pulse" />
-            <span className="font-body text-sm font-medium text-muted-foreground tracking-wide">
-              CPA · Finance Executive · Entrepreneur · Houston, TX
-            </span>
+            {/* Role Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-card/80 backdrop-blur-md border border-border shadow-sm mb-8"
+            >
+              <span className="w-2 h-2 rounded-full bg-evergreen animate-pulse" />
+              <span className="font-body text-sm font-medium text-muted-foreground tracking-wide">
+                CPA · Finance Executive · Entrepreneur
+              </span>
+            </motion.div>
+
+            {/* Main Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.9 }}
+              className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground leading-[1.08] mb-6"
+            >
+              I Convert{' '}
+              <span className="relative inline-block">
+                <span className="relative z-10">Complexity</span>
+                <motion.span
+                  className="absolute bottom-1 md:bottom-2 left-0 h-2 md:h-3 bg-evergreen/20 -z-0 rounded-sm"
+                  initial={{ width: 0 }}
+                  animate={{ width: '100%' }}
+                  transition={{ delay: 1.2, duration: 0.7, ease: 'easeOut' }}
+                />
+              </span>
+              <br />
+              Into{' '}
+              <span className="text-gradient-gold">Clarity</span>
+              <span className="text-gold">.</span>
+            </motion.h1>
+
+            {/* Subheadline */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="font-body text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mb-8"
+            >
+              I help individuals, businesses, and communities make{' '}
+              <span className="text-foreground font-medium">confident decisions</span>{' '}
+              by simplifying complex financial systems and aligning them with real-world goals.
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+              className="flex flex-col sm:flex-row items-start gap-4 mb-10"
+            >
+              <Button variant="hero" size="xl" className="min-w-[160px]" asChild>
+                <Link to="/contact" className="group">
+                  Let's Talk
+                  <ArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-1" size={20} />
+                </Link>
+              </Button>
+              <Button variant="heroOutline" size="xl" className="min-w-[160px]" asChild>
+                <Link to="/ventures">Explore My Work</Link>
+              </Button>
+            </motion.div>
+
+            {/* Credential Badges */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1, duration: 0.8 }}
+              className="flex flex-wrap items-center gap-3"
+            >
+              {credentialBadges.map((badge, index) => (
+                <motion.div
+                  key={badge.label}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.1 + index * 0.1, duration: 0.5 }}
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-muted/60 backdrop-blur-sm border border-border/50"
+                >
+                  <badge.icon size={14} className="text-gold" />
+                  <span className="font-body text-xs text-muted-foreground">{badge.label}</span>
+                </motion.div>
+              ))}
+            </motion.div>
           </motion.div>
 
-          {/* Main Headline - Phase 4 Copy */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.9 }}
-            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold text-foreground max-w-5xl mx-auto leading-[1.08] mb-8"
+          {/* Right: Portrait */}
+          <motion.div
+            initial={{ opacity: 0, x: 40, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
+            className="order-1 lg:order-2 relative"
           >
-            I Convert{' '}
-            <span className="relative inline-block">
-              <span className="relative z-10">Complexity</span>
-              <motion.span
-                className="absolute bottom-2 md:bottom-4 left-0 h-3 md:h-4 bg-evergreen/20 -z-0 rounded-sm"
-                initial={{ width: 0 }}
-                animate={{ width: '100%' }}
-                transition={{ delay: 1.2, duration: 0.7, ease: 'easeOut' }}
+            {/* Decorative frame */}
+            <div className="absolute -inset-4 bg-gradient-to-br from-evergreen/10 via-transparent to-gold/10 rounded-3xl blur-2xl" />
+            <div className="absolute -bottom-6 -right-6 w-full h-full border-2 border-evergreen/20 rounded-2xl -z-10" />
+            <div className="absolute -top-6 -left-6 w-32 h-32 border-2 border-gold/20 rounded-2xl -z-10" />
+            
+            {/* Portrait Image */}
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl">
+              <img
+                src={rayvenPortrait}
+                alt="Rayven J. Moore, CPA - Professional Portrait"
+                className="w-full h-full object-cover object-top"
               />
-            </span>
-            <br className="hidden sm:block" />
-            Into{' '}
-            <span className="text-gradient-gold">Clarity</span>
-            <span className="text-gold">.</span>
-          </motion.h1>
+              {/* Subtle gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-midnight/20 via-transparent to-transparent" />
+            </div>
 
-          {/* Subheadline - Phase 4 Copy */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            className="font-body text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-12"
-          >
-            I help individuals, businesses, and communities make{' '}
-            <span className="text-foreground font-medium">confident decisions</span>{' '}
-            by simplifying complex financial systems and aligning them with real-world goals.
-          </motion.p>
+            {/* Floating credential card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+              className="absolute -bottom-4 -left-4 md:left-8 bg-card/95 backdrop-blur-md rounded-xl px-5 py-4 shadow-lg border border-border"
+            >
+              <p className="font-body text-xs text-muted-foreground mb-1">Based in</p>
+              <p className="font-display text-lg font-semibold text-foreground">Houston, TX</p>
+            </motion.div>
 
-          {/* CTAs - Phase 4 */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
-          >
-            <Button variant="hero" size="xl" className="min-w-[180px]" asChild>
-              <Link to="/contact" className="group">
-                Let's Talk
-                <ArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-1" size={20} />
-              </Link>
-            </Button>
-            <Button variant="heroOutline" size="xl" className="min-w-[180px]" asChild>
-              <Link to="/ventures">Explore My Work</Link>
-            </Button>
+            {/* Experience badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.4, duration: 0.5 }}
+              className="absolute -top-2 -right-2 md:right-8 bg-evergreen text-primary-foreground rounded-xl px-4 py-3 shadow-lg"
+            >
+              <p className="font-display text-2xl font-bold">10+</p>
+              <p className="font-body text-xs opacity-80">Years</p>
+            </motion.div>
           </motion.div>
-
-          {/* Credential Badges */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            className="flex flex-wrap items-center justify-center gap-4 md:gap-6"
-          >
-            {credentialBadges.map((badge, index) => (
-              <motion.div
-                key={badge.label}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.1 + index * 0.1, duration: 0.5 }}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-muted/60 backdrop-blur-sm border border-border/50"
-              >
-                <badge.icon size={16} className="text-gold" />
-                <span className="font-body text-xs md:text-sm text-muted-foreground">{badge.label}</span>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.button
-          onClick={scrollToAbout}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 0.6 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-evergreen transition-colors duration-300 cursor-pointer group"
-          aria-label="Scroll to About section"
-        >
-          <span className="font-body text-xs tracking-widest uppercase">Discover</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-            className="p-2 rounded-full border border-border group-hover:border-evergreen/50 transition-colors"
-          >
-            <ChevronDown size={18} />
-          </motion.div>
-        </motion.button>
+        </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.button
+        onClick={scrollToAbout}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.8, duration: 0.6 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-evergreen transition-colors duration-300 cursor-pointer group"
+        aria-label="Scroll to About section"
+      >
+        <span className="font-body text-xs tracking-widest uppercase">Discover</span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+          className="p-2 rounded-full border border-border group-hover:border-evergreen/50 transition-colors"
+        >
+          <ChevronDown size={18} />
+        </motion.div>
+      </motion.button>
     </section>
   );
 }
