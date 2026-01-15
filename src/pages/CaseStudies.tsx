@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Target, Zap, Users, Lightbulb, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
@@ -88,6 +89,11 @@ const caseStudies = [
 export default function CaseStudies() {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Case Studies"
+        description="Real transformation stories - see how individuals and businesses moved from financial confusion to clarity using proven frameworks and actionable strategies."
+        canonical="/case-studies"
+      />
       <Header />
       <main>
         {/* Hero */}

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Search, Filter, ChevronRight, Clock, FileText, Video, Wrench, BookOpen, Bell, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
@@ -31,6 +32,11 @@ export default function Resources() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Resources"
+        description="Free financial education resources, guides, and tools. Learn about Bitcoin, personal finance, wealth building, business accounting, and more."
+        canonical="/resources"
+      />
       <Header />
       <main>
         {/* Hero */}

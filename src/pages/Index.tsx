@@ -1,3 +1,4 @@
+import SEO from '@/components/SEO';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/home/HeroSection';
@@ -14,6 +15,10 @@ import ContactSection from '@/components/home/ContactSection';
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        canonical="/"
+        description="Rayven J. Moore, CPA - Converting complexity into clarity. Financial educator, entrepreneur, and wealth-building strategist helping individuals and businesses achieve financial freedom."
+      />
       <Header />
       <main>
         <HeroSection />

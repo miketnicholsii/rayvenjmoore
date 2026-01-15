@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
@@ -9,6 +10,11 @@ import { ventures } from '@/data/ventures';
 export default function Ventures() {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Ventures & Community"
+        description="Explore Rayven J. Moore's ventures including tax services, hospitality, community development, fashion, and cryptocurrency research. Building wealth and impact across multiple industries."
+        canonical="/ventures"
+      />
       <Header />
       <main>
         {/* Hero */}
