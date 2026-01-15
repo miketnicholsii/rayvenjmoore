@@ -1,6 +1,7 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, ChevronDown, Shield, TrendingUp, Users, GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import rayvenPortrait from '@/assets/rayven-portrait.webp';
 
@@ -12,12 +13,23 @@ const credentialBadges = [
 ];
 
 export default function HeroSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  });
+
+  // Parallax transforms - portrait moves slower than scroll
+  const portraitY = useTransform(scrollYProgress, [0, 1], [0, 80]);
+  const decorFrameY = useTransform(scrollYProgress, [0, 1], [0, 40]);
+  const floatingCardY = useTransform(scrollYProgress, [0, 1], [0, 60]);
+
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-cream via-background to-sage/20">
+    <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-cream via-background to-sage/20">
       {/* Subtle background decorations */}
       <motion.div
         className="absolute top-20 right-0 w-[800px] h-[800px] rounded-full opacity-[0.07] blur-3xl"
@@ -141,13 +153,25 @@ export default function HeroSection() {
             transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
             className="order-1 lg:order-2 relative"
           >
-            {/* Decorative frame */}
-            <div className="absolute -inset-4 bg-gradient-to-br from-evergreen/10 via-transparent to-gold/10 rounded-3xl blur-2xl" />
-            <div className="absolute -bottom-6 -right-6 w-full h-full border-2 border-evergreen/20 rounded-2xl -z-10" />
-            <div className="absolute -top-6 -left-6 w-32 h-32 border-2 border-gold/20 rounded-2xl -z-10" />
+            {/* Decorative frame with parallax */}
+            <motion.div 
+              style={{ y: decorFrameY }}
+              className="absolute -inset-4 bg-gradient-to-br from-evergreen/10 via-transparent to-gold/10 rounded-3xl blur-2xl" 
+            />
+            <motion.div 
+              style={{ y: decorFrameY }}
+              className="absolute -bottom-6 -right-6 w-full h-full border-2 border-evergreen/20 rounded-2xl -z-10" 
+            />
+            <motion.div 
+              style={{ y: decorFrameY }}
+              className="absolute -top-6 -left-6 w-32 h-32 border-2 border-gold/20 rounded-2xl -z-10" 
+            />
             
-            {/* Portrait Image */}
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl">
+            {/* Portrait Image with parallax */}
+            <motion.div 
+              style={{ y: portraitY }}
+              className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl"
+            >
               <img
                 src={rayvenPortrait}
                 alt="Rayven J. Moore, CPA - Professional Portrait"
@@ -155,24 +179,26 @@ export default function HeroSection() {
               />
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-midnight/20 via-transparent to-transparent" />
-            </div>
+            </motion.div>
 
-            {/* Floating credential card */}
+            {/* Floating credential card with parallax */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2, duration: 0.6 }}
+              style={{ y: floatingCardY }}
               className="absolute -bottom-4 -left-4 md:left-8 bg-card/95 backdrop-blur-md rounded-xl px-5 py-4 shadow-lg border border-border"
             >
               <p className="font-body text-xs text-muted-foreground mb-1">Based in</p>
               <p className="font-display text-lg font-semibold text-foreground">Houston, TX</p>
             </motion.div>
 
-            {/* Experience badge */}
+            {/* Experience badge with parallax */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.4, duration: 0.5 }}
+              style={{ y: floatingCardY }}
               className="absolute -top-2 -right-2 md:right-8 bg-evergreen text-primary-foreground rounded-xl px-4 py-3 shadow-lg"
             >
               <p className="font-display text-2xl font-bold">10+</p>
