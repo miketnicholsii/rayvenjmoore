@@ -9,13 +9,11 @@ interface Section {
 const sections: Section[] = [
   { id: 'hero', label: 'Home' },
   { id: 'about', label: 'About' },
-  { id: 'career', label: 'Career' },
-  { id: 'services', label: 'Services' },
+  { id: 'credentials', label: 'Credentials' },
   { id: 'ventures', label: 'Ventures' },
-  { id: 'stories', label: 'Stories' },
-  { id: 'manifesto', label: 'Manifesto' },
-  { id: 'philosophy', label: 'Philosophy' },
-  { id: 'cta', label: 'Act' },
+  { id: 'leadership', label: 'Leadership' },
+  { id: 'case-studies', label: 'Cases' },
+  { id: 'speaking', label: 'Speaking' },
   { id: 'contact', label: 'Contact' },
 ];
 
@@ -90,7 +88,7 @@ export default function SectionNav() {
                   <motion.div
                     className={`rounded-full transition-all duration-300 ${
                       isActive
-                        ? 'w-3 h-3 bg-evergreen shadow-lg shadow-evergreen/30'
+                        ? 'w-3 h-3 bg-accent shadow-lg shadow-accent/30'
                         : 'w-2 h-2 bg-border group-hover:bg-muted-foreground'
                     }`}
                     layout
@@ -98,7 +96,7 @@ export default function SectionNav() {
                   {isActive && (
                     <motion.div
                       layoutId="activeIndicator"
-                      className="absolute -inset-1 rounded-full border-2 border-evergreen/30"
+                      className="absolute -inset-1 rounded-full border-2 border-accent/30"
                       transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                     />
                   )}
