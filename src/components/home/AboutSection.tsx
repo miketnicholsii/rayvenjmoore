@@ -48,33 +48,33 @@ export default function AboutSection() {
               About Rayven
             </span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6 leading-tight">
-              Guiding You Through Financial Complexity
+              A Partner in Your Financial Journey
             </h2>
             <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
               <p>
                 Rayven J. Moore is a <span className="text-foreground font-medium">Certified Public Accountant</span>, 
-                entrepreneur, and financial educator with over a decade of experience guiding individuals 
-                and businesses through the complexities of finance.
+                Notre Dame alumnus, Houston-based entrepreneur, and finance executive with over a decade 
+                of experience solving complex problems across accounting, finance, strategy, and community development.
               </p>
               <p>
-                His passion lies at the intersection of <span className="text-foreground font-medium">financial literacy</span>, 
-                community development, and creating opportunities for everyone—regardless of background—to 
-                build and sustain lasting wealth.
+                He's not a transactional advisor — he's a <span className="text-foreground font-medium">long-term partner, 
+                thinker, and builder of trust</span>. His approach combines institutional-grade expertise with 
+                genuine warmth and cultural fluency.
               </p>
               <p>
-                What sets Rayven apart is his specialty in <span className="text-foreground font-medium">breaking down 
-                complex concepts into actionable insights</span>, empowering people to confidently take control 
-                of their financial futures. No jargon, no gatekeeping—just clarity.
+                Whether guiding business owners, executives, or individuals seeking trustworthy financial counsel, 
+                Rayven translates complexity into <span className="text-foreground font-medium">clarity and confident action</span> — 
+                always with integrity at the center.
               </p>
             </div>
             
             {/* Expertise Areas */}
             <div className="mt-8 grid grid-cols-2 gap-4">
               {[
-                'Financial Literacy',
-                'Community Development',
-                'Wealth Building',
-                'Strategic Clarity'
+                'Business Strategy',
+                'Accounting & Finance',
+                'Community Leadership',
+                'Crypto & Emerging Tech'
               ].map((value, index) => (
                 <motion.div
                   key={value}

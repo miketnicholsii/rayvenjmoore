@@ -26,13 +26,13 @@ export default function CTASection() {
           className="text-center"
         >
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 leading-tight">
-            Let's Create{' '}
-            <span className="text-gold">Universal Wealth Care</span>
+            Let's Start a{' '}
+            <span className="text-gold">Meaningful Conversation</span>
             <span className="text-gold">.</span>
           </h2>
           <p className="font-body text-lg text-primary-foreground/70 max-w-xl mx-auto mb-10 leading-relaxed">
-            Together, we can build clarity, confidence, and a pathway to financial freedom. 
-            Whether you're ready to start your journey or want to learn more—let's connect.
+            Great partnerships begin with a conversation. Whether you're navigating complex decisions 
+            or seeking a trusted advisor — I'm here to listen, guide, and build with you.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="gold" size="xl" asChild>
