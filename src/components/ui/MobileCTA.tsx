@@ -61,10 +61,10 @@ export default function MobileCTA() {
 
               <div className="flex-grow min-w-0">
                 <p className="text-primary-foreground font-semibold text-sm">
-                  Financial strategy to business ideation
+                  Money. Business. Connections.
                 </p>
-                <p className="text-primary-foreground/70 text-xs truncate">
-                  Let's chat
+                <p className="text-primary-foreground/70 text-xs">
+                  If any of that matters to you, let's talk.
                 </p>
               </div>
 
@@ -72,7 +72,7 @@ export default function MobileCTA() {
                 to="/contact"
                 className="flex-shrink-0 bg-primary-foreground text-primary font-semibold px-5 py-2.5 rounded-xl text-sm hover:bg-primary-foreground/90 transition-colors"
               >
-                Let's Chat
+                Connect
               </Link>
             </div>
           </div>
