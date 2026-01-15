@@ -1,14 +1,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle, Mail, MapPin } from 'lucide-react';
-import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 
 export default function ContactSection() {
-  const { ref, isVisible } = useScrollReveal();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -40,16 +38,21 @@ export default function ContactSection() {
   if (isSubmitted) {
     return (
       <section id="contact" className="section-padding bg-background">
-        <div className="container-narrow" ref={ref}>
+        <div className="container-narrow">
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-center py-16"
           >
-            <div className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-6">
+            <motion.div 
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2, type: "spring", stiffness: 200 }}
+              className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-6"
+            >
               <CheckCircle className="w-10 h-10 text-accent" />
-            </div>
+            </motion.div>
             <h3 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4">
               Message Received
             </h3>
@@ -65,62 +68,119 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="section-padding bg-background">
-      <div className="container-wide" ref={ref}>
+      <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Left Side - Info */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
             className="lg:col-span-1"
           >
-            <span className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4 block">
+            <motion.span 
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4 block"
+            >
               Get In Touch
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
+            </motion.span>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4"
+            >
               Let's Talk
-            </h2>
-            <div className="accent-bar mb-6" />
-            <p className="font-body text-muted-foreground text-lg leading-relaxed mb-8">
+            </motion.h2>
+            <motion.div 
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="accent-bar mb-6 origin-left" 
+            />
+            <motion.p 
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.35 }}
+              className="font-body text-muted-foreground text-lg leading-relaxed mb-8"
+            >
               Ready to gain clarity on your financial decisions? Whether you're exploring a partnership, 
               seeking advice, or want to discuss a speaking opportunity — I'd love to hear from you.
-            </p>
+            </motion.p>
 
             {/* Contact Info */}
             <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                whileHover={{ x: 4, transition: { duration: 0.2 } }}
+                className="flex items-center gap-4"
+              >
+                <motion.div 
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.5, type: "spring", stiffness: 200 }}
+                  className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center"
+                >
                   <Mail className="w-5 h-5 text-accent" />
-                </div>
+                </motion.div>
                 <div>
                   <p className="font-body text-sm text-muted-foreground">Email</p>
                   <a href="mailto:hello@rayvenmoore.com" className="font-body font-medium text-foreground hover:text-accent transition-colors">
                     hello@rayvenmoore.com
                   </a>
                 </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                whileHover={{ x: 4, transition: { duration: 0.2 } }}
+                className="flex items-center gap-4"
+              >
+                <motion.div 
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.6, type: "spring", stiffness: 200 }}
+                  className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center"
+                >
                   <MapPin className="w-5 h-5 text-accent" />
-                </div>
+                </motion.div>
                 <div>
                   <p className="font-body text-sm text-muted-foreground">Location</p>
                   <p className="font-body font-medium text-foreground">Houston, Texas</p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
 
           {/* Form */}
           <motion.form
-            initial={{ opacity: 0, y: 30 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
             onSubmit={handleSubmit}
             className="lg:col-span-2 bg-card rounded-2xl p-8 md:p-10 shadow-card border border-border"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
                 <label htmlFor="name" className="font-body text-sm font-medium text-foreground mb-2 block">
                   Name
                 </label>
@@ -134,8 +194,13 @@ export default function ContactSection() {
                   placeholder="Your full name"
                   className="h-12"
                 />
-              </div>
-              <div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.35 }}
+              >
                 <label htmlFor="email" className="font-body text-sm font-medium text-foreground mb-2 block">
                   Email
                 </label>
@@ -149,9 +214,15 @@ export default function ContactSection() {
                   placeholder="you@example.com"
                   className="h-12"
                 />
-              </div>
+              </motion.div>
             </div>
-            <div className="mb-6">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="mb-6"
+            >
               <label htmlFor="subject" className="font-body text-sm font-medium text-foreground mb-2 block">
                 Subject
               </label>
@@ -165,8 +236,14 @@ export default function ContactSection() {
                 placeholder="What would you like to discuss?"
                 className="h-12"
               />
-            </div>
-            <div className="mb-8">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.45 }}
+              className="mb-8"
+            >
               <label htmlFor="message" className="font-body text-sm font-medium text-foreground mb-2 block">
                 Message
               </label>
@@ -180,26 +257,33 @@ export default function ContactSection() {
                 rows={5}
                 className="resize-none"
               />
-            </div>
-            <Button 
-              type="submit" 
-              variant="hero" 
-              size="xl" 
-              className="w-full md:w-auto"
-              disabled={isSubmitting}
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.5 }}
             >
-              {isSubmitting ? (
-                'Sending...'
-              ) : (
-                <>
-                  Send Message
-                  <Send className="ml-2" size={18} />
-                </>
-              )}
-            </Button>
-            <p className="font-body text-xs text-muted-foreground mt-4">
-              I typically respond within 2-3 business days.
-            </p>
+              <Button 
+                type="submit" 
+                variant="hero" 
+                size="xl" 
+                className="w-full md:w-auto"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  'Sending...'
+                ) : (
+                  <>
+                    Send Message
+                    <Send className="ml-2" size={18} />
+                  </>
+                )}
+              </Button>
+              <p className="font-body text-xs text-muted-foreground mt-4">
+                I typically respond within 2-3 business days.
+              </p>
+            </motion.div>
           </motion.form>
         </div>
       </div>

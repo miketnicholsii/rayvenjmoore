@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Calendar, MapPin, Users, ShoppingBag } from 'lucide-react';
-import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { Button } from '@/components/ui/button';
 
 const ventures = [
@@ -43,29 +42,66 @@ const ventures = [
   },
 ];
 
-export default function VenturesSection() {
-  const { ref, isVisible } = useScrollReveal();
+const cardVariants = {
+  hidden: { opacity: 0, y: 50, scale: 0.95 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      delay: i * 0.12,
+      ease: "easeOut" as const,
+    },
+  }),
+};
 
+export default function VenturesSection() {
   return (
     <section id="ventures" className="section-padding bg-background">
-      <div className="container-wide" ref={ref}>
+      <div className="container-wide">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4 block">
+          <motion.span
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4 block"
+          >
             Work & Ventures
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-4">
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-4"
+          >
             Building Toward Universal Wealth
-          </h2>
-          <p className="font-body text-muted-foreground text-lg">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="font-body text-muted-foreground text-lg"
+          >
             A portfolio of businesses and initiatives designed to create lasting value for clients, communities, and future generations.
-          </p>
-          <div className="accent-bar mx-auto mt-6" />
+          </motion.p>
+          <motion.div 
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="accent-bar mx-auto mt-6 origin-center" 
+          />
         </motion.div>
 
         {/* Ventures Grid */}
@@ -73,10 +109,12 @@ export default function VenturesSection() {
           {ventures.map((venture, index) => (
             <motion.div
               key={venture.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -6 }}
+              custom={index}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
               className={`group relative overflow-hidden rounded-2xl transition-all duration-300 ${
                 venture.featured
                   ? 'bg-forest text-primary-foreground md:col-span-2'

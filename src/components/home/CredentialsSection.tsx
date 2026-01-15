@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { Shield, FileText, TrendingUp, Bitcoin, Cpu, Building2 } from 'lucide-react';
 
 const expertiseAreas = [
@@ -11,41 +10,86 @@ const expertiseAreas = [
   { icon: Building2, label: 'Community Leadership' },
 ];
 
-export default function CredentialsSection() {
-  const { ref, isVisible } = useScrollReveal();
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.2,
+    },
+  },
+};
 
+const itemVariants = {
+  hidden: { opacity: 0, y: 20, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeOut" as const },
+  },
+};
+
+export default function CredentialsSection() {
   return (
     <section id="credentials" className="section-padding bg-secondary/30">
-      <div className="container-wide" ref={ref}>
+      <div className="container-wide">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
-          <span className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4 block">
+          <motion.span 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4 block"
+          >
             Credentials
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-4">
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-4"
+          >
             Professional Foundation
-          </h2>
-          <div className="accent-bar mx-auto" />
+          </motion.h2>
+          <motion.div 
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="accent-bar mx-auto origin-center" 
+          />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* CPA Credential Card */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
             <div className="card-accent p-8">
               <div className="flex items-start gap-5">
-                <div className="w-16 h-16 rounded-xl bg-forest flex items-center justify-center flex-shrink-0">
+                <motion.div 
+                  initial={{ scale: 0, rotate: -20 }}
+                  whileInView={{ scale: 1, rotate: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.4, type: "spring", stiffness: 200 }}
+                  className="w-16 h-16 rounded-xl bg-forest flex items-center justify-center flex-shrink-0"
+                >
                   <Shield className="w-8 h-8 text-primary-foreground" />
-                </div>
+                </motion.div>
                 <div>
                   <h3 className="font-display text-2xl font-semibold text-foreground mb-2">
                     Certified Public Accountant
@@ -54,14 +98,26 @@ export default function CredentialsSection() {
                     Texas State Board of Public Accountancy
                   </p>
                   <div className="flex flex-wrap gap-4 text-sm">
-                    <div className="flex items-center gap-2">
+                    <motion.div 
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: 0.5 }}
+                      className="flex items-center gap-2"
+                    >
                       <span className="w-2 h-2 rounded-full bg-accent" />
                       <span className="text-muted-foreground">Issued September 2015</span>
-                    </div>
-                    <div className="flex items-center gap-2">
+                    </motion.div>
+                    <motion.div 
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: 0.6 }}
+                      className="flex items-center gap-2"
+                    >
                       <span className="w-2 h-2 rounded-full bg-accent" />
                       <span className="text-muted-foreground">Credential ID: 105770</span>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
               </div>
@@ -70,21 +126,26 @@ export default function CredentialsSection() {
 
           {/* Areas of Expertise */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
             <h3 className="font-display text-xl font-semibold text-foreground mb-6">
               Areas of Expertise
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {expertiseAreas.map((area, index) => (
+            <motion.div 
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+            >
+              {expertiseAreas.map((area) => (
                 <motion.div
                   key={area.label}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.4, delay: 0.4 + index * 0.08 }}
-                  whileHover={{ x: 4 }}
+                  variants={itemVariants}
+                  whileHover={{ x: 4, scale: 1.02 }}
                   className="group flex items-center gap-3 p-4 bg-card border border-border rounded-xl hover:border-accent/30 transition-all duration-300"
                 >
                   <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300">
@@ -95,7 +156,7 @@ export default function CredentialsSection() {
                   </span>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
