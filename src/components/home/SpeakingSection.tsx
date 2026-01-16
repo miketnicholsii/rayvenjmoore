@@ -168,28 +168,6 @@ export default function SpeakingSection() {
               </div>
             </motion.div>
 
-            {/* What I'm Listening To */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-primary-foreground/5 backdrop-blur-sm rounded-2xl p-6 border border-primary-foreground/10"
-            >
-              <h4 className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4">
-                What I'm Listening To
-              </h4>
-              <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
-                <iframe
-                  src="https://open.spotify.com/embed/playlist/6MptPHpTE9KRwh4KczLfEW?utm_source=generator"
-                  className="absolute top-0 left-0 w-full h-full rounded-xl"
-                  frameBorder="0"
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
-                />
-              </div>
-            </motion.div>
-
             {/* Social Links */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
