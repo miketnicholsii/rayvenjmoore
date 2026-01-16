@@ -87,7 +87,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-background/98 backdrop-blur-lg shadow-soft py-3'
+          ? 'bg-cream/98 backdrop-blur-lg shadow-soft py-3'
           : 'bg-transparent py-5'
       }`}
     >
@@ -98,13 +98,13 @@ export default function Header() {
           className="group flex items-center gap-2"
         >
           <motion.span 
-            className="font-display text-xl md:text-2xl font-semibold text-foreground tracking-tight"
+            className="font-display text-xl md:text-2xl font-semibold text-dark-forest tracking-tight"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
             Rayven J. Moore
-            <span className="text-accent">,</span>
-            <span className="text-muted-foreground font-body text-sm ml-1 font-normal">CPA</span>
+            <span className="text-terracotta">,</span>
+            <span className="text-olive font-body text-sm ml-1 font-normal">CPA</span>
           </motion.span>
         </button>
 
@@ -117,15 +117,15 @@ export default function Header() {
                 onClick={() => scrollToSection(link.href)}
                 className={`relative font-body text-sm px-4 py-2 rounded-lg transition-all duration-300 ${
                   isActive(link)
-                    ? 'text-foreground'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
+                    ? 'text-dark-forest'
+                    : 'text-olive hover:text-dark-forest hover:bg-sage/20'
                 }`}
               >
                 {link.name}
                 {isActive(link) && (
                   <motion.span
                     layoutId="activeNav"
-                    className="absolute bottom-0 left-4 right-4 h-0.5 bg-accent rounded-full"
+                    className="absolute bottom-0 left-4 right-4 h-0.5 bg-terracotta rounded-full"
                     transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                   />
                 )}
@@ -136,15 +136,15 @@ export default function Header() {
                 to={link.href}
                 className={`relative font-body text-sm px-4 py-2 rounded-lg transition-all duration-300 ${
                   isActive(link)
-                    ? 'text-foreground'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
+                    ? 'text-dark-forest'
+                    : 'text-olive hover:text-dark-forest hover:bg-sage/20'
                 }`}
               >
                 {link.name}
                 {isActive(link) && (
                   <motion.span
                     layoutId="activeNav"
-                    className="absolute bottom-0 left-4 right-4 h-0.5 bg-accent rounded-full"
+                    className="absolute bottom-0 left-4 right-4 h-0.5 bg-terracotta rounded-full"
                     transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                   />
                 )}
@@ -162,7 +162,7 @@ export default function Header() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg flex items-center justify-center text-muted-foreground hover:text-accent hover:bg-accent/10 transition-all duration-300"
+                className="w-9 h-9 rounded-lg flex items-center justify-center text-olive hover:text-terracotta hover:bg-terracotta/10 transition-all duration-300"
                 aria-label={social.name}
               >
                 <social.icon size={18} />
@@ -176,7 +176,7 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="xl:hidden p-2 text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
+          className="xl:hidden p-2 text-dark-forest hover:bg-sage/20 rounded-lg transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -197,7 +197,7 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="xl:hidden bg-background border-t border-border overflow-hidden"
+            className="xl:hidden bg-cream border-t border-sage/30 overflow-hidden"
           >
             <div className="container-wide py-6 flex flex-col gap-2">
               {navLinks.map((link, index) => (
@@ -212,8 +212,8 @@ export default function Header() {
                       onClick={() => scrollToSection(link.href)}
                       className={`block w-full text-left font-body text-base py-3 px-4 rounded-lg transition-all duration-300 ${
                         isActive(link)
-                          ? 'text-accent bg-accent/10'
-                          : 'text-foreground hover:text-accent hover:bg-secondary/50'
+                          ? 'text-terracotta bg-terracotta/10'
+                          : 'text-dark-forest hover:text-terracotta hover:bg-sage/20'
                       }`}
                     >
                       {link.name}
@@ -223,8 +223,8 @@ export default function Header() {
                       to={link.href}
                       className={`block font-body text-base py-3 px-4 rounded-lg transition-all duration-300 ${
                         isActive(link)
-                          ? 'text-accent bg-accent/10'
-                          : 'text-foreground hover:text-accent hover:bg-secondary/50'
+                          ? 'text-terracotta bg-terracotta/10'
+                          : 'text-dark-forest hover:text-terracotta hover:bg-sage/20'
                       }`}
                     >
                       {link.name}
@@ -241,7 +241,7 @@ export default function Header() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-lg flex items-center justify-center text-muted-foreground hover:text-accent hover:bg-accent/10 transition-all duration-300 border border-border"
+                    className="w-10 h-10 rounded-lg flex items-center justify-center text-olive hover:text-terracotta hover:bg-terracotta/10 transition-all duration-300 border border-sage/30"
                     aria-label={social.name}
                   >
                     <social.icon size={18} />

@@ -25,21 +25,21 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-accent text-accent-foreground">
+    <footer className="bg-dark-forest text-cream">
       <div className="container-wide py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
             <motion.h3 
-              className="font-display text-2xl font-semibold mb-4"
+              className="font-display text-2xl font-semibold mb-4 text-cream"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              Rayven J. Moore<span className="text-primary">,</span> CPA
+              Rayven J. Moore<span className="text-terracotta">,</span> CPA
             </motion.h3>
-            <p className="text-accent-foreground/80 font-body text-sm leading-relaxed max-w-md mb-6">
+            <p className="text-cream/80 font-body text-sm leading-relaxed max-w-md mb-6">
               Bringing clarity to complex financial decisions. Helping individuals, businesses, and communities 
               make confident decisions through trusted guidance and strategic expertise.
             </p>
@@ -50,7 +50,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-xl border border-accent-foreground/20 flex items-center justify-center transition-all duration-300 hover:bg-primary hover:border-primary hover:text-primary-foreground group"
+                  className="w-11 h-11 rounded-xl border border-cream/20 flex items-center justify-center transition-all duration-300 hover:bg-terracotta hover:border-terracotta hover:text-cream group"
                   aria-label={social.name}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +66,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-body text-sm font-semibold tracking-wide uppercase mb-5 text-primary">
+            <h4 className="font-body text-sm font-semibold tracking-wide uppercase mb-5 text-terracotta">
               Explore
             </h4>
             <ul className="space-y-3">
@@ -74,9 +74,9 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="font-body text-sm text-accent-foreground/80 hover:text-primary transition-colors duration-200 inline-flex items-center gap-1 group"
+                    className="font-body text-sm text-cream/80 hover:text-terracotta transition-colors duration-200 inline-flex items-center gap-1 group"
                   >
-                    <span className="w-0 h-px bg-primary transition-all duration-300 group-hover:w-3" />
+                    <span className="w-0 h-px bg-terracotta transition-all duration-300 group-hover:w-3" />
                     {link.name}
                   </Link>
                 </li>
@@ -86,7 +86,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <h4 className="font-body text-sm font-semibold tracking-wide uppercase mb-5 text-primary">
+            <h4 className="font-body text-sm font-semibold tracking-wide uppercase mb-5 text-terracotta">
               Connect
             </h4>
             <ul className="space-y-3">
@@ -94,9 +94,9 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="font-body text-sm text-accent-foreground/80 hover:text-primary transition-colors duration-200 inline-flex items-center gap-1 group"
+                    className="font-body text-sm text-cream/80 hover:text-terracotta transition-colors duration-200 inline-flex items-center gap-1 group"
                   >
-                    <span className="w-0 h-px bg-primary transition-all duration-300 group-hover:w-3" />
+                    <span className="w-0 h-px bg-terracotta transition-all duration-300 group-hover:w-3" />
                     {link.name}
                   </Link>
                 </li>
@@ -110,22 +110,22 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="font-body text-sm text-accent-foreground/70">
+          <p className="font-body text-sm text-cream/70">
             © {new Date().getFullYear()} Rayven J. Moore, CPA. All rights reserved.
           </p>
-          <p className="font-body text-sm text-accent-foreground/70 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-primary" />
+          <p className="font-body text-sm text-cream/70 flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-terracotta" />
             Clarity · Confidence · Action
           </p>
         </div>
 
         {/* Credit */}
-        <div className="mt-8 pt-6 border-t border-accent-foreground/10 text-center">
+        <div className="mt-8 pt-6 border-t border-cream/10 text-center">
           <a 
             href="https://helloneko.co" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="font-body text-xs tracking-[0.25em] uppercase text-accent-foreground/50 hover:text-primary transition-colors duration-300"
+            className="font-body text-xs tracking-[0.25em] uppercase text-cream/50 hover:text-terracotta transition-colors duration-300"
           >
             NÈKO.
           </a>

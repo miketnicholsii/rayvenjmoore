@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <defs>
-    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#163C90"/>
-      <stop offset="100%" style="stop-color:#2764F3"/>
+    <linearGradient id="forestGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4B544A"/>
+      <stop offset="100%" style="stop-color:#6C7463"/>
     </linearGradient>
-    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2764F3"/>
-      <stop offset="100%" style="stop-color:#4B82F5"/>
+    <linearGradient id="terracottaAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7D5C4E"/>
+      <stop offset="100%" style="stop-color:#9A7466"/>
     </linearGradient>
   </defs>
   <!-- Background -->
-  <rect width="512" height="512" rx="96" fill="url(#blueGradient)"/>
+  <rect width="512" height="512" rx="96" fill="url(#forestGradient)"/>
   <!-- RM Letters -->
-  <text x="256" y="340" font-family="Georgia, serif" font-size="260" font-weight="600" text-anchor="middle" fill="#E5E5E5">RM</text>
-  <!-- Accent bar -->
-  <rect x="96" y="440" width="320" height="12" rx="6" fill="url(#accentGradient)"/>
+  <text x="256" y="340" font-family="Georgia, serif" font-size="260" font-weight="600" text-anchor="middle" fill="#E6E1D2">RM</text>
+  <!-- Terracotta accent bar -->
+  <rect x="96" y="440" width="320" height="12" rx="6" fill="url(#terracottaAccent)"/>
 </svg>
