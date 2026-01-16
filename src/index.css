@@ -9,10 +9,11 @@
     /* ========================================
        RJM - BRAND COLOR SYSTEM
        Deep Blue + Silver Gray Palette
+       Optimized for Contrast & Accessibility
        ======================================== */
     
-    /* Light Background - Off White */
-    --background: 210 8% 97%;
+    /* Clean White Background */
+    --background: 0 0% 100%;
     --foreground: 205 70% 8%;
 
     --card: 0 0% 100%;
@@ -21,28 +22,28 @@
     --popover: 0 0% 100%;
     --popover-foreground: 205 70% 8%;
 
-    /* Deep Blue - Primary Authority Color */
+    /* Deep Blue - Primary (great contrast on white) */
     --primary: 200 68% 28%;
     --primary-foreground: 0 0% 100%;
 
-    /* Silver Gray Secondary */
-    --secondary: 200 6% 65%;
+    /* Silver Gray Secondary - for subtle backgrounds */
+    --secondary: 200 5% 94%;
     --secondary-foreground: 205 70% 8%;
 
-    /* Muted Neutrals */
-    --muted: 200 5% 92%;
-    --muted-foreground: 200 5% 40%;
+    /* Muted - Light gray for backgrounds */
+    --muted: 200 5% 96%;
+    --muted-foreground: 200 10% 35%;
 
-    /* Deep Blue - Accent (micro-interactions, emphasis) */
-    --accent: 200 68% 28%;
+    /* Accent - Deep Navy for emphasis (high contrast) */
+    --accent: 205 70% 8%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Borders - Soft, professional */
-    --border: 200 5% 85%;
-    --input: 200 5% 85%;
+    /* Borders */
+    --border: 200 8% 82%;
+    --input: 200 8% 82%;
     --ring: 200 68% 28%;
 
     --radius: 0.5rem;
@@ -51,87 +52,91 @@
        BRAND EXTENSIONS - RJM Palette
        ======================================== */
     
-    /* Primary Blues */
-    --deep-navy: 205 70% 8%;          /* #071527 - Darkest */
+    /* Blues - Primary palette */
+    --deep-navy: 205 70% 8%;          /* #071527 - Darkest, for text */
     --navy: 200 68% 28%;              /* #175676 - Primary Blue */
-    --steel-blue: 200 50% 38%;        /* Medium Blue */
+    --steel-blue: 200 45% 42%;        /* Lighter blue for hover states */
     
     /* Silver/Gray Tones */
-    --silver: 200 6% 65%;             /* #A3A9AC - Silver Gray */
-    --charcoal-gray: 190 5% 38%;      /* #5D6566 - Charcoal */
+    --silver: 200 6% 65%;             /* #A3A9AC - Silver accent */
+    --silver-light: 200 5% 88%;       /* Light silver for backgrounds */
+    --charcoal-gray: 190 5% 38%;      /* #5D6566 - Dark gray */
     
     /* Neutral Extensions */
     --charcoal: 205 70% 8%;
-    --charcoal-light: 190 5% 38%;
-    --cream: 200 5% 97%;
-    --warm-white: 200 5% 99%;
-    --slate: 200 6% 85%;
-    --steel: 200 6% 65%;
+    --charcoal-light: 200 10% 25%;
+    --cream: 40 20% 98%;
+    --warm-white: 40 15% 99%;
+    --slate: 200 8% 88%;
+    --steel: 200 6% 55%;
 
     /* ========================================
-       GRADIENTS - Subtle, Professional
+       GRADIENTS
        ======================================== */
     --gradient-navy: linear-gradient(135deg, hsl(205 70% 8%), hsl(200 68% 28%));
-    --gradient-blue: linear-gradient(135deg, hsl(200 68% 28%), hsl(200 50% 38%));
-    --gradient-hero: linear-gradient(180deg, hsl(210 8% 97%) 0%, hsl(200 6% 90% / 0.3) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 8% 97%) 100%);
+    --gradient-blue: linear-gradient(135deg, hsl(200 68% 28%), hsl(200 45% 42%));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(200 5% 96%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(200 5% 98%) 100%);
 
     /* ========================================
-       SHADOWS - Elegant, calm
+       SHADOWS
        ======================================== */
-    --shadow-soft: 0 4px 20px -4px hsl(205 70% 8% / 0.1);
-    --shadow-elevated: 0 12px 40px -8px hsl(205 70% 8% / 0.15);
-    --shadow-blue: 0 8px 30px -6px hsl(200 68% 28% / 0.25);
-    --shadow-card: 0 1px 3px hsl(205 70% 8% / 0.05), 0 4px 12px hsl(205 70% 8% / 0.08);
+    --shadow-soft: 0 4px 20px -4px hsl(205 70% 8% / 0.08);
+    --shadow-elevated: 0 12px 40px -8px hsl(205 70% 8% / 0.12);
+    --shadow-blue: 0 8px 30px -6px hsl(200 68% 28% / 0.2);
+    --shadow-card: 0 1px 3px hsl(205 70% 8% / 0.04), 0 4px 12px hsl(205 70% 8% / 0.06);
 
     /* Sidebar */
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 205 70% 8%;
     --sidebar-primary: 200 68% 28%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 200 6% 90%;
+    --sidebar-accent: 200 5% 94%;
     --sidebar-accent-foreground: 205 70% 8%;
-    --sidebar-border: 200 5% 85%;
+    --sidebar-border: 200 8% 82%;
     --sidebar-ring: 200 68% 28%;
   }
 
   .dark {
+    /* Dark mode - Deep navy background */
     --background: 205 70% 6%;
-    --foreground: 200 6% 92%;
+    --foreground: 200 5% 95%;
 
     --card: 205 60% 10%;
-    --card-foreground: 200 6% 92%;
+    --card-foreground: 200 5% 95%;
 
     --popover: 205 60% 10%;
-    --popover-foreground: 200 6% 92%;
+    --popover-foreground: 200 5% 95%;
 
-    --primary: 200 6% 92%;
-    --primary-foreground: 200 68% 28%;
+    /* Primary becomes lighter blue for dark mode */
+    --primary: 200 55% 55%;
+    --primary-foreground: 205 70% 6%;
 
     --secondary: 200 20% 18%;
-    --secondary-foreground: 200 6% 92%;
+    --secondary-foreground: 200 5% 90%;
 
-    --muted: 205 50% 12%;
-    --muted-foreground: 200 6% 60%;
+    --muted: 205 40% 14%;
+    --muted-foreground: 200 5% 65%;
 
-    --accent: 200 68% 38%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - Silver for dark mode emphasis */
+    --accent: 200 6% 75%;
+    --accent-foreground: 205 70% 8%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 200 20% 18%;
-    --input: 200 20% 18%;
-    --ring: 200 68% 38%;
+    --border: 200 20% 22%;
+    --input: 200 20% 22%;
+    --ring: 200 55% 55%;
 
     --sidebar-background: 205 60% 10%;
-    --sidebar-foreground: 200 6% 92%;
-    --sidebar-primary: 200 68% 38%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 205 50% 12%;
-    --sidebar-accent-foreground: 200 6% 92%;
-    --sidebar-border: 200 20% 18%;
-    --sidebar-ring: 200 68% 38%;
+    --sidebar-foreground: 200 5% 95%;
+    --sidebar-primary: 200 55% 55%;
+    --sidebar-primary-foreground: 205 70% 8%;
+    --sidebar-accent: 205 40% 14%;
+    --sidebar-accent-foreground: 200 5% 90%;
+    --sidebar-border: 200 20% 22%;
+    --sidebar-ring: 200 55% 55%;
   }
 }
 

@@ -62,6 +62,7 @@ export default {
         // Silver/Gray Tones
         silver: {
           DEFAULT: "hsl(var(--silver))",
+          light: "hsl(var(--silver-light))",
         },
         charcoal: {
           DEFAULT: "hsl(var(--charcoal))",
