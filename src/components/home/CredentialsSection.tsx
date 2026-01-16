@@ -48,7 +48,7 @@ export default function CredentialsSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4 block"
+            className="font-body text-sm font-semibold tracking-widest uppercase text-primary mb-4 block"
           >
             Credentials
           </motion.span>
@@ -86,7 +86,7 @@ export default function CredentialsSection() {
                   whileInView={{ scale: 1, rotate: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.4, type: "spring", stiffness: 200 }}
-                  className="w-16 h-16 rounded-xl bg-forest flex items-center justify-center flex-shrink-0"
+                  className="w-16 h-16 rounded-xl bg-primary flex items-center justify-center flex-shrink-0"
                 >
                   <Shield className="w-8 h-8 text-primary-foreground" />
                 </motion.div>
@@ -105,7 +105,7 @@ export default function CredentialsSection() {
                       transition={{ duration: 0.4, delay: 0.5 }}
                       className="flex items-center gap-2"
                     >
-                      <span className="w-2 h-2 rounded-full bg-accent" />
+                      <span className="w-2 h-2 rounded-full bg-primary" />
                       <span className="text-muted-foreground">Issued September 2015</span>
                     </motion.div>
                     <motion.div 
@@ -115,7 +115,7 @@ export default function CredentialsSection() {
                       transition={{ duration: 0.4, delay: 0.6 }}
                       className="flex items-center gap-2"
                     >
-                      <span className="w-2 h-2 rounded-full bg-accent" />
+                      <span className="w-2 h-2 rounded-full bg-primary" />
                       <span className="text-muted-foreground">Credential ID: 105770</span>
                     </motion.div>
                   </div>
@@ -146,12 +146,12 @@ export default function CredentialsSection() {
                   key={area.label}
                   variants={itemVariants}
                   whileHover={{ x: 4, scale: 1.02 }}
-                  className="group flex items-center gap-3 p-4 bg-card border border-border rounded-xl hover:border-accent/30 transition-all duration-300"
+                  className="group flex items-center gap-3 p-4 bg-card border border-border rounded-xl hover:border-primary/30 transition-all duration-300"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300">
-                    <area.icon className="w-5 h-5 text-accent" />
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                    <area.icon className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="font-body font-medium text-foreground group-hover:text-accent transition-colors duration-300">
+                  <span className="font-body font-medium text-foreground group-hover:text-primary transition-colors duration-300">
                     {area.label}
                   </span>
                 </motion.div>

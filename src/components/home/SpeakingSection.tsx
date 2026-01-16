@@ -31,7 +31,7 @@ const topicVariants = {
 
 export default function SpeakingSection() {
   return (
-    <section id="speaking" className="section-padding bg-forest text-primary-foreground">
+    <section id="speaking" className="section-padding bg-accent text-accent-foreground">
       <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
@@ -46,7 +46,7 @@ export default function SpeakingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4 block"
+              className="font-body text-sm font-semibold tracking-widest uppercase text-primary mb-4 block"
             >
               Speaking & Media
             </motion.span>
@@ -55,7 +55,7 @@ export default function SpeakingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-primary-foreground mb-6 leading-tight"
+              className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-accent-foreground mb-6 leading-tight"
             >
               Conversations That Matter
             </motion.h2>
@@ -64,7 +64,7 @@ export default function SpeakingSection() {
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="w-12 h-1 rounded-full bg-accent mb-8 origin-left" 
+              className="w-12 h-1 rounded-full bg-primary mb-8 origin-left" 
             />
 
             <motion.p 
@@ -72,7 +72,7 @@ export default function SpeakingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.35 }}
-              className="font-body text-primary-foreground/80 text-lg leading-relaxed mb-8"
+              className="font-body text-accent-foreground/80 text-lg leading-relaxed mb-8"
             >
               Rayven brings clarity and insight to conversations about finance, business, and community. 
               Available for keynotes, panels, podcasts, and workshops.
@@ -96,11 +96,11 @@ export default function SpeakingSection() {
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.4 + index * 0.1, type: "spring", stiffness: 200 }}
-                    className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300"
+                    className="w-10 h-10 rounded-lg bg-accent-foreground/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300"
                   >
-                    <topic.icon className="w-5 h-5 text-accent" />
+                    <topic.icon className="w-5 h-5 text-primary" />
                   </motion.div>
-                  <span className="font-body text-sm font-medium text-primary-foreground/90">
+                  <span className="font-body text-sm font-medium text-accent-foreground/90">
                     {topic.label}
                   </span>
                 </motion.div>
@@ -114,7 +114,7 @@ export default function SpeakingSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <Button variant="accent" size="lg" asChild>
+              <Button variant="hero" size="lg" asChild>
                 <Link to="/speaking" className="group">
                   Invite Rayven to Speak
                   <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -138,7 +138,7 @@ export default function SpeakingSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="bg-primary-foreground/5 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/10"
+              className="bg-accent-foreground/5 backdrop-blur-sm rounded-2xl p-8 border border-accent-foreground/10"
             >
               <div className="flex items-center gap-4 mb-6">
                 <motion.div 
@@ -146,21 +146,21 @@ export default function SpeakingSection() {
                   whileInView={{ scale: 1, rotate: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.4, type: "spring", stiffness: 200 }}
-                  className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center"
+                  className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center"
                 >
-                  <Mic className="w-8 h-8 text-accent" />
+                  <Mic className="w-8 h-8 text-primary" />
                 </motion.div>
                 <div>
-                  <h3 className="font-display text-xl font-semibold text-primary-foreground">
+                  <h3 className="font-display text-xl font-semibold text-accent-foreground">
                     Book a Speaking Engagement
                   </h3>
-                  <p className="text-sm text-primary-foreground/70">
+                  <p className="text-sm text-accent-foreground/70">
                     Keynotes · Panels · Podcasts · Workshops
                   </p>
                 </div>
               </div>
 
-              <div className="space-y-3 text-sm text-primary-foreground/70">
+              <div className="space-y-3 text-sm text-accent-foreground/70">
                 <p>✓ Financial strategy for executives and business owners</p>
                 <p>✓ Community leadership and civic engagement</p>
                 <p>✓ Navigating digital assets and emerging technologies</p>
@@ -187,7 +187,7 @@ export default function SpeakingSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.55 + index * 0.1 }}
                   whileHover={{ y: -2, scale: 1.05 }}
-                  className="px-4 py-2 rounded-lg bg-primary-foreground/10 text-primary-foreground/80 font-body text-sm font-medium hover:bg-accent/20 hover:text-accent transition-all duration-300"
+                  className="px-4 py-2 rounded-lg bg-accent-foreground/10 text-accent-foreground/80 font-body text-sm font-medium hover:bg-primary/20 hover:text-primary transition-all duration-300"
                 >
                   {link.name}
                 </motion.a>

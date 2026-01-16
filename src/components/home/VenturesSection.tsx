@@ -73,7 +73,7 @@ export default function VenturesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4 block"
+            className="font-body text-sm font-semibold tracking-widest uppercase text-primary mb-4 block"
           >
             Work & Ventures
           </motion.span>
@@ -117,8 +117,8 @@ export default function VenturesSection() {
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
               className={`group relative overflow-hidden rounded-2xl transition-all duration-300 ${
                 venture.featured
-                  ? 'bg-forest text-primary-foreground md:col-span-2'
-                  : 'bg-card border border-border hover:border-accent/30'
+                  ? 'bg-accent text-accent-foreground md:col-span-2'
+                  : 'bg-card border border-border hover:border-primary/30'
               }`}
             >
               <div className="p-8 md:p-10">
@@ -128,31 +128,31 @@ export default function VenturesSection() {
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${
                       venture.featured 
-                        ? 'bg-accent/20' 
-                        : 'bg-accent/10 group-hover:bg-accent/20'
+                        ? 'bg-primary/20' 
+                        : 'bg-primary/10 group-hover:bg-primary/20'
                     } transition-colors duration-300`}
                   >
-                    <venture.icon className={`w-7 h-7 ${venture.featured ? 'text-accent' : 'text-accent'}`} />
+                    <venture.icon className={`w-7 h-7 ${venture.featured ? 'text-primary' : 'text-primary'}`} />
                   </motion.div>
 
                   <div className="flex-1">
                     {/* Tagline */}
                     <p className={`font-body text-sm font-medium tracking-wide uppercase mb-2 ${
-                      venture.featured ? 'text-accent' : 'text-accent'
+                      venture.featured ? 'text-primary' : 'text-primary'
                     }`}>
                       {venture.tagline}
                     </p>
 
                     {/* Title */}
                     <h3 className={`font-display text-2xl font-semibold mb-4 ${
-                      venture.featured ? 'text-primary-foreground' : 'text-foreground group-hover:text-accent'
+                      venture.featured ? 'text-accent-foreground' : 'text-foreground group-hover:text-primary'
                     } transition-colors duration-300`}>
                       {venture.title}
                     </h3>
 
                     {/* Description */}
                     <p className={`font-body leading-relaxed mb-6 ${
-                      venture.featured ? 'text-primary-foreground/80' : 'text-muted-foreground'
+                      venture.featured ? 'text-accent-foreground/80' : 'text-muted-foreground'
                     }`}>
                       {venture.description}
                     </p>
@@ -178,8 +178,8 @@ export default function VenturesSection() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
               </div>
 
-              {/* Orange accent line at bottom */}
-              <div className={`absolute bottom-0 left-0 right-0 h-1 bg-accent transform origin-left transition-transform duration-300 ${
+              {/* Blue accent line at bottom */}
+              <div className={`absolute bottom-0 left-0 right-0 h-1 bg-primary transform origin-left transition-transform duration-300 ${
                 venture.featured ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
               }`} />
             </motion.div>
