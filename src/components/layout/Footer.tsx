@@ -25,7 +25,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-forest text-primary-foreground">
+    <footer className="bg-accent text-accent-foreground">
       <div className="container-wide py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
@@ -37,9 +37,9 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              Rayven J. Moore<span className="text-accent">,</span> CPA
+              Rayven J. Moore<span className="text-primary">,</span> CPA
             </motion.h3>
-            <p className="text-primary-foreground/70 font-body text-sm leading-relaxed max-w-md mb-6">
+            <p className="text-accent-foreground/80 font-body text-sm leading-relaxed max-w-md mb-6">
               Bringing clarity to complex financial decisions. Helping individuals, businesses, and communities 
               make confident decisions through trusted guidance and strategic expertise.
             </p>
@@ -50,7 +50,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-xl border border-primary-foreground/20 flex items-center justify-center transition-all duration-300 hover:bg-accent hover:border-accent hover:text-accent-foreground group"
+                  className="w-11 h-11 rounded-xl border border-accent-foreground/20 flex items-center justify-center transition-all duration-300 hover:bg-primary hover:border-primary hover:text-primary-foreground group"
                   aria-label={social.name}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +66,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-body text-sm font-semibold tracking-wide uppercase mb-5 text-accent">
+            <h4 className="font-body text-sm font-semibold tracking-wide uppercase mb-5 text-primary">
               Explore
             </h4>
             <ul className="space-y-3">
@@ -74,9 +74,9 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="font-body text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-200 inline-flex items-center gap-1 group"
+                    className="font-body text-sm text-accent-foreground/80 hover:text-primary transition-colors duration-200 inline-flex items-center gap-1 group"
                   >
-                    <span className="w-0 h-px bg-accent transition-all duration-300 group-hover:w-3" />
+                    <span className="w-0 h-px bg-primary transition-all duration-300 group-hover:w-3" />
                     {link.name}
                   </Link>
                 </li>
@@ -86,7 +86,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <h4 className="font-body text-sm font-semibold tracking-wide uppercase mb-5 text-accent">
+            <h4 className="font-body text-sm font-semibold tracking-wide uppercase mb-5 text-primary">
               Connect
             </h4>
             <ul className="space-y-3">
@@ -94,9 +94,9 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="font-body text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-200 inline-flex items-center gap-1 group"
+                    className="font-body text-sm text-accent-foreground/80 hover:text-primary transition-colors duration-200 inline-flex items-center gap-1 group"
                   >
-                    <span className="w-0 h-px bg-accent transition-all duration-300 group-hover:w-3" />
+                    <span className="w-0 h-px bg-primary transition-all duration-300 group-hover:w-3" />
                     {link.name}
                   </Link>
                 </li>
@@ -110,22 +110,22 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="font-body text-sm text-primary-foreground/60">
+          <p className="font-body text-sm text-accent-foreground/70">
             © {new Date().getFullYear()} Rayven J. Moore, CPA. All rights reserved.
           </p>
-          <p className="font-body text-sm text-primary-foreground/60 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-accent/70" />
+          <p className="font-body text-sm text-accent-foreground/70 flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-primary" />
             Clarity · Confidence · Action
           </p>
         </div>
 
         {/* Credit */}
-        <div className="mt-8 pt-6 border-t border-primary-foreground/10 text-center">
+        <div className="mt-8 pt-6 border-t border-accent-foreground/10 text-center">
           <a 
             href="https://helloneko.co" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="font-body text-xs tracking-[0.25em] uppercase text-primary-foreground/40 hover:text-accent transition-colors duration-300"
+            className="font-body text-xs tracking-[0.25em] uppercase text-accent-foreground/50 hover:text-primary transition-colors duration-300"
           >
             NÈKO.
           </a>

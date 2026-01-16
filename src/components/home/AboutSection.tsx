@@ -18,7 +18,7 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4 block"
+              className="font-body text-sm font-semibold tracking-widest uppercase text-primary mb-4 block"
             >
               About Rayven
             </motion.span>
@@ -85,7 +85,7 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="border-l-4 border-accent pl-6 py-2 my-8 bg-secondary/30 rounded-r-lg"
+              className="border-l-4 border-primary pl-6 py-2 my-8 bg-secondary/30 rounded-r-lg"
             >
               <p className="text-foreground font-medium italic text-xl">
                 "Rayven is known not only for technical expertise, but for being a connector — someone who listens carefully, 

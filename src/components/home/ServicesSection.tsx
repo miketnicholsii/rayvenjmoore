@@ -29,7 +29,7 @@ export default function ServicesSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="services" className="section-padding bg-sage/30">
+    <section id="services" className="section-padding bg-secondary/30">
       <div className="container-wide" ref={ref}>
         {/* Header */}
         <motion.div
@@ -38,7 +38,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <span className="font-body text-sm font-semibold tracking-widest uppercase text-evergreen mb-4 block">
+          <span className="font-body text-sm font-semibold tracking-widest uppercase text-primary mb-4 block">
             How I Help
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground">
@@ -59,18 +59,18 @@ export default function ServicesSection() {
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -4 }}
-              className="card-elevated p-8 group border border-border hover:border-evergreen/30 cursor-pointer"
+              className="card-elevated p-8 group border border-border hover:border-primary/30 cursor-pointer"
             >
               <div className="flex items-start gap-5">
                 <motion.div 
-                  className="flex-shrink-0 w-14 h-14 rounded-xl bg-evergreen/10 flex items-center justify-center transition-colors duration-300 group-hover:bg-evergreen/20"
+                  className="flex-shrink-0 w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center transition-colors duration-300 group-hover:bg-primary/20"
                   whileHover={{ scale: 1.1, rotate: 3 }}
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
-                  <service.icon className="w-7 h-7 text-evergreen transition-transform duration-300 group-hover:scale-110" />
+                  <service.icon className="w-7 h-7 text-primary transition-transform duration-300 group-hover:scale-110" />
                 </motion.div>
                 <div>
-                  <h3 className="font-display text-xl font-semibold text-foreground mb-2 group-hover:text-evergreen transition-colors duration-300">
+                  <h3 className="font-display text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                     {service.title}
                   </h3>
                   <p className="font-body text-muted-foreground leading-relaxed">

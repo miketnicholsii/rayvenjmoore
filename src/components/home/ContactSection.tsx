@@ -49,9 +49,9 @@ export default function ContactSection() {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2, type: "spring", stiffness: 200 }}
-              className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-6"
+              className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6"
             >
-              <CheckCircle className="w-10 h-10 text-accent" />
+              <CheckCircle className="w-10 h-10 text-primary" />
             </motion.div>
             <h3 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4">
               Message Received
@@ -83,7 +83,7 @@ export default function ContactSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4 block"
+              className="font-body text-sm font-semibold tracking-widest uppercase text-primary mb-4 block"
             >
               Get In Touch
             </motion.span>
@@ -129,13 +129,13 @@ export default function ContactSection() {
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.5, type: "spring", stiffness: 200 }}
-                  className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center"
+                  className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center"
                 >
-                  <Mail className="w-5 h-5 text-accent" />
+                  <Mail className="w-5 h-5 text-primary" />
                 </motion.div>
                 <div>
                   <p className="font-body text-sm text-muted-foreground">Email</p>
-                  <a href="mailto:rayvenjmoore@gmail.com" className="font-body font-medium text-foreground hover:text-accent transition-colors">
+                  <a href="mailto:rayvenjmoore@gmail.com" className="font-body font-medium text-foreground hover:text-primary transition-colors">
                     rayvenjmoore@gmail.com
                   </a>
                 </div>
@@ -153,9 +153,9 @@ export default function ContactSection() {
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.6, type: "spring", stiffness: 200 }}
-                  className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center"
+                  className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center"
                 >
-                  <MapPin className="w-5 h-5 text-accent" />
+                  <MapPin className="w-5 h-5 text-primary" />
                 </motion.div>
                 <div>
                   <p className="font-body text-sm text-muted-foreground">Location</p>
