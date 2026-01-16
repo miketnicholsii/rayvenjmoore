@@ -52,7 +52,7 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Brand Colors - RJM Earthy Palette
+        // Brand Colors - RJM 6-Color Palette
         sage: {
           DEFAULT: "hsl(var(--sage))",
           light: "hsl(var(--sage-light))",
@@ -71,17 +71,9 @@ export default {
         "dark-forest": "hsl(var(--dark-forest))",
         "warm-beige": "hsl(var(--warm-beige))",
         cream: "hsl(var(--cream))",
-        // NEW: High-Contrast Orange Accents
-        "gold-orange": "hsl(var(--gold-orange))",
-        "warm-orange": "hsl(var(--warm-orange))",
-        "burnt-orange": "hsl(var(--burnt-orange))",
-        // NEW: Off-white for dark backgrounds
+        // High-contrast text colors
         "off-white": "hsl(var(--off-white))",
         "near-white": "hsl(var(--near-white))",
-        // NEW: Deep forest shades
-        "deep-forest": "hsl(var(--deep-forest))",
-        evergreen: "hsl(var(--evergreen))",
-        "moss-green": "hsl(var(--moss-green))",
         // Legacy mappings for compatibility
         navy: {
           DEFAULT: "hsl(var(--navy))",

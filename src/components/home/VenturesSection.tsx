@@ -73,7 +73,7 @@ export default function VenturesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-body text-sm font-semibold tracking-widest uppercase text-gold-orange mb-4 block"
+            className="font-body text-sm font-semibold tracking-widest uppercase text-terracotta mb-4 block"
           >
             Work & Ventures
           </motion.span>
@@ -82,7 +82,7 @@ export default function VenturesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-deep-forest mb-4"
+            className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-dark-forest mb-4"
           >
             Building Toward Universal Wealth
           </motion.h2>
@@ -91,7 +91,7 @@ export default function VenturesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="font-body text-dark-forest text-lg"
+            className="font-body text-olive text-lg"
           >
             A portfolio of businesses and initiatives designed to create lasting value for clients, communities, and future generations.
           </motion.p>
@@ -100,7 +100,7 @@ export default function VenturesSection() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="w-12 h-1 bg-gold-orange mx-auto mt-6 rounded-full origin-center" 
+            className="w-12 h-1 bg-terracotta mx-auto mt-6 rounded-full origin-center" 
           />
         </motion.div>
 
@@ -117,42 +117,42 @@ export default function VenturesSection() {
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
               className={`group relative overflow-hidden rounded-2xl transition-all duration-300 ${
                 venture.featured
-                  ? 'bg-deep-forest text-off-white md:col-span-2'
-                  : 'bg-off-white border border-sage/30 hover:border-gold-orange/50'
+                  ? 'bg-dark-forest text-cream md:col-span-2'
+                  : 'bg-warm-beige/30 border border-sage/30 hover:border-terracotta/50'
               }`}
             >
               <div className="p-8 md:p-10">
                 <div className={`flex flex-col ${venture.featured ? 'md:flex-row md:items-start md:gap-8' : ''}`}>
-                  {/* Icon - Solid container for visibility */}
+                  {/* Icon - Solid container */}
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 shadow-md ${
                       venture.featured 
-                        ? 'bg-gold-orange' 
-                        : 'bg-deep-forest group-hover:bg-moss-green'
+                        ? 'bg-terracotta' 
+                        : 'bg-olive group-hover:bg-dark-forest'
                     } transition-colors duration-300`}
                   >
-                    <venture.icon className={`w-7 h-7 ${venture.featured ? 'text-deep-forest' : 'text-off-white'}`} />
+                    <venture.icon className={`w-7 h-7 ${venture.featured ? 'text-cream' : 'text-cream'}`} />
                   </motion.div>
 
                   <div className="flex-1">
                     {/* Tagline */}
                     <p className={`font-body text-sm font-medium tracking-wide uppercase mb-2 ${
-                      venture.featured ? 'text-gold-orange' : 'text-gold-orange'
+                      venture.featured ? 'text-warm-beige' : 'text-terracotta'
                     }`}>
                       {venture.tagline}
                     </p>
 
                     {/* Title */}
                     <h3 className={`font-display text-2xl font-semibold mb-4 ${
-                      venture.featured ? 'text-off-white' : 'text-deep-forest group-hover:text-gold-orange'
+                      venture.featured ? 'text-cream' : 'text-dark-forest group-hover:text-terracotta'
                     } transition-colors duration-300`}>
                       {venture.title}
                     </h3>
 
                     {/* Description */}
                     <p className={`font-body leading-relaxed mb-6 ${
-                      venture.featured ? 'text-off-white/90' : 'text-dark-forest'
+                      venture.featured ? 'text-cream/90' : 'text-olive'
                     }`}>
                       {venture.description}
                     </p>
@@ -163,8 +163,8 @@ export default function VenturesSection() {
                       size="default"
                       className={`group/btn ${
                         venture.featured 
-                          ? 'bg-gold-orange text-deep-forest hover:bg-warm-orange border-0' 
-                          : 'border-deep-forest text-deep-forest hover:bg-deep-forest hover:text-off-white'
+                          ? 'bg-terracotta text-cream hover:bg-terracotta-light border-0' 
+                          : 'border-dark-forest text-dark-forest hover:bg-dark-forest hover:text-cream'
                       }`}
                       asChild
                     >
@@ -182,8 +182,8 @@ export default function VenturesSection() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
               </div>
 
-              {/* Gold Orange accent line at bottom */}
-              <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gold-orange transform origin-left transition-transform duration-300 ${
+              {/* Terracotta accent line at bottom */}
+              <div className={`absolute bottom-0 left-0 right-0 h-1 bg-terracotta transform origin-left transition-transform duration-300 ${
                 venture.featured ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
               }`} />
             </motion.div>

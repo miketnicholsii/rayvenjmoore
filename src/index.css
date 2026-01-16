@@ -59,10 +59,17 @@
 
     /* ========================================
        BRAND EXTENSIONS - RJM Earthy Palette
-       WCAG AA Contrast Optimized
+       STRICT 6-COLOR SYSTEM
+       
+       #959D8D (Sage) - muted elements, borders
+       #E6E1D2 (Cream) - backgrounds
+       #E6CFB8 (Warm Beige) - soft accents
+       #6C7463 (Olive) - primary elements, body text
+       #4B544A (Dark Forest) - high-contrast headings
+       #7D5C4E (Terracotta) - CTA buttons & accents
        ======================================== */
     
-    /* Core Palette */
+    /* Core 6 Colors */
     --sage: 85 8% 59%;           /* #959D8D */
     --cream: 43 30% 92%;         /* #E6E1D2 */
     --warm-beige: 30 42% 81%;    /* #E6CFB8 */
@@ -70,21 +77,11 @@
     --dark-forest: 100 8% 31%;   /* #4B544A */
     --terracotta: 18 26% 40%;    /* #7D5C4E */
     
-    /* NEW: High-Contrast Orange Accents (WCAG AA Compliant) */
-    --gold-orange: 36 92% 51%;   /* #F4900E - Primary CTAs, key numbers */
-    --warm-orange: 24 93% 54%;   /* #F7631C - Hover states */
-    --burnt-orange: 19 96% 47%;  /* #ED5005 - Rare highlights */
-    
-    /* NEW: Off-white for maximum contrast on dark/terracotta */
-    --off-white: 40 33% 98%;     /* #FDFCFA - Text on dark backgrounds */
+    /* High-contrast text for dark backgrounds (WCAG AA) */
+    --off-white: 40 33% 98%;     /* #FDFCFA - Text on dark/terracotta */
     --near-white: 43 30% 96%;    /* #F8F6F1 */
     
-    /* NEW: Deep Forest for stat cards and dark sections */
-    --deep-forest: 100 10% 16%;  /* #2A312A */
-    --evergreen: 120 15% 19%;    /* #28382B */
-    --moss-green: 115 12% 31%;   /* #455B46 */
-    
-    /* Extended tones */
+    /* Extended tones (derived from core 6) */
     --sage-light: 85 8% 70%;
     --sage-dark: 85 10% 45%;
     --olive-light: 93 8% 52%;

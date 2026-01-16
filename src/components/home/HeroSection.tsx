@@ -19,12 +19,9 @@ export default function HeroSection() {
     offset: ['start start', 'end start'],
   });
 
-  // Parallax transforms - portrait moves slower than scroll
   const portraitY = useTransform(scrollYProgress, [0, 1], [0, 80]);
   const decorFrameY = useTransform(scrollYProgress, [0, 1], [0, 40]);
   const floatingCardY = useTransform(scrollYProgress, [0, 1], [0, 60]);
-  
-  // Background parallax - slower movement for depth
   const bgGradient1Y = useTransform(scrollYProgress, [0, 1], [0, -120]);
   const bgGradient2Y = useTransform(scrollYProgress, [0, 1], [0, -80]);
   const bgGradient3Y = useTransform(scrollYProgress, [0, 1], [0, -150]);
@@ -37,7 +34,7 @@ export default function HeroSection() {
 
   return (
     <section id="hero" ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-cream via-cream to-warm-beige/30">
-      {/* Grain texture overlay for editorial feel */}
+      {/* Grain texture overlay */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-[0.25] mix-blend-overlay z-[1]"
         style={{
@@ -46,15 +43,14 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Parallax background layer - slowest */}
+      {/* Parallax background layers */}
       <motion.div 
         className="absolute inset-0 pointer-events-none"
         style={{ y: bgGradient3Y, opacity: bgOpacity }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-gold-orange/5 via-transparent to-moss-green/5" />
+        <div className="absolute inset-0 bg-gradient-to-br from-terracotta/5 via-transparent to-olive/5" />
       </motion.div>
 
-      {/* Subtle background decorations - Sage/Olive with parallax */}
       <motion.div
         className="absolute top-20 right-0 w-[800px] h-[800px] rounded-full opacity-[0.06] blur-3xl"
         style={{
@@ -75,11 +71,10 @@ export default function HeroSection() {
         transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
       />
       
-      {/* Additional parallax accent orb - Gold Orange */}
       <motion.div
         className="absolute top-1/3 left-1/4 w-[400px] h-[400px] rounded-full opacity-[0.04] blur-3xl"
         style={{
-          background: 'radial-gradient(circle, hsl(var(--gold-orange)) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, hsl(var(--terracotta)) 0%, transparent 70%)',
           y: bgGradient1Y,
         }}
       />
@@ -99,10 +94,10 @@ export default function HeroSection() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-off-white/80 backdrop-blur-md border border-sage/30 shadow-sm mb-8"
+              className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-cream/80 backdrop-blur-md border border-sage/30 shadow-sm mb-8"
             >
-              <span className="w-2 h-2 rounded-full bg-gold-orange animate-pulse" />
-              <span className="font-body text-sm font-medium text-dark-forest tracking-wide">
+              <span className="w-2 h-2 rounded-full bg-terracotta animate-pulse" />
+              <span className="font-body text-sm font-medium text-olive tracking-wide">
                 CPA · Finance Leader · Houston Businessman
               </span>
             </motion.div>
@@ -112,21 +107,21 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.9 }}
-              className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-deep-forest leading-[1.08] mb-6"
+              className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-dark-forest leading-[1.08] mb-6"
             >
               Clarity for{' '}
               <span className="relative inline-block">
                 <span className="relative z-10">Complex</span>
                 <motion.span
-                  className="absolute bottom-1 md:bottom-2 left-0 h-2 md:h-3 bg-gold-orange/25 -z-0 rounded-sm"
+                  className="absolute bottom-1 md:bottom-2 left-0 h-2 md:h-3 bg-terracotta/20 -z-0 rounded-sm"
                   initial={{ width: 0 }}
                   animate={{ width: '100%' }}
                   transition={{ delay: 1.2, duration: 0.7, ease: 'easeOut' }}
                 />
               </span>
               <br />
-              <span className="text-gold-orange font-bold">Financial Decisions</span>
-              <span className="text-gold-orange">.</span>
+              <span className="text-terracotta font-bold">Financial Decisions</span>
+              <span className="text-terracotta">.</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -134,19 +129,19 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="font-body text-lg md:text-xl text-dark-forest max-w-xl leading-relaxed mb-4"
+              className="font-body text-lg md:text-xl text-olive max-w-xl leading-relaxed mb-4"
             >
-              I'm <span className="text-deep-forest font-semibold">Rayven J. Moore</span>, a Certified Public Accountant, finance leader, and Houston-based businessman.
+              I'm <span className="text-dark-forest font-semibold">Rayven J. Moore</span>, a Certified Public Accountant, finance leader, and Houston-based businessman.
             </motion.p>
             
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="font-body text-base md:text-lg text-dark-forest/80 max-w-xl leading-relaxed mb-4"
+              className="font-body text-base md:text-lg text-olive max-w-xl leading-relaxed mb-4"
             >
               I help organizations, entrepreneurs, and communities navigate complexity, strengthen decision-making, and build{' '}
-              <span className="text-deep-forest font-medium">durable, long-term value</span>.
+              <span className="text-dark-forest font-medium">durable, long-term value</span>.
             </motion.p>
 
             {/* Supporting Line */}
@@ -154,7 +149,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="font-body text-sm text-dark-forest/70 max-w-lg leading-relaxed mb-8 border-l-2 border-gold-orange/60 pl-4 italic"
+              className="font-body text-sm text-olive max-w-lg leading-relaxed mb-8 border-l-2 border-terracotta/50 pl-4 italic"
             >
               From technical accounting and SEC reporting to strategy, digital assets, and civic leadership — I bring structure, perspective, and calm to high-stakes situations.
             </motion.p>
@@ -169,7 +164,7 @@ export default function HeroSection() {
               <Button 
                 variant="hero" 
                 size="xl" 
-                className="min-w-[160px] bg-gold-orange text-deep-forest hover:bg-warm-orange border-0 font-semibold shadow-lg" 
+                className="min-w-[160px] bg-terracotta text-cream hover:bg-terracotta-dark border-0 font-semibold shadow-lg" 
                 asChild
               >
                 <Link to="/contact" className="group">
@@ -180,7 +175,7 @@ export default function HeroSection() {
               <Button 
                 variant="heroOutline" 
                 size="xl" 
-                className="min-w-[160px] border-deep-forest text-deep-forest hover:bg-deep-forest hover:text-off-white" 
+                className="min-w-[160px] border-dark-forest text-dark-forest hover:bg-dark-forest hover:text-cream" 
                 asChild
               >
                 <a href="#ventures">Explore My Work</a>
@@ -203,36 +198,32 @@ export default function HeroSection() {
                   whileHover={{ 
                     scale: 1.08, 
                     y: -4,
-                    boxShadow: "0 8px 25px -5px hsl(var(--gold-orange) / 0.3)",
+                    boxShadow: "0 8px 25px -5px hsl(var(--terracotta) / 0.25)",
                   }}
                   whileTap={{ scale: 0.98 }}
-                  className="group relative flex items-center gap-2.5 px-4 py-2 rounded-xl bg-off-white/90 backdrop-blur-md border border-sage/30 cursor-pointer hover:border-gold-orange/50 transition-all duration-300 overflow-hidden shadow-sm"
+                  className="group relative flex items-center gap-2.5 px-4 py-2 rounded-xl bg-cream/90 backdrop-blur-md border border-sage/30 cursor-pointer hover:border-terracotta/40 transition-all duration-300 overflow-hidden shadow-sm"
                 >
-                  {/* Subtle glow effect on hover */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-gold-orange/0 via-gold-orange/10 to-gold-orange/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    className="absolute inset-0 bg-gradient-to-r from-terracotta/0 via-terracotta/10 to-terracotta/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     initial={false}
                   />
                   
-                  {/* Icon container with solid background */}
                   <motion.div
-                    className="relative z-10 flex items-center justify-center w-6 h-6 rounded-lg bg-deep-forest group-hover:bg-moss-green transition-colors duration-300"
+                    className="relative z-10 flex items-center justify-center w-6 h-6 rounded-lg bg-olive/10 group-hover:bg-olive/20 transition-colors duration-300"
                     whileHover={{ rotate: 12, scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   >
-                    <badge.icon size={14} className="text-off-white group-hover:text-gold-orange transition-colors" />
+                    <badge.icon size={14} className="text-olive group-hover:text-terracotta transition-colors" />
                   </motion.div>
                   
-                  {/* Label */}
                   <motion.span 
-                    className="relative z-10 font-body text-xs font-medium text-deep-forest group-hover:text-gold-orange transition-colors duration-300"
+                    className="relative z-10 font-body text-xs font-medium text-olive group-hover:text-dark-forest transition-colors duration-300"
                   >
                     {badge.label}
                   </motion.span>
                   
-                  {/* Animated underline on hover */}
                   <motion.div
-                    className="absolute bottom-0 left-4 right-4 h-[2px] bg-gradient-to-r from-transparent via-gold-orange/60 to-transparent"
+                    className="absolute bottom-0 left-4 right-4 h-[2px] bg-gradient-to-r from-transparent via-terracotta/50 to-transparent"
                     initial={{ scaleX: 0, opacity: 0 }}
                     whileHover={{ scaleX: 1, opacity: 1 }}
                     transition={{ duration: 0.3 }}
@@ -249,21 +240,19 @@ export default function HeroSection() {
             transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
             className="order-1 lg:order-2 relative"
           >
-            {/* Decorative frame with parallax */}
             <motion.div 
               style={{ y: decorFrameY }}
-              className="absolute -inset-4 bg-gradient-to-br from-gold-orange/10 via-transparent to-moss-green/10 rounded-3xl blur-2xl"
+              className="absolute -inset-4 bg-gradient-to-br from-terracotta/10 via-transparent to-olive/10 rounded-3xl blur-2xl"
             />
             <motion.div 
               style={{ y: decorFrameY }}
-              className="absolute -bottom-6 -right-6 w-full h-full border-2 border-gold-orange/20 rounded-2xl -z-10" 
+              className="absolute -bottom-6 -right-6 w-full h-full border-2 border-terracotta/20 rounded-2xl -z-10" 
             />
             <motion.div 
               style={{ y: decorFrameY }}
-              className="absolute -top-6 -left-6 w-32 h-32 border-2 border-moss-green/20 rounded-2xl -z-10" 
+              className="absolute -top-6 -left-6 w-32 h-32 border-2 border-olive/20 rounded-2xl -z-10" 
             />
             
-            {/* Portrait Image with parallax */}
             <motion.div 
               style={{ y: portraitY }}
               className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-elevated"
@@ -273,32 +262,31 @@ export default function HeroSection() {
                 alt="Rayven J. Moore, CPA - Professional Portrait"
                 className="w-full h-full object-cover object-top"
               />
-              {/* Subtle gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-deep-forest/20 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark-forest/20 via-transparent to-transparent" />
             </motion.div>
 
-            {/* Floating credential card with parallax */}
+            {/* Floating credential card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2, duration: 0.6 }}
               style={{ y: floatingCardY }}
-              className="absolute -bottom-4 -left-4 md:left-8 bg-off-white/95 backdrop-blur-md rounded-xl px-5 py-4 shadow-lg border border-sage/30"
+              className="absolute -bottom-4 -left-4 md:left-8 bg-cream/95 backdrop-blur-md rounded-xl px-5 py-4 shadow-lg border border-sage/30"
             >
-              <p className="font-body text-xs text-dark-forest/70 mb-1">Based in</p>
-              <p className="font-display text-lg font-semibold text-deep-forest">Houston, TX</p>
+              <p className="font-body text-xs text-olive mb-1">Based in</p>
+              <p className="font-display text-lg font-semibold text-dark-forest">Houston, TX</p>
             </motion.div>
 
-            {/* Experience badge with parallax - High contrast */}
+            {/* Experience badge - Terracotta accent */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.4, duration: 0.5 }}
               style={{ y: floatingCardY }}
-              className="absolute -top-2 -right-2 md:right-8 bg-gold-orange text-deep-forest rounded-xl px-4 py-3 shadow-lg"
+              className="absolute -top-2 -right-2 md:right-8 bg-terracotta text-cream rounded-xl px-4 py-3 shadow-lg"
             >
               <p className="font-display text-2xl font-bold">12+</p>
-              <p className="font-body text-xs font-medium">Years</p>
+              <p className="font-body text-xs opacity-90">Years</p>
             </motion.div>
           </motion.div>
         </div>
@@ -310,14 +298,14 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-dark-forest hover:text-gold-orange transition-colors duration-300 cursor-pointer group"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-olive hover:text-terracotta transition-colors duration-300 cursor-pointer group"
         aria-label="Scroll to About section"
       >
         <span className="font-body text-xs tracking-widest uppercase">Discover</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-          className="p-2 rounded-full border border-sage/50 group-hover:border-gold-orange/50 transition-colors"
+          className="p-2 rounded-full border border-sage/50 group-hover:border-terracotta/50 transition-colors"
         >
           <ChevronDown size={18} />
         </motion.div>
