@@ -31,7 +31,7 @@ export default function Resources() {
   const featuredResources = resources.filter(r => r.featured);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-cream">
       <SEO 
         title="Resources"
         description="Free financial education resources, guides, and tools. Learn about Bitcoin, personal finance, wealth building, business accounting, and more."
@@ -40,7 +40,7 @@ export default function Resources() {
       <BreakoutNav title="Resources" backLabel="Back to Home" sectionId="services" />
       <main className="pt-16">
         {/* Hero */}
-        <section className="pt-32 pb-16 bg-gradient-to-b from-primary/5 to-background">
+        <section className="pt-32 pb-16 bg-gradient-to-b from-warm-beige/50 to-cream">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -48,13 +48,13 @@ export default function Resources() {
               transition={{ duration: 0.6 }}
               className="max-w-3xl"
             >
-              <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
+              <span className="inline-block px-4 py-2 bg-olive/10 text-olive rounded-full text-sm font-medium mb-6">
                 Education Hub
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-                Your Financial <span className="text-primary">Learning Hub</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-forest leading-tight mb-6">
+                Your Financial <span className="text-terracotta">Learning Hub</span>
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-olive">
                 Free resources, guides, and tools designed to help you build financial clarity and confidence—at your own pace.
               </p>
             </motion.div>
@@ -62,30 +62,30 @@ export default function Resources() {
         </section>
 
         {/* Search & Filter Bar */}
-        <section className="py-8 border-y border-border bg-card/50">
+        <section className="py-8 border-y border-sage/30 bg-cream">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row gap-4">
               {/* Search */}
               <div className="relative flex-grow">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-olive" />
                 <input
                   type="text"
                   placeholder="Search resources..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full h-12 pl-12 pr-4 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                  className="w-full h-12 pl-12 pr-4 rounded-lg bg-warm-beige/30 border border-sage/30 text-dark-forest placeholder:text-olive/60 focus:outline-none focus:border-terracotta transition-colors"
                 />
               </div>
 
               {/* Category Filter */}
               <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0">
-                <Filter className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+                <Filter className="w-5 h-5 text-olive flex-shrink-0" />
                 <button
                   onClick={() => setSelectedCategory(null)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors ${
                     !selectedCategory
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
+                      ? 'bg-olive text-cream'
+                      : 'bg-warm-beige text-olive hover:bg-warm-beige/80'
                   }`}
                 >
                   All
@@ -96,8 +96,8 @@ export default function Resources() {
                     onClick={() => setSelectedCategory(cat.id)}
                     className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors ${
                       selectedCategory === cat.id
-                        ? 'bg-primary text-primary-foreground'
-                        : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
+                        ? 'bg-olive text-cream'
+                        : 'bg-warm-beige text-olive hover:bg-warm-beige/80'
                     }`}
                   >
                     {cat.name}
@@ -110,10 +110,10 @@ export default function Resources() {
 
         {/* Featured Resources */}
         {featuredResources.length > 0 && !searchQuery && !selectedCategory && (
-          <section className="py-16">
+          <section className="py-16 bg-cream">
             <div className="container mx-auto px-4">
-              <h2 className="text-2xl font-bold text-foreground mb-8 flex items-center gap-2">
-                <span className="w-2 h-2 bg-primary rounded-full" />
+              <h2 className="text-2xl font-bold text-dark-forest mb-8 flex items-center gap-2">
+                <span className="w-2 h-2 bg-terracotta rounded-full" />
                 Featured Resources
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -129,31 +129,31 @@ export default function Resources() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 }}
-                      className="relative bg-card border border-border rounded-2xl p-8 hover:border-primary/30 transition-all duration-300 group"
+                      className="relative bg-cream border border-sage/30 rounded-2xl p-8 hover:border-terracotta/40 transition-all duration-300 group"
                     >
                       {resource.comingSoon && (
-                        <span className="absolute top-4 right-4 px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">
+                        <span className="absolute top-4 right-4 px-3 py-1 bg-olive/10 text-olive text-xs font-medium rounded-full">
                           Coming Soon
                         </span>
                       )}
 
-                      <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${category?.color || 'from-primary/20 to-primary/10'} flex items-center justify-center mb-6`}>
-                        <CategoryIcon className="w-7 h-7 text-primary" />
+                      <div className={`w-14 h-14 rounded-xl bg-olive/10 flex items-center justify-center mb-6`}>
+                        <CategoryIcon className="w-7 h-7 text-olive" />
                       </div>
 
                       <div className="flex items-center gap-3 mb-3">
-                        <span className="text-xs text-muted-foreground uppercase tracking-wider">
+                        <span className="text-xs text-olive uppercase tracking-wider">
                           {category?.name}
                         </span>
-                        <span className="text-muted-foreground">•</span>
-                        <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                        <span className="text-olive/50">•</span>
+                        <span className="flex items-center gap-1 text-xs text-olive">
                           <TypeIcon className="w-3 h-3" />
                           {resource.type}
                         </span>
                         {resource.readTime && (
                           <>
-                            <span className="text-muted-foreground">•</span>
-                            <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                            <span className="text-olive/50">•</span>
+                            <span className="flex items-center gap-1 text-xs text-olive">
                               <Clock className="w-3 h-3" />
                               {resource.readTime}
                             </span>
@@ -161,10 +161,10 @@ export default function Resources() {
                         )}
                       </div>
 
-                      <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      <h3 className="text-xl font-bold text-dark-forest mb-2 group-hover:text-terracotta transition-colors">
                         {resource.title}
                       </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
+                      <p className="text-olive text-sm leading-relaxed">
                         {resource.description}
                       </p>
                     </motion.div>
@@ -176,10 +176,10 @@ export default function Resources() {
         )}
 
         {/* Category Grid */}
-        <section className="py-16 bg-secondary/30">
+        <section className="py-16 bg-warm-beige/30">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl font-bold text-foreground mb-8 flex items-center gap-2">
-              <span className="w-2 h-2 bg-primary rounded-full" />
+            <h2 className="text-2xl font-bold text-dark-forest mb-8 flex items-center gap-2">
+              <span className="w-2 h-2 bg-terracotta rounded-full" />
               Browse by Category
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -194,21 +194,21 @@ export default function Resources() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all duration-300 group cursor-pointer"
+                    className="bg-cream border border-sage/30 rounded-xl p-6 hover:border-terracotta/40 transition-all duration-300 group cursor-pointer"
                     onClick={() => setSelectedCategory(category.id)}
                   >
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                      <CategoryIcon className="w-6 h-6 text-primary" />
+                    <div className={`w-12 h-12 rounded-xl bg-olive/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                      <CategoryIcon className="w-6 h-6 text-olive" />
                     </div>
 
-                    <h3 className="text-lg font-semibold text-foreground mb-2">{category.name}</h3>
-                    <p className="text-sm text-muted-foreground mb-4">{category.description}</p>
+                    <h3 className="text-lg font-semibold text-dark-forest mb-2">{category.name}</h3>
+                    <p className="text-sm text-olive mb-4">{category.description}</p>
 
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-muted-foreground">
+                      <span className="text-xs text-olive">
                         {categoryResources.length} resources
                       </span>
-                      <ChevronRight className="w-5 h-5 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <ChevronRight className="w-5 h-5 text-terracotta opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                   </motion.div>
                 );
@@ -218,19 +218,19 @@ export default function Resources() {
         </section>
 
         {/* All Resources */}
-        <section className="py-16">
+        <section className="py-16 bg-cream">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl font-bold text-foreground mb-8 flex items-center gap-2">
-              <span className="w-2 h-2 bg-primary rounded-full" />
+            <h2 className="text-2xl font-bold text-dark-forest mb-8 flex items-center gap-2">
+              <span className="w-2 h-2 bg-terracotta rounded-full" />
               {selectedCategory
                 ? resourceCategories.find(c => c.id === selectedCategory)?.name
                 : 'All Resources'}
               {selectedCategory && (
                 <button
                   onClick={() => setSelectedCategory(null)}
-                  className="ml-2 p-1 hover:bg-secondary rounded-full transition-colors"
+                  className="ml-2 p-1 hover:bg-warm-beige rounded-full transition-colors"
                 >
-                  <X className="w-4 h-4 text-muted-foreground" />
+                  <X className="w-4 h-4 text-olive" />
                 </button>
               )}
             </h2>
@@ -248,31 +248,31 @@ export default function Resources() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.05 }}
-                      className="relative bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all duration-300 group"
+                      className="relative bg-cream border border-sage/30 rounded-xl p-6 hover:border-terracotta/40 transition-all duration-300 group"
                     >
                       {resource.comingSoon && (
-                        <span className="absolute top-3 right-3 px-2 py-0.5 bg-secondary text-muted-foreground text-xs rounded-full">
+                        <span className="absolute top-3 right-3 px-2 py-0.5 bg-warm-beige text-olive text-xs rounded-full">
                           Coming Soon
                         </span>
                       )}
 
                       <div className="flex items-center gap-2 mb-3">
-                        <TypeIcon className="w-4 h-4 text-primary" />
-                        <span className="text-xs text-muted-foreground uppercase tracking-wider">
+                        <TypeIcon className="w-4 h-4 text-olive" />
+                        <span className="text-xs text-olive uppercase tracking-wider">
                           {resource.type}
                         </span>
                         {resource.readTime && (
                           <>
-                            <span className="text-muted-foreground">•</span>
-                            <span className="text-xs text-muted-foreground">{resource.readTime}</span>
+                            <span className="text-olive/50">•</span>
+                            <span className="text-xs text-olive">{resource.readTime}</span>
                           </>
                         )}
                       </div>
 
-                      <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      <h3 className="text-lg font-semibold text-dark-forest mb-2 group-hover:text-terracotta transition-colors">
                         {resource.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground line-clamp-2">
+                      <p className="text-sm text-olive line-clamp-2">
                         {resource.description}
                       </p>
                     </motion.div>
@@ -280,10 +280,10 @@ export default function Resources() {
                 })}
               </div>
             ) : (
-              <div className="text-center py-16 bg-card border border-border rounded-2xl">
-                <Search className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-foreground mb-2">No resources found</h3>
-                <p className="text-muted-foreground mb-4">
+              <div className="text-center py-16 bg-cream border border-sage/30 rounded-2xl">
+                <Search className="w-12 h-12 text-olive mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-dark-forest mb-2">No resources found</h3>
+                <p className="text-olive mb-4">
                   Try adjusting your search or filter criteria.
                 </p>
                 <Button variant="outline" onClick={() => { setSearchQuery(''); setSelectedCategory(null); }}>
@@ -295,7 +295,7 @@ export default function Resources() {
         </section>
 
         {/* Newsletter CTA */}
-        <section className="py-20 bg-primary text-primary-foreground">
+        <section className="py-20 bg-olive">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -303,11 +303,11 @@ export default function Resources() {
               viewport={{ once: true }}
               className="text-center max-w-2xl mx-auto"
             >
-              <Bell className="w-12 h-12 mx-auto mb-6 opacity-80" />
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <Bell className="w-12 h-12 mx-auto mb-6 text-cream/80" />
+              <h2 className="text-3xl md:text-4xl font-bold text-cream mb-4">
                 Get Notified When Resources Launch
               </h2>
-              <p className="text-primary-foreground/70 mb-8">
+              <p className="text-cream/70 mb-8">
                 Be the first to access new guides, tools, and educational content as they become available.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
@@ -316,7 +316,7 @@ export default function Resources() {
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-grow h-14 px-6 rounded-lg bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:border-primary-foreground/50 transition-colors"
+                  className="flex-grow h-14 px-6 rounded-lg bg-cream/10 border border-cream/20 text-cream placeholder:text-cream/50 focus:outline-none focus:border-cream/50 transition-colors"
                 />
                 <Button variant="secondary" size="lg" className="h-14 px-8">
                   Notify Me

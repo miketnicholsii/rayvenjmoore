@@ -40,7 +40,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-forest-deep"
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-dark-forest"
         >
           {/* Logo/Brand Mark */}
           <motion.div
@@ -53,15 +53,15 @@ export default function Preloader({ onComplete }: PreloaderProps) {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                className="w-16 h-16 rounded-full border-2 border-forest-moss/30"
+                className="w-16 h-16 rounded-full border-2 border-sage/30"
               />
               <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 w-16 h-16 rounded-full border-2 border-transparent border-t-accent-gold"
+                className="absolute inset-0 w-16 h-16 rounded-full border-2 border-transparent border-t-terracotta"
               />
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-xl font-display font-bold text-white">RM</span>
+                <span className="text-xl font-display font-bold text-cream">RM</span>
               </div>
             </div>
           </motion.div>
@@ -71,18 +71,18 @@ export default function Preloader({ onComplete }: PreloaderProps) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.4 }}
-            className="text-white/60 text-sm tracking-widest uppercase mb-6"
+            className="text-cream/60 text-sm tracking-widest uppercase mb-6"
           >
             Loading Experience
           </motion.p>
 
           {/* Progress Bar */}
-          <div className="w-48 h-0.5 bg-white/10 rounded-full overflow-hidden">
+          <div className="w-48 h-0.5 bg-cream/10 rounded-full overflow-hidden">
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: `${Math.min(progress, 100)}%` }}
               transition={{ duration: 0.3 }}
-              className="h-full bg-gradient-to-r from-accent-gold to-accent-warm rounded-full"
+              className="h-full bg-gradient-to-r from-terracotta to-olive rounded-full"
             />
           </div>
 
@@ -91,7 +91,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="mt-3 text-xs text-white/40 font-mono"
+            className="mt-3 text-xs text-cream/40 font-mono"
           >
             {Math.round(Math.min(progress, 100))}%
           </motion.span>

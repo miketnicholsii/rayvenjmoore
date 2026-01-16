@@ -18,11 +18,11 @@ export default function VentureDetail() {
   const relatedVentures = ventures.filter(v => v.id !== venture.id).slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-cream">
       <BreakoutNav title={venture.title} backLabel="Back to Ventures" backTo="/ventures" />
       <main className="pt-16">
         {/* Hero */}
-        <section className="pt-32 pb-16 bg-gradient-to-b from-primary/5 to-background">
+        <section className="pt-32 pb-16 bg-gradient-to-b from-warm-beige/50 to-cream">
           <div className="container-wide">
             {/* Back Link */}
             <motion.div
@@ -33,7 +33,7 @@ export default function VentureDetail() {
             >
               <Link 
                 to="/ventures" 
-                className="inline-flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="inline-flex items-center gap-2 font-body text-sm text-olive hover:text-terracotta transition-colors"
               >
                 <ArrowLeft size={16} />
                 Back to Ventures
@@ -50,15 +50,15 @@ export default function VentureDetail() {
               >
                 {/* Icon & Category */}
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
-                    <venture.icon className="w-8 h-8 text-primary" />
+                  <div className="w-16 h-16 rounded-2xl bg-olive/10 flex items-center justify-center">
+                    <venture.icon className="w-8 h-8 text-olive" />
                   </div>
                   <div>
-                    <span className="font-body text-sm font-semibold tracking-widest uppercase text-primary">
+                    <span className="font-body text-sm font-semibold tracking-widest uppercase text-terracotta">
                       {venture.category}
                     </span>
                     {venture.featured && (
-                      <span className="ml-3 font-body text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full bg-primary/10 text-primary">
+                      <span className="ml-3 font-body text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full bg-olive/10 text-olive">
                         Featured Venture
                       </span>
                     )}
@@ -66,12 +66,12 @@ export default function VentureDetail() {
                 </div>
 
                 {/* Title */}
-                <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground leading-tight mb-4">
+                <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-dark-forest leading-tight mb-4">
                   {venture.title}
                 </h1>
 
                 {/* Tagline */}
-                <p className="font-body text-xl text-primary italic mb-8">
+                <p className="font-body text-xl text-terracotta italic mb-8">
                   {venture.tagline}
                 </p>
 
@@ -83,7 +83,7 @@ export default function VentureDetail() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                      className="font-body text-muted-foreground leading-relaxed mb-6"
+                      className="font-body text-olive leading-relaxed mb-6"
                     >
                       {paragraph}
                     </motion.p>
@@ -100,11 +100,11 @@ export default function VentureDetail() {
               >
                 <div className="sticky top-32 space-y-6">
                   {/* CTA Card */}
-                  <div className="bg-accent text-accent-foreground rounded-2xl p-8">
-                    <h3 className="font-display text-xl font-semibold mb-4">
+                  <div className="bg-terracotta rounded-2xl p-8">
+                    <h3 className="font-display text-xl font-semibold text-cream mb-4">
                       Ready to Connect?
                     </h3>
-                    <p className="font-body text-sm text-accent-foreground/70 mb-6">
+                    <p className="font-body text-sm text-cream/80 mb-6">
                       Take the next step and explore what {venture.title} has to offer.
                     </p>
                     <Button 
@@ -126,15 +126,15 @@ export default function VentureDetail() {
 
                   {/* Highlights */}
                   {venture.highlights && (
-                    <div className="bg-card border border-border rounded-2xl p-8">
-                      <h3 className="font-display text-lg font-semibold text-foreground mb-4">
+                    <div className="bg-cream border border-sage/30 rounded-2xl p-8">
+                      <h3 className="font-display text-lg font-semibold text-dark-forest mb-4">
                         Highlights
                       </h3>
                       <ul className="space-y-3">
                         {venture.highlights.map((highlight, index) => (
                           <li key={index} className="flex items-start gap-3">
-                            <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                            <span className="font-body text-sm text-muted-foreground">{highlight}</span>
+                            <CheckCircle className="w-5 h-5 text-olive flex-shrink-0 mt-0.5" />
+                            <span className="font-body text-sm text-olive">{highlight}</span>
                           </li>
                         ))}
                       </ul>
@@ -147,14 +147,14 @@ export default function VentureDetail() {
         </section>
 
         {/* Related Ventures */}
-        <section className="section-padding bg-secondary/30">
+        <section className="section-padding bg-warm-beige/30">
           <div className="container-wide">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-8"
+              className="font-display text-2xl md:text-3xl font-semibold text-dark-forest mb-8"
             >
               Explore More Ventures
             </motion.h2>
@@ -170,20 +170,20 @@ export default function VentureDetail() {
                 >
                   <Link 
                     to={`/ventures/${related.id}`}
-                    className="block bg-card rounded-xl p-6 border border-border hover:border-primary/30 transition-all duration-300 group"
+                    className="block bg-cream rounded-xl p-6 border border-sage/30 hover:border-terracotta/40 transition-all duration-300 group"
                   >
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                        <related.icon className="w-5 h-5 text-primary" />
+                      <div className="w-10 h-10 rounded-lg bg-olive/10 flex items-center justify-center">
+                        <related.icon className="w-5 h-5 text-olive" />
                       </div>
-                      <span className="font-body text-xs font-semibold tracking-wider uppercase text-primary">
+                      <span className="font-body text-xs font-semibold tracking-wider uppercase text-terracotta">
                         {related.category}
                       </span>
                     </div>
-                    <h3 className="font-display text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                    <h3 className="font-display text-lg font-semibold text-dark-forest mb-2 group-hover:text-terracotta transition-colors">
                       {related.title}
                     </h3>
-                    <p className="font-body text-sm text-muted-foreground line-clamp-2">
+                    <p className="font-body text-sm text-olive line-clamp-2">
                       {related.tagline}
                     </p>
                   </Link>

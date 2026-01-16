@@ -39,7 +39,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-cream">
       <SEO 
         title="Contact"
         description="Get in touch with Rayven J. Moore, CPA. Schedule a consultation, inquire about speaking engagements, or start your journey to financial clarity."
@@ -48,13 +48,13 @@ export default function Contact() {
       <BreakoutNav title="Contact" backLabel="Back to Home" sectionId="contact" />
       <main className="pt-16">
         {/* Hero */}
-        <section className="pt-32 pb-16 bg-gradient-to-b from-primary/5 to-background">
+        <section className="pt-32 pb-16 bg-gradient-to-b from-warm-beige/50 to-cream">
           <div className="container-narrow text-center">
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="font-body text-sm font-semibold tracking-widest uppercase text-primary mb-4 block"
+              className="font-body text-sm font-semibold tracking-widest uppercase text-terracotta mb-4 block"
             >
               Get In Touch
             </motion.span>
@@ -62,7 +62,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight"
+              className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-dark-forest leading-tight"
             >
               Let's Start a Conversation
             </motion.h1>
@@ -70,7 +70,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-body text-lg text-muted-foreground mt-6 max-w-xl mx-auto"
+              className="font-body text-lg text-olive mt-6 max-w-xl mx-auto"
             >
               Have a question, want to collaborate, or ready to start your clarity journey? 
               I'd love to hear from you.
@@ -79,7 +79,7 @@ export default function Contact() {
         </section>
 
         {/* Contact Form */}
-        <section className="section-padding">
+        <section className="section-padding bg-cream">
           <div className="container-wide">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               {/* Sidebar */}
@@ -90,33 +90,33 @@ export default function Contact() {
                 transition={{ duration: 0.6 }}
                 className="lg:col-span-1"
               >
-                <div className="bg-secondary/50 rounded-2xl p-8">
-                  <h3 className="font-display text-xl font-semibold text-foreground mb-6">
+                <div className="bg-warm-beige/50 rounded-2xl p-8">
+                  <h3 className="font-display text-xl font-semibold text-dark-forest mb-6">
                     Other Ways to Connect
                   </h3>
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Mail className="w-5 h-5 text-primary" />
+                      <div className="w-10 h-10 rounded-lg bg-olive/10 flex items-center justify-center flex-shrink-0">
+                        <Mail className="w-5 h-5 text-olive" />
                       </div>
                       <div>
-                        <p className="font-body text-sm font-medium text-foreground mb-1">Email</p>
-                        <a href="mailto:rayvenjmoore@gmail.com" className="font-body text-sm text-muted-foreground hover:text-primary transition-colors">rayvenjmoore@gmail.com</a>
+                        <p className="font-body text-sm font-medium text-dark-forest mb-1">Email</p>
+                        <a href="mailto:rayvenjmoore@gmail.com" className="font-body text-sm text-olive hover:text-terracotta transition-colors">rayvenjmoore@gmail.com</a>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-5 h-5 text-primary" />
+                      <div className="w-10 h-10 rounded-lg bg-olive/10 flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-5 h-5 text-olive" />
                       </div>
                       <div>
-                        <p className="font-body text-sm font-medium text-foreground mb-1">Based In</p>
-                        <p className="font-body text-sm text-muted-foreground">United States</p>
+                        <p className="font-body text-sm font-medium text-dark-forest mb-1">Based In</p>
+                        <p className="font-body text-sm text-olive">United States</p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-8 pt-8 border-t border-border">
-                    <p className="font-body text-sm text-muted-foreground">
+                  <div className="mt-8 pt-8 border-t border-sage/30">
+                    <p className="font-body text-sm text-olive">
                       I personally review every message and typically respond within 2-3 business days.
                     </p>
                   </div>
@@ -132,14 +132,14 @@ export default function Contact() {
                 className="lg:col-span-2"
               >
                 {isSubmitted ? (
-                  <div className="bg-card rounded-2xl p-12 text-center border border-border">
-                    <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                      <CheckCircle className="w-10 h-10 text-primary" />
+                  <div className="bg-cream rounded-2xl p-12 text-center border border-sage/30">
+                    <div className="w-20 h-20 rounded-full bg-olive/10 flex items-center justify-center mx-auto mb-6">
+                      <CheckCircle className="w-10 h-10 text-olive" />
                     </div>
-                    <h3 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4">
+                    <h3 className="font-display text-2xl md:text-3xl font-semibold text-dark-forest mb-4">
                       Message Received
                     </h3>
-                    <p className="font-body text-muted-foreground max-w-md mx-auto">
+                    <p className="font-body text-olive max-w-md mx-auto">
                       Thank you for reaching out. I'll review your message and get back 
                       to you as soon as possible.
                     </p>
@@ -147,11 +147,11 @@ export default function Contact() {
                 ) : (
                   <form
                     onSubmit={handleSubmit}
-                    className="bg-card rounded-2xl p-8 md:p-12 border border-border"
+                    className="bg-cream rounded-2xl p-8 md:p-12 border border-sage/30"
                   >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                       <div>
-                        <label htmlFor="name" className="font-body text-sm font-medium text-foreground mb-2 block">
+                        <label htmlFor="name" className="font-body text-sm font-medium text-dark-forest mb-2 block">
                           Your Name
                         </label>
                         <Input
@@ -162,11 +162,11 @@ export default function Contact() {
                           value={formData.name}
                           onChange={handleChange}
                           placeholder="John Smith"
-                          className="h-12"
+                          className="h-12 bg-warm-beige/30 border-sage/30 focus:border-terracotta"
                         />
                       </div>
                       <div>
-                        <label htmlFor="email" className="font-body text-sm font-medium text-foreground mb-2 block">
+                        <label htmlFor="email" className="font-body text-sm font-medium text-dark-forest mb-2 block">
                           Email Address
                         </label>
                         <Input
@@ -177,12 +177,12 @@ export default function Contact() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="john@example.com"
-                          className="h-12"
+                          className="h-12 bg-warm-beige/30 border-sage/30 focus:border-terracotta"
                         />
                       </div>
                     </div>
                     <div className="mb-6">
-                      <label htmlFor="subject" className="font-body text-sm font-medium text-foreground mb-2 block">
+                      <label htmlFor="subject" className="font-body text-sm font-medium text-dark-forest mb-2 block">
                         Subject
                       </label>
                       <Input
@@ -193,11 +193,11 @@ export default function Contact() {
                         value={formData.subject}
                         onChange={handleChange}
                         placeholder="What would you like to discuss?"
-                        className="h-12"
+                        className="h-12 bg-warm-beige/30 border-sage/30 focus:border-terracotta"
                       />
                     </div>
                     <div className="mb-8">
-                      <label htmlFor="message" className="font-body text-sm font-medium text-foreground mb-2 block">
+                      <label htmlFor="message" className="font-body text-sm font-medium text-dark-forest mb-2 block">
                         Your Message
                       </label>
                       <Textarea
@@ -208,7 +208,7 @@ export default function Contact() {
                         onChange={handleChange}
                         placeholder="Tell me about your situation and how I can help..."
                         rows={6}
-                        className="resize-none"
+                        className="resize-none bg-warm-beige/30 border-sage/30 focus:border-terracotta"
                       />
                     </div>
                     <Button 
