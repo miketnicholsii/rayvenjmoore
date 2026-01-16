@@ -44,6 +44,7 @@
 
     /* Terracotta Accent - Warm & Actionable */
     --accent: 18 26% 40%;  /* #7D5C4E */
+    --accent-foreground: 43 30% 95%;  /* Cream - high contrast on terracotta */
     --accent-foreground: 43 30% 95%;
 
     --destructive: 0 72% 51%;
