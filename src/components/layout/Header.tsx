@@ -87,28 +87,28 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-cream/98 backdrop-blur-lg shadow-soft py-3'
-          : 'bg-transparent py-5'
+          ? 'bg-deep-forest/98 backdrop-blur-lg shadow-elevated py-3'
+          : 'bg-deep-forest/90 backdrop-blur-md py-5'
       }`}
     >
       <nav className="container-wide flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo - Off-white for contrast on dark header */}
         <button
           onClick={() => scrollToSection('#hero')}
           className="group flex items-center gap-2"
         >
           <motion.span 
-            className="font-display text-xl md:text-2xl font-semibold text-dark-forest tracking-tight"
+            className="font-display text-xl md:text-2xl font-semibold text-off-white tracking-tight"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
             Rayven J. Moore
-            <span className="text-terracotta">,</span>
-            <span className="text-olive font-body text-sm ml-1 font-normal">CPA</span>
+            <span className="text-gold-orange">,</span>
+            <span className="text-off-white/80 font-body text-sm ml-1 font-normal">CPA</span>
           </motion.span>
         </button>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation - Off-white text, orange active/hover */}
         <div className="hidden xl:flex items-center gap-1">
           {navLinks.map((link) => (
             link.isAnchor ? (
@@ -117,15 +117,15 @@ export default function Header() {
                 onClick={() => scrollToSection(link.href)}
                 className={`relative font-body text-sm px-4 py-2 rounded-lg transition-all duration-300 ${
                   isActive(link)
-                    ? 'text-dark-forest'
-                    : 'text-olive hover:text-dark-forest hover:bg-sage/20'
+                    ? 'text-gold-orange'
+                    : 'text-off-white/90 hover:text-gold-orange hover:bg-off-white/10'
                 }`}
               >
                 {link.name}
                 {isActive(link) && (
                   <motion.span
                     layoutId="activeNav"
-                    className="absolute bottom-0 left-4 right-4 h-0.5 bg-terracotta rounded-full"
+                    className="absolute bottom-0 left-4 right-4 h-0.5 bg-gold-orange rounded-full"
                     transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                   />
                 )}
@@ -136,15 +136,15 @@ export default function Header() {
                 to={link.href}
                 className={`relative font-body text-sm px-4 py-2 rounded-lg transition-all duration-300 ${
                   isActive(link)
-                    ? 'text-dark-forest'
-                    : 'text-olive hover:text-dark-forest hover:bg-sage/20'
+                    ? 'text-gold-orange'
+                    : 'text-off-white/90 hover:text-gold-orange hover:bg-off-white/10'
                 }`}
               >
                 {link.name}
                 {isActive(link) && (
                   <motion.span
                     layoutId="activeNav"
-                    className="absolute bottom-0 left-4 right-4 h-0.5 bg-terracotta rounded-full"
+                    className="absolute bottom-0 left-4 right-4 h-0.5 bg-gold-orange rounded-full"
                     transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                   />
                 )}
@@ -162,21 +162,26 @@ export default function Header() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg flex items-center justify-center text-olive hover:text-terracotta hover:bg-terracotta/10 transition-all duration-300"
+                className="w-9 h-9 rounded-lg flex items-center justify-center text-off-white/80 hover:text-gold-orange hover:bg-off-white/10 transition-all duration-300"
                 aria-label={social.name}
               >
                 <social.icon size={18} />
               </a>
             ))}
           </div>
-          <Button variant="hero" size="default" onClick={() => scrollToSection('#contact')}>
+          <Button 
+            variant="hero" 
+            size="default" 
+            onClick={() => scrollToSection('#contact')}
+            className="bg-gold-orange text-deep-forest hover:bg-warm-orange border-0 font-semibold shadow-lg"
+          >
             Let's Talk
           </Button>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="xl:hidden p-2 text-dark-forest hover:bg-sage/20 rounded-lg transition-colors"
+          className="xl:hidden p-2 text-off-white hover:bg-off-white/10 rounded-lg transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -189,7 +194,7 @@ export default function Header() {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Dark background with off-white text */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -197,7 +202,7 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="xl:hidden bg-cream border-t border-sage/30 overflow-hidden"
+            className="xl:hidden bg-deep-forest border-t border-off-white/10 overflow-hidden"
           >
             <div className="container-wide py-6 flex flex-col gap-2">
               {navLinks.map((link, index) => (
@@ -212,8 +217,8 @@ export default function Header() {
                       onClick={() => scrollToSection(link.href)}
                       className={`block w-full text-left font-body text-base py-3 px-4 rounded-lg transition-all duration-300 ${
                         isActive(link)
-                          ? 'text-terracotta bg-terracotta/10'
-                          : 'text-dark-forest hover:text-terracotta hover:bg-sage/20'
+                          ? 'text-gold-orange bg-off-white/10'
+                          : 'text-off-white hover:text-gold-orange hover:bg-off-white/5'
                       }`}
                     >
                       {link.name}
@@ -223,8 +228,8 @@ export default function Header() {
                       to={link.href}
                       className={`block font-body text-base py-3 px-4 rounded-lg transition-all duration-300 ${
                         isActive(link)
-                          ? 'text-terracotta bg-terracotta/10'
-                          : 'text-dark-forest hover:text-terracotta hover:bg-sage/20'
+                          ? 'text-gold-orange bg-off-white/10'
+                          : 'text-off-white hover:text-gold-orange hover:bg-off-white/5'
                       }`}
                     >
                       {link.name}
@@ -241,7 +246,7 @@ export default function Header() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-lg flex items-center justify-center text-olive hover:text-terracotta hover:bg-terracotta/10 transition-all duration-300 border border-sage/30"
+                    className="w-10 h-10 rounded-lg flex items-center justify-center text-off-white hover:text-gold-orange hover:bg-off-white/10 transition-all duration-300 border border-off-white/20"
                     aria-label={social.name}
                   >
                     <social.icon size={18} />
@@ -249,7 +254,12 @@ export default function Header() {
                 ))}
               </div>
 
-              <Button variant="hero" size="lg" className="mt-4 mx-4" onClick={() => scrollToSection('#contact')}>
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="mt-4 mx-4 bg-gold-orange text-deep-forest hover:bg-warm-orange border-0 font-semibold" 
+                onClick={() => scrollToSection('#contact')}
+              >
                 Let's Talk
               </Button>
             </div>
