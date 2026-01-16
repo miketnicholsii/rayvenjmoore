@@ -7,132 +7,131 @@
 @layer base {
   :root {
     /* ========================================
-       MOORE HOSPITALITY - BRAND COLOR SYSTEM
-       Navy Blue + Gold Accent Palette
+       RJM - BRAND COLOR SYSTEM
+       Deep Blue + Silver Gray Palette
        ======================================== */
     
-    /* Clean White - Primary Background */
-    --background: 210 20% 98%;
-    --foreground: 210 40% 15%;
+    /* Light Background - Off White */
+    --background: 210 8% 97%;
+    --foreground: 205 70% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 40% 15%;
+    --card-foreground: 205 70% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 40% 15%;
+    --popover-foreground: 205 70% 8%;
 
-    /* Deep Navy - Primary Authority Color */
-    --primary: 210 50% 25%;
+    /* Deep Blue - Primary Authority Color */
+    --primary: 200 68% 28%;
     --primary-foreground: 0 0% 100%;
 
-    /* Soft Blue-Gray Secondary */
-    --secondary: 210 20% 93%;
-    --secondary-foreground: 210 40% 15%;
+    /* Silver Gray Secondary */
+    --secondary: 200 6% 65%;
+    --secondary-foreground: 205 70% 8%;
 
     /* Muted Neutrals */
-    --muted: 210 15% 95%;
-    --muted-foreground: 210 10% 45%;
+    --muted: 200 5% 92%;
+    --muted-foreground: 200 5% 40%;
 
-    /* Gold - Accent (micro-interactions, emphasis) */
-    --accent: 45 100% 50%;
-    --accent-foreground: 210 40% 15%;
+    /* Deep Blue - Accent (micro-interactions, emphasis) */
+    --accent: 200 68% 28%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
     /* Borders - Soft, professional */
-    --border: 210 15% 88%;
-    --input: 210 15% 88%;
-    --ring: 45 100% 50%;
+    --border: 200 5% 85%;
+    --input: 200 5% 85%;
+    --ring: 200 68% 28%;
 
     --radius: 0.5rem;
 
     /* ========================================
-       BRAND EXTENSIONS - Navy Blue Palette
+       BRAND EXTENSIONS - RJM Palette
        ======================================== */
     
     /* Primary Blues */
-    --deep-navy: 210 50% 25%;         /* #1E3A5F */
-    --navy: 210 45% 30%;              /* #2A4A6E */
-    --steel-blue: 210 35% 40%;        /* #4A6B8A */
+    --deep-navy: 205 70% 8%;          /* #071527 - Darkest */
+    --navy: 200 68% 28%;              /* #175676 - Primary Blue */
+    --steel-blue: 200 50% 38%;        /* Medium Blue */
     
-    /* Gold Accents - Sparing Use */
-    --gold: 45 100% 50%;              /* #FFD700 */
-    --warm-gold: 40 95% 48%;          /* #E6A800 */
-    --amber: 38 92% 45%;              /* #D4880D */
+    /* Silver/Gray Tones */
+    --silver: 200 6% 65%;             /* #A3A9AC - Silver Gray */
+    --charcoal-gray: 190 5% 38%;      /* #5D6566 - Charcoal */
     
     /* Neutral Extensions */
-    --charcoal: 210 25% 12%;
-    --charcoal-light: 210 15% 22%;
-    --cream: 45 30% 97%;
-    --warm-white: 45 20% 99%;
-    --slate: 210 20% 90%;
-    --steel: 210 10% 50%;
+    --charcoal: 205 70% 8%;
+    --charcoal-light: 190 5% 38%;
+    --cream: 200 5% 97%;
+    --warm-white: 200 5% 99%;
+    --slate: 200 6% 85%;
+    --steel: 200 6% 65%;
 
     /* ========================================
        GRADIENTS - Subtle, Professional
        ======================================== */
-    --gradient-navy: linear-gradient(135deg, hsl(210 50% 25%), hsl(210 45% 30%));
-    --gradient-gold: linear-gradient(135deg, hsl(45 100% 50%), hsl(40 95% 48%));
-    --gradient-hero: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(210 20% 93% / 0.3) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
+    --gradient-navy: linear-gradient(135deg, hsl(205 70% 8%), hsl(200 68% 28%));
+    --gradient-blue: linear-gradient(135deg, hsl(200 68% 28%), hsl(200 50% 38%));
+    --gradient-hero: linear-gradient(180deg, hsl(210 8% 97%) 0%, hsl(200 6% 90% / 0.3) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 8% 97%) 100%);
 
     /* ========================================
        SHADOWS - Elegant, calm
        ======================================== */
-    --shadow-soft: 0 4px 20px -4px hsl(210 50% 25% / 0.08);
-    --shadow-elevated: 0 12px 40px -8px hsl(210 50% 25% / 0.12);
-    --shadow-gold: 0 8px 30px -6px hsl(45 100% 50% / 0.25);
-    --shadow-card: 0 1px 3px hsl(210 50% 25% / 0.05), 0 4px 12px hsl(210 50% 25% / 0.08);
+    --shadow-soft: 0 4px 20px -4px hsl(205 70% 8% / 0.1);
+    --shadow-elevated: 0 12px 40px -8px hsl(205 70% 8% / 0.15);
+    --shadow-blue: 0 8px 30px -6px hsl(200 68% 28% / 0.25);
+    --shadow-card: 0 1px 3px hsl(205 70% 8% / 0.05), 0 4px 12px hsl(205 70% 8% / 0.08);
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 210 40% 15%;
-    --sidebar-primary: 210 50% 25%;
+    --sidebar-foreground: 205 70% 8%;
+    --sidebar-primary: 200 68% 28%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 20% 93%;
-    --sidebar-accent-foreground: 210 40% 15%;
-    --sidebar-border: 210 15% 88%;
-    --sidebar-ring: 45 100% 50%;
+    --sidebar-accent: 200 6% 90%;
+    --sidebar-accent-foreground: 205 70% 8%;
+    --sidebar-border: 200 5% 85%;
+    --sidebar-ring: 200 68% 28%;
   }
 
   .dark {
-    --background: 210 30% 8%;
-    --foreground: 210 15% 92%;
+    --background: 205 70% 6%;
+    --foreground: 200 6% 92%;
 
-    --card: 210 25% 12%;
-    --card-foreground: 210 15% 92%;
+    --card: 205 60% 10%;
+    --card-foreground: 200 6% 92%;
 
-    --popover: 210 25% 12%;
-    --popover-foreground: 210 15% 92%;
+    --popover: 205 60% 10%;
+    --popover-foreground: 200 6% 92%;
 
-    --primary: 210 15% 92%;
-    --primary-foreground: 210 50% 25%;
+    --primary: 200 6% 92%;
+    --primary-foreground: 200 68% 28%;
 
-    --secondary: 210 25% 18%;
-    --secondary-foreground: 210 15% 92%;
+    --secondary: 200 20% 18%;
+    --secondary-foreground: 200 6% 92%;
 
-    --muted: 210 20% 15%;
-    --muted-foreground: 210 10% 60%;
+    --muted: 205 50% 12%;
+    --muted-foreground: 200 6% 60%;
 
-    --accent: 45 100% 50%;
-    --accent-foreground: 210 40% 10%;
+    --accent: 200 68% 38%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 20%;
-    --input: 210 20% 20%;
-    --ring: 45 100% 50%;
+    --border: 200 20% 18%;
+    --input: 200 20% 18%;
+    --ring: 200 68% 38%;
 
-    --sidebar-background: 210 25% 12%;
-    --sidebar-foreground: 210 15% 92%;
-    --sidebar-primary: 45 100% 50%;
-    --sidebar-primary-foreground: 210 40% 10%;
-    --sidebar-accent: 210 20% 15%;
-    --sidebar-accent-foreground: 210 15% 92%;
-    --sidebar-border: 210 20% 20%;
-    --sidebar-ring: 45 100% 50%;
+    --sidebar-background: 205 60% 10%;
+    --sidebar-foreground: 200 6% 92%;
+    --sidebar-primary: 200 68% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 205 50% 12%;
+    --sidebar-accent-foreground: 200 6% 92%;
+    --sidebar-border: 200 20% 18%;
+    --sidebar-ring: 200 68% 38%;
   }
 }
 
