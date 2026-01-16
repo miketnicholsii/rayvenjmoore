@@ -127,7 +127,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="font-body text-xs tracking-[0.25em] uppercase text-primary-foreground/40 hover:text-accent transition-colors duration-300"
           >
-            hello, NÈKO.
+            NÈKO.
           </a>
         </div>
       </div>
