@@ -29,7 +29,7 @@ export default function ServicesSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="services" className="section-padding bg-secondary/30">
+    <section id="services" className="section-padding bg-[#E6CFB8]/20">
       <div className="container-wide" ref={ref}>
         {/* Header */}
         <motion.div
@@ -38,13 +38,13 @@ export default function ServicesSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <span className="font-body text-sm font-semibold tracking-widest uppercase text-primary mb-4 block">
+          <span className="font-body text-sm font-semibold tracking-widest uppercase text-[#7D5C4E] mb-4 block">
             How I Help
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-[#4B544A]">
             Clarity Across Every Dimension
           </h2>
-          <p className="font-body text-muted-foreground mt-4">
+          <p className="font-body text-[#6C7463] mt-4">
             Whether you're an individual seeking financial clarity or a business ready to scale, 
             these are the ways I can support your journey.
           </p>
@@ -59,21 +59,21 @@ export default function ServicesSection() {
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -4 }}
-              className="card-elevated p-8 group border border-border hover:border-primary/30 cursor-pointer"
+              className="bg-[#FAF7F2] rounded-xl p-8 group border border-[#959D8D]/30 hover:border-[#7D5C4E]/50 cursor-pointer transition-all duration-300 shadow-soft hover:shadow-elevated"
             >
               <div className="flex items-start gap-5">
                 <motion.div 
-                  className="flex-shrink-0 w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center transition-colors duration-300 group-hover:bg-primary/20"
+                  className="flex-shrink-0 w-14 h-14 rounded-xl bg-[#6C7463]/10 flex items-center justify-center transition-colors duration-300 group-hover:bg-[#6C7463]/20"
                   whileHover={{ scale: 1.1, rotate: 3 }}
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
-                  <service.icon className="w-7 h-7 text-primary transition-transform duration-300 group-hover:scale-110" />
+                  <service.icon className="w-7 h-7 text-[#6C7463] transition-transform duration-300 group-hover:scale-110" />
                 </motion.div>
                 <div>
-                  <h3 className="font-display text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                  <h3 className="font-display text-xl font-semibold text-[#4B544A] mb-2 group-hover:text-[#7D5C4E] transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="font-body text-muted-foreground leading-relaxed">
+                  <p className="font-body text-[#6C7463] leading-relaxed">
                     {service.description}
                   </p>
                 </div>
