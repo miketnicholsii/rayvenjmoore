@@ -113,20 +113,22 @@ export default function Footer() {
           <p className="font-body text-sm text-primary-foreground/60">
             © {new Date().getFullYear()} Rayven J. Moore, CPA. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <p className="font-body text-sm text-primary-foreground/60 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-accent/70" />
-              Clarity · Confidence · Action
-            </p>
-            <a 
-              href="https://helloneko.co" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="font-body text-[10px] tracking-[0.2em] uppercase text-primary-foreground/30 hover:text-accent/60 transition-colors duration-300"
-            >
-              hello, NÈKO.
-            </a>
-          </div>
+          <p className="font-body text-sm text-primary-foreground/60 flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-accent/70" />
+            Clarity · Confidence · Action
+          </p>
+        </div>
+
+        {/* Credit */}
+        <div className="mt-8 pt-6 border-t border-primary-foreground/10 text-center">
+          <a 
+            href="https://helloneko.co" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="font-body text-xs tracking-[0.25em] uppercase text-primary-foreground/40 hover:text-accent transition-colors duration-300"
+          >
+            hello, NÈKO.
+          </a>
         </div>
       </div>
     </footer>
