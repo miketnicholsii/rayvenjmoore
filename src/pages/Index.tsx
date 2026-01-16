@@ -15,7 +15,6 @@ import LeadershipSection from '@/components/home/LeadershipSection';
 import CaseStudiesPreview from '@/components/home/CaseStudiesPreview';
 import SpeakingSection from '@/components/home/SpeakingSection';
 import CTASection from '@/components/home/CTASection';
-import SpotifySection from '@/components/home/SpotifySection';
 import ContactSection from '@/components/home/ContactSection';
 
 const Index = () => {
@@ -59,9 +58,6 @@ const Index = () => {
           </AnimatedSection>
           <AnimatedSection>
             <CTASection />
-          </AnimatedSection>
-          <AnimatedSection>
-            <SpotifySection />
           </AnimatedSection>
           <AnimatedSection>
             <ContactSection />
