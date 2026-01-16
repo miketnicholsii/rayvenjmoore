@@ -48,13 +48,13 @@ export default function Contact() {
       <BreakoutNav title="Contact" backLabel="Back to Home" sectionId="contact" />
       <main className="pt-16">
         {/* Hero */}
-        <section className="pt-32 pb-16 bg-gradient-to-b from-cream to-background">
+        <section className="pt-32 pb-16 bg-gradient-to-b from-primary/5 to-background">
           <div className="container-narrow text-center">
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="font-body text-sm font-semibold tracking-widest uppercase text-gold mb-4 block"
+              className="font-body text-sm font-semibold tracking-widest uppercase text-primary mb-4 block"
             >
               Get In Touch
             </motion.span>
@@ -90,23 +90,23 @@ export default function Contact() {
                 transition={{ duration: 0.6 }}
                 className="lg:col-span-1"
               >
-                <div className="bg-muted/50 rounded-2xl p-8">
+                <div className="bg-secondary/50 rounded-2xl p-8">
                   <h3 className="font-display text-xl font-semibold text-foreground mb-6">
                     Other Ways to Connect
                   </h3>
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
-                        <Mail className="w-5 h-5 text-gold" />
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <Mail className="w-5 h-5 text-primary" />
                       </div>
                       <div>
                         <p className="font-body text-sm font-medium text-foreground mb-1">Email</p>
-                        <a href="mailto:rayvenjmoore@gmail.com" className="font-body text-sm text-muted-foreground hover:text-accent transition-colors">rayvenjmoore@gmail.com</a>
+                        <a href="mailto:rayvenjmoore@gmail.com" className="font-body text-sm text-muted-foreground hover:text-primary transition-colors">rayvenjmoore@gmail.com</a>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-5 h-5 text-gold" />
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-5 h-5 text-primary" />
                       </div>
                       <div>
                         <p className="font-body text-sm font-medium text-foreground mb-1">Based In</p>
@@ -133,8 +133,8 @@ export default function Contact() {
               >
                 {isSubmitted ? (
                   <div className="bg-card rounded-2xl p-12 text-center border border-border">
-                    <div className="w-20 h-20 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
-                      <CheckCircle className="w-10 h-10 text-gold" />
+                    <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                      <CheckCircle className="w-10 h-10 text-primary" />
                     </div>
                     <h3 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4">
                       Message Received
@@ -213,8 +213,8 @@ export default function Contact() {
                     </div>
                     <Button 
                       type="submit" 
-                      variant="hero" 
-                      size="xl" 
+                      variant="default" 
+                      size="lg" 
                       className="w-full"
                       disabled={isSubmitting}
                     >
