@@ -2,137 +2,137 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
     /* ========================================
-       RAYVEN J. MOORE - BRAND COLOR SYSTEM
-       Forest Green + Orange Accent Palette
+       MOORE HOSPITALITY - BRAND COLOR SYSTEM
+       Navy Blue + Gold Accent Palette
        ======================================== */
     
-    /* Warm Ivory - Primary Background */
-    --background: 45 20% 97%;
-    --foreground: 100 8% 16%;
+    /* Clean White - Primary Background */
+    --background: 210 20% 98%;
+    --foreground: 210 40% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 100 8% 16%;
+    --card-foreground: 210 40% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 100 8% 16%;
+    --popover-foreground: 210 40% 15%;
 
-    /* Deep Forest Green - Primary Authority Color */
-    --primary: 100 8% 18%;
-    --primary-foreground: 45 20% 97%;
+    /* Deep Navy - Primary Authority Color */
+    --primary: 210 50% 25%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Soft Sage Secondary */
-    --secondary: 110 12% 92%;
-    --secondary-foreground: 100 8% 16%;
+    /* Soft Blue-Gray Secondary */
+    --secondary: 210 20% 93%;
+    --secondary-foreground: 210 40% 15%;
 
     /* Muted Neutrals */
-    --muted: 45 12% 94%;
-    --muted-foreground: 100 6% 45%;
+    --muted: 210 15% 95%;
+    --muted-foreground: 210 10% 45%;
 
-    /* Gold Orange - Accent (micro-interactions, emphasis) */
-    --accent: 38 92% 50%;
-    --accent-foreground: 100 8% 10%;
+    /* Gold - Accent (micro-interactions, emphasis) */
+    --accent: 45 100% 50%;
+    --accent-foreground: 210 40% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
     /* Borders - Soft, professional */
-    --border: 100 6% 88%;
-    --input: 100 6% 88%;
-    --ring: 38 92% 50%;
+    --border: 210 15% 88%;
+    --input: 210 15% 88%;
+    --ring: 45 100% 50%;
 
-    --radius: 0.625rem;
+    --radius: 0.5rem;
 
     /* ========================================
-       BRAND EXTENSIONS - Forest Green Palette
+       BRAND EXTENSIONS - Navy Blue Palette
        ======================================== */
     
-    /* Primary Greens */
-    --deep-forest: 100 8% 18%;        /* #2A312A */
-    --evergreen: 120 15% 19%;          /* #28382B */
-    --moss: 115 12% 31%;               /* #455B46 */
+    /* Primary Blues */
+    --deep-navy: 210 50% 25%;         /* #1E3A5F */
+    --navy: 210 45% 30%;              /* #2A4A6E */
+    --steel-blue: 210 35% 40%;        /* #4A6B8A */
     
-    /* Orange Accents - Sparing Use */
-    --gold-orange: 38 92% 50%;         /* #F4900E */
-    --warm-orange: 20 92% 54%;         /* #F7631C */
-    --burnt-orange: 17 95% 47%;        /* #ED5005 */
+    /* Gold Accents - Sparing Use */
+    --gold: 45 100% 50%;              /* #FFD700 */
+    --warm-gold: 40 95% 48%;          /* #E6A800 */
+    --amber: 38 92% 45%;              /* #D4880D */
     
     /* Neutral Extensions */
-    --charcoal: 100 8% 12%;
-    --charcoal-light: 100 6% 20%;
-    --cream: 45 20% 97%;
-    --warm-white: 45 15% 99%;
-    --sage: 110 15% 90%;
-    --steel: 100 5% 50%;
+    --charcoal: 210 25% 12%;
+    --charcoal-light: 210 15% 22%;
+    --cream: 45 30% 97%;
+    --warm-white: 45 20% 99%;
+    --slate: 210 20% 90%;
+    --steel: 210 10% 50%;
 
     /* ========================================
        GRADIENTS - Subtle, Professional
        ======================================== */
-    --gradient-forest: linear-gradient(135deg, hsl(100 8% 18%), hsl(120 15% 19%));
-    --gradient-orange: linear-gradient(135deg, hsl(38 92% 50%), hsl(20 92% 54%));
-    --gradient-hero: linear-gradient(180deg, hsl(45 20% 97%) 0%, hsl(110 12% 92% / 0.3) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(45 20% 97%) 100%);
+    --gradient-navy: linear-gradient(135deg, hsl(210 50% 25%), hsl(210 45% 30%));
+    --gradient-gold: linear-gradient(135deg, hsl(45 100% 50%), hsl(40 95% 48%));
+    --gradient-hero: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(210 20% 93% / 0.3) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
 
     /* ========================================
        SHADOWS - Elegant, calm
        ======================================== */
-    --shadow-soft: 0 4px 20px -4px hsl(100 8% 18% / 0.08);
-    --shadow-elevated: 0 12px 40px -8px hsl(100 8% 18% / 0.12);
-    --shadow-orange: 0 8px 30px -6px hsl(38 92% 50% / 0.25);
-    --shadow-card: 0 1px 3px hsl(100 8% 18% / 0.05), 0 4px 12px hsl(100 8% 18% / 0.08);
+    --shadow-soft: 0 4px 20px -4px hsl(210 50% 25% / 0.08);
+    --shadow-elevated: 0 12px 40px -8px hsl(210 50% 25% / 0.12);
+    --shadow-gold: 0 8px 30px -6px hsl(45 100% 50% / 0.25);
+    --shadow-card: 0 1px 3px hsl(210 50% 25% / 0.05), 0 4px 12px hsl(210 50% 25% / 0.08);
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 100 8% 16%;
-    --sidebar-primary: 100 8% 18%;
-    --sidebar-primary-foreground: 45 20% 97%;
-    --sidebar-accent: 110 12% 92%;
-    --sidebar-accent-foreground: 100 8% 16%;
-    --sidebar-border: 100 6% 88%;
-    --sidebar-ring: 38 92% 50%;
+    --sidebar-foreground: 210 40% 15%;
+    --sidebar-primary: 210 50% 25%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 93%;
+    --sidebar-accent-foreground: 210 40% 15%;
+    --sidebar-border: 210 15% 88%;
+    --sidebar-ring: 45 100% 50%;
   }
 
   .dark {
-    --background: 100 10% 8%;
-    --foreground: 45 15% 92%;
+    --background: 210 30% 8%;
+    --foreground: 210 15% 92%;
 
-    --card: 100 8% 12%;
-    --card-foreground: 45 15% 92%;
+    --card: 210 25% 12%;
+    --card-foreground: 210 15% 92%;
 
-    --popover: 100 8% 12%;
-    --popover-foreground: 45 15% 92%;
+    --popover: 210 25% 12%;
+    --popover-foreground: 210 15% 92%;
 
-    --primary: 45 15% 92%;
-    --primary-foreground: 100 8% 18%;
+    --primary: 210 15% 92%;
+    --primary-foreground: 210 50% 25%;
 
-    --secondary: 100 8% 18%;
-    --secondary-foreground: 45 15% 92%;
+    --secondary: 210 25% 18%;
+    --secondary-foreground: 210 15% 92%;
 
-    --muted: 100 8% 15%;
-    --muted-foreground: 45 8% 60%;
+    --muted: 210 20% 15%;
+    --muted-foreground: 210 10% 60%;
 
-    --accent: 38 92% 50%;
-    --accent-foreground: 100 8% 10%;
+    --accent: 45 100% 50%;
+    --accent-foreground: 210 40% 10%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 100 8% 20%;
-    --input: 100 8% 20%;
-    --ring: 38 92% 50%;
+    --border: 210 20% 20%;
+    --input: 210 20% 20%;
+    --ring: 45 100% 50%;
 
-    --sidebar-background: 100 8% 12%;
-    --sidebar-foreground: 45 15% 92%;
-    --sidebar-primary: 38 92% 50%;
-    --sidebar-primary-foreground: 100 8% 10%;
-    --sidebar-accent: 100 8% 15%;
-    --sidebar-accent-foreground: 45 15% 92%;
-    --sidebar-border: 100 8% 20%;
-    --sidebar-ring: 38 92% 50%;
+    --sidebar-background: 210 25% 12%;
+    --sidebar-foreground: 210 15% 92%;
+    --sidebar-primary: 45 100% 50%;
+    --sidebar-primary-foreground: 210 40% 10%;
+    --sidebar-accent: 210 20% 15%;
+    --sidebar-accent-foreground: 210 15% 92%;
+    --sidebar-border: 210 20% 20%;
+    --sidebar-ring: 45 100% 50%;
   }
 }
 
@@ -150,29 +150,29 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
 
-  /* Improved focus states - Orange ring for accessibility */
+  /* Improved focus states - Gold ring for accessibility */
   *:focus-visible {
     @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
   }
 
-  /* Typography hierarchy - Editorial, refined */
+  /* Typography hierarchy - Modern, authoritative */
   h1 {
-    font-family: 'Playfair Display', Georgia, serif;
-    @apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-tight;
+    font-family: 'Montserrat', system-ui, sans-serif;
+    @apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-tight uppercase;
   }
 
   h2 {
-    font-family: 'Playfair Display', Georgia, serif;
-    @apply text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold tracking-wide;
   }
 
   h3 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Montserrat', system-ui, sans-serif;
     @apply text-xl md:text-2xl font-semibold tracking-tight;
   }
 
   h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Montserrat', system-ui, sans-serif;
     @apply font-semibold tracking-tight;
   }
 }
@@ -182,22 +182,26 @@
      TYPOGRAPHY UTILITIES
      ======================================== */
   .font-display {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Montserrat', system-ui, sans-serif;
+  }
+
+  .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
   }
 
   .font-body {
     font-family: 'Inter', system-ui, sans-serif;
   }
 
-  /* Gradient Text - Orange accent */
-  .text-gradient-orange {
-    background: linear-gradient(135deg, hsl(38 92% 50%), hsl(20 92% 54%));
+  /* Gradient Text - Gold accent */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(45 100% 50%), hsl(40 95% 48%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Gradient Text - Forest */
+  /* Gradient Text - Navy */
   .text-gradient-forest {
     background: linear-gradient(135deg, hsl(100 8% 18%), hsl(115 12% 31%));
     -webkit-background-clip: text;

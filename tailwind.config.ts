@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Playfair Display"', 'Georgia', 'serif'],
+        display: ['Montserrat', 'system-ui', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         body: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
@@ -51,36 +52,26 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Brand Colors - Forest Green Palette
-        forest: {
-          DEFAULT: "hsl(var(--deep-forest))",
-          deep: "hsl(var(--deep-forest))",
-          evergreen: "hsl(var(--evergreen))",
-          moss: "hsl(var(--moss))",
+        // Brand Colors - Navy Blue Palette
+        navy: {
+          DEFAULT: "hsl(var(--deep-navy))",
+          deep: "hsl(var(--deep-navy))",
+          medium: "hsl(var(--navy))",
+          steel: "hsl(var(--steel-blue))",
         },
-        // Orange Accents
-        orange: {
-          DEFAULT: "hsl(var(--gold-orange))",
-          gold: "hsl(var(--gold-orange))",
-          warm: "hsl(var(--warm-orange))",
-          burnt: "hsl(var(--burnt-orange))",
-        },
-        // Legacy support
-        evergreen: {
-          DEFAULT: "hsl(var(--evergreen))",
-          light: "hsl(var(--moss))",
-        },
+        // Gold Accents
         gold: {
-          DEFAULT: "hsl(var(--gold-orange))",
-          light: "hsl(var(--warm-orange))",
-          dark: "hsl(var(--burnt-orange))",
+          DEFAULT: "hsl(var(--gold))",
+          bright: "hsl(var(--gold))",
+          warm: "hsl(var(--warm-gold))",
+          amber: "hsl(var(--amber))",
         },
         charcoal: {
           DEFAULT: "hsl(var(--charcoal))",
           light: "hsl(var(--charcoal-light))",
         },
         cream: "hsl(var(--cream))",
-        sage: "hsl(var(--sage))",
+        slate: "hsl(var(--slate))",
         steel: "hsl(var(--steel))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -127,9 +118,9 @@ export default {
           "0%": { opacity: "0", transform: "scale(0.95)" },
           "100%": { opacity: "1", transform: "scale(1)" },
         },
-        "pulse-orange": {
-          "0%, 100%": { boxShadow: "0 0 0 0 hsl(38 92% 50% / 0.4)" },
-          "50%": { boxShadow: "0 0 0 12px hsl(38 92% 50% / 0)" },
+        "pulse-gold": {
+          "0%, 100%": { boxShadow: "0 0 0 0 hsl(45 100% 50% / 0.4)" },
+          "50%": { boxShadow: "0 0 0 12px hsl(45 100% 50% / 0)" },
         },
         "gentle-float": {
           "0%, 100%": { transform: "translateY(0)" },
@@ -148,15 +139,15 @@ export default {
         "slide-in-left": "slide-in-left 0.8s ease-out forwards",
         "slide-in-right": "slide-in-right 0.8s ease-out forwards",
         "scale-in": "scale-in 0.6s ease-out forwards",
-        "pulse-orange": "pulse-orange 2s ease-in-out infinite",
+        "pulse-gold": "pulse-gold 2s ease-in-out infinite",
         "gentle-float": "gentle-float 6s ease-in-out infinite",
         "shimmer": "shimmer 0.8s ease-out",
       },
       boxShadow: {
-        'soft': '0 4px 20px -4px hsl(100 8% 18% / 0.08)',
-        'elevated': '0 12px 40px -8px hsl(100 8% 18% / 0.12)',
-        'orange': '0 8px 30px -6px hsl(38 92% 50% / 0.25)',
-        'card': '0 1px 3px hsl(100 8% 18% / 0.05), 0 4px 12px hsl(100 8% 18% / 0.08)',
+        'soft': '0 4px 20px -4px hsl(210 50% 25% / 0.08)',
+        'elevated': '0 12px 40px -8px hsl(210 50% 25% / 0.12)',
+        'gold': '0 8px 30px -6px hsl(45 100% 50% / 0.25)',
+        'card': '0 1px 3px hsl(210 50% 25% / 0.05), 0 4px 12px hsl(210 50% 25% / 0.08)',
       },
     },
   },
