@@ -88,7 +88,7 @@ const caseStudies = [
 
 export default function CaseStudies() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-cream">
       <SEO 
         title="Case Studies"
         description="Real transformation stories - see how individuals and businesses moved from financial confusion to clarity using proven frameworks and actionable strategies."
@@ -97,7 +97,7 @@ export default function CaseStudies() {
       <BreakoutNav title="Case Studies" backLabel="Back to Home" sectionId="stories" />
       <main className="pt-16">
         {/* Hero */}
-        <section className="pt-32 pb-20 bg-gradient-to-b from-primary/5 to-background">
+        <section className="pt-32 pb-20 bg-gradient-to-b from-warm-beige/50 to-cream">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -105,13 +105,13 @@ export default function CaseStudies() {
               transition={{ duration: 0.6 }}
               className="max-w-3xl"
             >
-              <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
+              <span className="inline-block px-4 py-2 bg-olive/10 text-olive rounded-full text-sm font-medium mb-6">
                 Case Studies
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-                Transformation Through <span className="text-primary">Clarity</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-forest leading-tight mb-6">
+                Transformation Through <span className="text-terracotta">Clarity</span>
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-olive">
                 Real stories of moving from confusion to clarity, from anxiety to confidence. 
                 Every journey is unique, but the framework remains the same.
               </p>
@@ -120,7 +120,7 @@ export default function CaseStudies() {
         </section>
 
         {/* Clarity Framework Section */}
-        <section className="py-16 bg-secondary/30">
+        <section className="py-16 bg-warm-beige/30">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -128,10 +128,10 @@ export default function CaseStudies() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-dark-forest mb-4">
                 The Clarity Framework
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-olive max-w-2xl mx-auto">
                 Every transformation follows this proven three-step process.
               </p>
             </motion.div>
@@ -140,7 +140,7 @@ export default function CaseStudies() {
         </section>
 
         {/* Case Studies */}
-        <section className="py-20">
+        <section className="py-20 bg-cream">
           <div className="container mx-auto px-4">
             <div className="space-y-12">
               {caseStudies.map((study, index) => (
@@ -150,24 +150,24 @@ export default function CaseStudies() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-card rounded-2xl border border-border overflow-hidden hover:border-primary/30 transition-colors duration-300"
+                  className="bg-cream rounded-2xl border border-sage/30 overflow-hidden hover:border-terracotta/30 transition-colors duration-300"
                 >
                   <div className="p-8 md:p-12">
                     {/* Header */}
                     <div className="flex flex-wrap items-start gap-4 mb-8">
-                      <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
-                        <study.icon className="w-7 h-7 text-primary" />
+                      <div className="w-14 h-14 rounded-2xl bg-olive/10 flex items-center justify-center">
+                        <study.icon className="w-7 h-7 text-olive" />
                       </div>
                       <div className="flex-grow">
-                        <span className="text-xs font-semibold tracking-wider uppercase text-primary">
+                        <span className="text-xs font-semibold tracking-wider uppercase text-terracotta">
                           {study.category}
                         </span>
-                        <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-1">
+                        <h2 className="text-2xl md:text-3xl font-bold text-dark-forest mt-1">
                           {study.title}
                         </h2>
                       </div>
-                      <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10">
-                        <span className="text-sm font-medium text-primary">
+                      <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-olive/10">
+                        <span className="text-sm font-medium text-olive">
                           {study.transformation}
                         </span>
                       </div>
@@ -177,36 +177,36 @@ export default function CaseStudies() {
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                       {/* The Challenge */}
                       <div className="lg:col-span-1">
-                        <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
-                          <span className="w-2 h-2 bg-red-400 rounded-full" />
+                        <h3 className="text-sm font-semibold text-olive uppercase tracking-wider mb-3 flex items-center gap-2">
+                          <span className="w-2 h-2 bg-terracotta rounded-full" />
                           The Challenge
                         </h3>
-                        <p className="text-foreground/80 leading-relaxed">
+                        <p className="text-dark-forest/80 leading-relaxed">
                           {study.challenge}
                         </p>
                       </div>
 
                       {/* The Clarity Move */}
                       <div className="lg:col-span-1">
-                        <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
-                          <span className="w-2 h-2 bg-primary rounded-full" />
+                        <h3 className="text-sm font-semibold text-olive uppercase tracking-wider mb-3 flex items-center gap-2">
+                          <span className="w-2 h-2 bg-olive rounded-full" />
                           The Clarity Move
                         </h3>
-                        <p className="text-foreground/80 leading-relaxed">
+                        <p className="text-dark-forest/80 leading-relaxed">
                           {study.clarityMove}
                         </p>
                       </div>
 
                       {/* The Action Plan */}
                       <div className="lg:col-span-1">
-                        <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
-                          <span className="w-2 h-2 bg-blue-400 rounded-full" />
+                        <h3 className="text-sm font-semibold text-olive uppercase tracking-wider mb-3 flex items-center gap-2">
+                          <span className="w-2 h-2 bg-sage rounded-full" />
                           The Action Plan
                         </h3>
                         <ul className="space-y-2">
                           {study.actionPlan.map((step, stepIndex) => (
-                            <li key={stepIndex} className="flex items-start gap-2 text-sm text-foreground/80">
-                              <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                            <li key={stepIndex} className="flex items-start gap-2 text-sm text-dark-forest/80">
+                              <CheckCircle className="w-4 h-4 text-olive mt-0.5 flex-shrink-0" />
                               {step}
                             </li>
                           ))}
@@ -215,11 +215,11 @@ export default function CaseStudies() {
 
                       {/* The Outcome */}
                       <div className="lg:col-span-1">
-                        <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
-                          <span className="w-2 h-2 bg-green-400 rounded-full" />
+                        <h3 className="text-sm font-semibold text-olive uppercase tracking-wider mb-3 flex items-center gap-2">
+                          <span className="w-2 h-2 bg-dark-forest rounded-full" />
                           The Outcome
                         </h3>
-                        <p className="text-foreground/80 leading-relaxed">
+                        <p className="text-dark-forest/80 leading-relaxed">
                           {study.outcome}
                         </p>
                       </div>
@@ -232,7 +232,7 @@ export default function CaseStudies() {
         </section>
 
         {/* Wealth Care Pillars */}
-        <section className="py-20 bg-secondary/30">
+        <section className="py-20 bg-warm-beige/30">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -240,10 +240,10 @@ export default function CaseStudies() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-dark-forest mb-4">
                 The Wealth Care Pillars
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-olive max-w-2xl mx-auto">
                 Every transformation is built on these foundational principles.
               </p>
             </motion.div>
@@ -252,9 +252,9 @@ export default function CaseStudies() {
         </section>
 
         {/* Authenticity Note */}
-        <section className="py-12 bg-muted/30">
+        <section className="py-12 bg-sage/20">
           <div className="container mx-auto px-4 text-center">
-            <p className="text-sm text-muted-foreground italic max-w-2xl mx-auto">
+            <p className="text-sm text-olive italic max-w-2xl mx-auto">
               These case studies represent composite examples based on real client experiences. 
               Details have been generalized to protect client privacy while illustrating typical transformations.
             </p>
@@ -262,7 +262,7 @@ export default function CaseStudies() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-primary text-primary-foreground">
+        <section className="py-20 bg-olive">
           <div className="container mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -271,10 +271,10 @@ export default function CaseStudies() {
               transition={{ duration: 0.6 }}
               className="max-w-2xl mx-auto"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Write Your <span className="text-secondary">Transformation Story</span>?
+              <h2 className="text-3xl md:text-4xl font-bold text-cream mb-6">
+                Ready to Write Your <span className="text-warm-beige">Transformation Story</span>?
               </h2>
-              <p className="text-primary-foreground/70 mb-8 max-w-lg mx-auto">
+              <p className="text-cream/70 mb-8 max-w-lg mx-auto">
                 Every journey to financial clarity starts with a conversation. 
                 Let us explore how I can support your goals.
               </p>

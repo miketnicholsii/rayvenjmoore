@@ -36,7 +36,7 @@ const manifestoSections = [
 
 export default function Manifesto() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-cream">
       <SEO 
         title="Manifesto"
         description="The Universal Wealth Care Manifesto - principles on money, clarity, education, community, trust, and long-term thinking that guide Rayven J. Moore's mission."
@@ -45,13 +45,13 @@ export default function Manifesto() {
       <BreakoutNav title="Manifesto" backLabel="Back to Home" sectionId="manifesto" />
       <main className="pt-16">
         {/* Hero */}
-        <section className="pt-32 pb-20 bg-gradient-to-b from-primary/5 to-background">
+        <section className="pt-32 pb-20 bg-gradient-to-b from-warm-beige/50 to-cream">
           <div className="container-narrow text-center">
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="font-body text-sm font-semibold tracking-widest uppercase text-primary mb-4 block"
+              className="font-body text-sm font-semibold tracking-widest uppercase text-terracotta mb-4 block"
             >
               A Personal Manifesto
             </motion.span>
@@ -59,7 +59,7 @@ export default function Manifesto() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight"
+              className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-dark-forest leading-tight"
             >
               What I Believe
             </motion.h1>
@@ -67,7 +67,7 @@ export default function Manifesto() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-body text-lg text-muted-foreground mt-6 max-w-2xl mx-auto"
+              className="font-body text-lg text-olive mt-6 max-w-2xl mx-auto"
             >
               These are the principles that guide my work, my decisions, and my vision 
               for a more financially empowered world.
@@ -76,7 +76,7 @@ export default function Manifesto() {
         </section>
 
         {/* Manifesto Content */}
-        <section className="section-padding">
+        <section className="section-padding bg-cream">
           <div className="container-narrow">
             {manifestoSections.map((section, index) => (
               <motion.div
@@ -87,10 +87,10 @@ export default function Manifesto() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="mb-16 last:mb-0"
               >
-                <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4 border-b-2 border-primary pb-2 inline-block">
+                <h2 className="font-display text-2xl md:text-3xl font-semibold text-dark-forest mb-4 border-b-2 border-terracotta pb-2 inline-block">
                   {section.title}
                 </h2>
-                <p className="font-body text-lg text-muted-foreground leading-relaxed mt-6">
+                <p className="font-body text-lg text-olive leading-relaxed mt-6">
                   {section.content}
                 </p>
               </motion.div>
@@ -102,13 +102,13 @@ export default function Manifesto() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="mt-20 pt-12 border-t border-border text-center"
+              className="mt-20 pt-12 border-t border-sage/30 text-center"
             >
-              <p className="font-display text-xl italic text-muted-foreground mb-4">
+              <p className="font-display text-xl italic text-olive mb-4">
                 "Converting complexity into clarity, one person at a time."
               </p>
-              <p className="font-display text-2xl font-semibold text-foreground">
-                — Rayven J. Moore<span className="text-primary">,</span> CPA
+              <p className="font-display text-2xl font-semibold text-dark-forest">
+                — Rayven J. Moore<span className="text-terracotta">,</span> CPA
               </p>
             </motion.div>
           </div>
