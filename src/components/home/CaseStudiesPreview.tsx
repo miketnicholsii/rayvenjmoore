@@ -61,7 +61,7 @@ export default function CaseStudiesPreview() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4 block"
+            className="font-body text-sm font-semibold tracking-widest uppercase text-primary mb-4 block"
           >
             Case Studies
           </motion.span>
@@ -112,13 +112,13 @@ export default function CaseStudiesPreview() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.15, type: "spring", stiffness: 200 }}
                 whileHover={{ scale: 1.1, rotate: 5 }}
-                className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors duration-300"
+                className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300"
               >
-                <study.icon className="w-7 h-7 text-accent" />
+                <study.icon className="w-7 h-7 text-primary" />
               </motion.div>
 
               {/* Title */}
-              <h3 className="font-display text-xl font-semibold text-foreground mb-6 group-hover:text-accent transition-colors duration-300">
+              <h3 className="font-display text-xl font-semibold text-foreground mb-6 group-hover:text-primary transition-colors duration-300">
                 {study.title}
               </h3>
 
@@ -137,7 +137,7 @@ export default function CaseStudiesPreview() {
                   <p className="text-muted-foreground">{study.approach}</p>
                 </div>
                 <div className="pt-2 border-t border-border">
-                  <p className="font-semibold text-accent mb-1">The Outcome</p>
+                  <p className="font-semibold text-primary mb-1">The Outcome</p>
                   <p className="text-foreground font-medium">{study.outcome}</p>
                 </div>
               </div>

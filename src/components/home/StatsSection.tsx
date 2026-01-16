@@ -49,11 +49,11 @@ const cardVariants = {
 
 export default function StatsSection() {
   return (
-    <section className="py-16 md:py-20 bg-forest relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-accent relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-1/4 w-64 h-64 bg-accent rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary-foreground rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-foreground rounded-full blur-3xl" />
       </div>
 
       <div className="container-wide relative z-10">
@@ -70,7 +70,7 @@ export default function StatsSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4 block"
+            className="font-body text-sm font-semibold tracking-widest uppercase text-primary mb-4 block"
           >
             Impact & Experience
           </motion.span>
@@ -79,7 +79,7 @@ export default function StatsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-display text-3xl md:text-4xl font-semibold text-primary-foreground"
+            className="font-display text-3xl md:text-4xl font-semibold text-accent-foreground"
           >
             Numbers That Tell a Story
           </motion.h2>
@@ -96,10 +96,10 @@ export default function StatsSection() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="group relative bg-primary-foreground/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-primary-foreground/10 hover:border-accent/30 transition-all duration-300 text-center"
+              className="group relative bg-accent-foreground/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-accent-foreground/10 hover:border-primary/30 transition-all duration-300 text-center"
             >
               {/* Glow effect on hover */}
-              <div className="absolute inset-0 rounded-2xl bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 rounded-2xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               {/* Icon */}
               <motion.div
@@ -107,9 +107,9 @@ export default function StatsSection() {
                 whileInView={{ scale: 1, rotate: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1, type: "spring", stiffness: 200 }}
-                className="relative z-10 w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center mx-auto mb-5 group-hover:bg-accent/30 transition-colors duration-300"
+                className="relative z-10 w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/30 transition-colors duration-300"
               >
-                <stat.icon className="w-7 h-7 text-accent" />
+                <stat.icon className="w-7 h-7 text-primary" />
               </motion.div>
 
               {/* Counter */}
@@ -118,17 +118,17 @@ export default function StatsSection() {
                   value={stat.value}
                   suffix={stat.suffix}
                   duration={2.5}
-                  className="font-display text-4xl md:text-5xl font-bold text-primary-foreground"
+                  className="font-display text-4xl md:text-5xl font-bold text-accent-foreground"
                 />
               </div>
 
               {/* Label */}
-              <h3 className="relative z-10 font-display text-lg font-semibold text-primary-foreground mb-1 group-hover:text-accent transition-colors duration-300">
+              <h3 className="relative z-10 font-display text-lg font-semibold text-accent-foreground mb-1 group-hover:text-primary transition-colors duration-300">
                 {stat.label}
               </h3>
               
               {/* Description */}
-              <p className="relative z-10 font-body text-sm text-primary-foreground/60">
+              <p className="relative z-10 font-body text-sm text-accent-foreground/70">
                 {stat.description}
               </p>
 
@@ -138,7 +138,7 @@ export default function StatsSection() {
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                className="absolute bottom-0 left-4 right-4 h-1 bg-gradient-to-r from-transparent via-accent/50 to-transparent origin-center"
+                className="absolute bottom-0 left-4 right-4 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent origin-center"
               />
             </motion.div>
           ))}

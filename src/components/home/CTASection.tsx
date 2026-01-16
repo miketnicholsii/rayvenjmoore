@@ -33,7 +33,7 @@ export default function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4 block"
+            className="font-body text-sm font-semibold tracking-widest uppercase text-primary mb-4 block"
           >
             Let's Connect
           </motion.span>
@@ -45,8 +45,8 @@ export default function CTASection() {
             className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6 leading-tight"
           >
             Ready to Start a{' '}
-            <span className="text-gradient-orange">Meaningful Conversation</span>
-            <span className="text-accent">?</span>
+            <span className="text-primary font-bold">Meaningful Conversation</span>
+            <span className="text-primary">?</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}

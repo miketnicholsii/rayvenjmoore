@@ -32,7 +32,7 @@ export default function LeadershipSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4 block"
+              className="font-body text-sm font-semibold tracking-widest uppercase text-primary mb-4 block"
             >
               Leadership & Service
             </motion.span>
@@ -107,15 +107,15 @@ export default function LeadershipSection() {
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.5, type: "spring", stiffness: 200 }}
-                  className="w-12 h-12 rounded-xl bg-forest flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors duration-300"
+                  className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-300"
                 >
-                  <Users className="w-6 h-6 text-primary-foreground group-hover:text-accent transition-colors duration-300" />
+                  <Users className="w-6 h-6 text-primary-foreground group-hover:text-primary transition-colors duration-300" />
                 </motion.div>
                 <div>
-                  <h3 className="font-display text-lg font-semibold text-foreground mb-1 group-hover:text-accent transition-colors duration-300">
+                  <h3 className="font-display text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
                     Riverside Civic Association
                   </h3>
-                  <p className="text-sm text-accent font-medium mb-2">President · 501(c)(3) Nonprofit</p>
+                  <p className="text-sm text-primary font-medium mb-2">President · 501(c)(3) Nonprofit</p>
                   <p className="text-sm text-muted-foreground">
                     Leading community initiatives in Houston's historic Third Ward
                   </p>
@@ -139,15 +139,15 @@ export default function LeadershipSection() {
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.65, type: "spring", stiffness: 200 }}
-                  className="w-12 h-12 rounded-xl bg-forest flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors duration-300"
+                  className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-300"
                 >
-                  <Heart className="w-6 h-6 text-primary-foreground group-hover:text-accent transition-colors duration-300" />
+                  <Heart className="w-6 h-6 text-primary-foreground group-hover:text-primary transition-colors duration-300" />
                 </motion.div>
                 <div>
-                  <h3 className="font-display text-lg font-semibold text-foreground mb-1 group-hover:text-accent transition-colors duration-300">
+                  <h3 className="font-display text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
                     Volunteer Tax Preparer
                   </h3>
-                  <p className="text-sm text-accent font-medium mb-2">Notre Dame Tax Assistance Program</p>
+                  <p className="text-sm text-primary font-medium mb-2">Notre Dame Tax Assistance Program</p>
                   <p className="text-sm text-muted-foreground">
                     Helping families navigate the tax system with clarity
                   </p>
@@ -171,15 +171,15 @@ export default function LeadershipSection() {
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.8, type: "spring", stiffness: 200 }}
-                  className="w-12 h-12 rounded-xl bg-forest flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors duration-300"
+                  className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-300"
                 >
-                  <Award className="w-6 h-6 text-primary-foreground group-hover:text-accent transition-colors duration-300" />
+                  <Award className="w-6 h-6 text-primary-foreground group-hover:text-primary transition-colors duration-300" />
                 </motion.div>
                 <div>
-                  <h3 className="font-display text-lg font-semibold text-foreground mb-1 group-hover:text-accent transition-colors duration-300">
+                  <h3 className="font-display text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
                     Community Impact
                   </h3>
-                  <p className="text-sm text-accent font-medium mb-2">Safety · Infrastructure · Quality of Life</p>
+                  <p className="text-sm text-primary font-medium mb-2">Safety · Infrastructure · Quality of Life</p>
                   <p className="text-sm text-muted-foreground">
                     Working with city leaders and residents for lasting change
                   </p>
