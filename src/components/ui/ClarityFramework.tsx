@@ -8,7 +8,7 @@ const steps = [
     title: 'See Clearly',
     subtitle: 'Assess',
     description: 'Understand your complete financial picture without judgment or overwhelm.',
-    color: 'from-olive/20 to-olive/10'
+    color: 'from-blue-500/20 to-blue-600/10'
   },
   {
     number: '02',
@@ -16,7 +16,7 @@ const steps = [
     title: 'Plan Precisely',
     subtitle: 'Strategize',
     description: 'Create a customized roadmap aligned with your goals and values.',
-    color: 'from-terracotta/20 to-terracotta/10'
+    color: 'from-primary/20 to-primary/10'
   },
   {
     number: '03',
@@ -24,7 +24,7 @@ const steps = [
     title: 'Move Confidently',
     subtitle: 'Execute',
     description: 'Take consistent action with clarity, accountability, and support.',
-    color: 'from-dark-forest/20 to-dark-forest/10'
+    color: 'from-green-500/20 to-green-600/10'
   }
 ];
 
@@ -48,32 +48,32 @@ export default function ClarityFramework({ className = '', compact = false }: Cl
           >
             {/* Connector Line (desktop) */}
             {index < steps.length - 1 && (
-              <div className="hidden md:block absolute top-12 left-[calc(50%+3rem)] right-0 h-0.5 bg-gradient-to-r from-sage to-transparent z-0" />
+              <div className="hidden md:block absolute top-12 left-[calc(50%+3rem)] right-0 h-0.5 bg-gradient-to-r from-border to-transparent z-0" />
             )}
 
-            <div className={`relative bg-cream border border-sage/30 rounded-2xl ${compact ? 'p-4' : 'p-6'} hover:border-terracotta/30 transition-all duration-300 hover:shadow-lg group`}>
+            <div className={`relative bg-card border border-border rounded-2xl ${compact ? 'p-4' : 'p-6'} hover:border-primary/30 transition-all duration-300 hover:shadow-lg group`}>
               {/* Step Number Badge */}
               <div className="absolute -top-3 left-4">
-                <span className="inline-block px-3 py-1 bg-terracotta text-cream text-xs font-bold rounded-full">
+                <span className="inline-block px-3 py-1 bg-primary text-primary-foreground text-xs font-bold rounded-full">
                   {step.number}
                 </span>
               </div>
 
               {/* Icon */}
               <div className={`${compact ? 'w-10 h-10 mt-2' : 'w-14 h-14 mt-4'} rounded-xl bg-gradient-to-br ${step.color} flex items-center justify-center mb-4 group-hover:scale-105 transition-transform`}>
-                <step.icon className={`${compact ? 'w-5 h-5' : 'w-7 h-7'} text-olive`} />
+                <step.icon className={`${compact ? 'w-5 h-5' : 'w-7 h-7'} text-primary`} />
               </div>
 
               {/* Content */}
               <div>
-                <span className="text-xs font-medium text-olive uppercase tracking-wider">
+                <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
                   {step.subtitle}
                 </span>
-                <h3 className={`${compact ? 'text-lg' : 'text-xl'} font-bold text-dark-forest mt-1 mb-2`}>
+                <h3 className={`${compact ? 'text-lg' : 'text-xl'} font-bold text-foreground mt-1 mb-2`}>
                   {step.title}
                 </h3>
                 {!compact && (
-                  <p className="text-sm text-olive leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {step.description}
                   </p>
                 )}

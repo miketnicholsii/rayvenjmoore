@@ -6,7 +6,7 @@ export default function PhilosophySection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="philosophy" className="section-padding bg-cream overflow-hidden">
+    <section id="philosophy" className="section-padding bg-background overflow-hidden">
       <div className="container-wide" ref={ref}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
@@ -15,15 +15,15 @@ export default function PhilosophySection() {
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <span className="font-body text-sm font-semibold tracking-widest uppercase text-terracotta mb-4 block">
+            <span className="font-body text-sm font-semibold tracking-widest uppercase text-gold mb-4 block">
               Philosophy & Impact
             </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-dark-forest mb-6 leading-tight">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6 leading-tight">
               Accessible Knowledge, 
               <br />
-              <span className="text-terracotta">Lasting Change</span>
+              <span className="text-gradient-gold">Lasting Change</span>
             </h2>
-            <div className="space-y-4 font-body text-olive leading-relaxed">
+            <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
               <p>
                 I believe that financial education should be a right, not a privilege. 
                 When people understand their money, they make better decisions—not just 
@@ -35,7 +35,7 @@ export default function PhilosophySection() {
                 every consultation, every initiative I lead is designed to create ripple 
                 effects that last for generations.
               </p>
-              <p className="font-medium text-dark-forest">
+              <p className="font-medium text-foreground">
                 This is what I mean by Universal Wealth Care—a world where everyone has 
                 access to the knowledge they need to build the future they deserve.
               </p>
@@ -50,10 +50,10 @@ export default function PhilosophySection() {
             className="relative"
           >
             {/* Background decoration */}
-            <div className="absolute inset-0 bg-gradient-to-br from-terracotta/5 to-transparent rounded-3xl" />
+            <div className="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent rounded-3xl" />
             
-            <div className="relative bg-cream rounded-3xl p-8 md:p-12 shadow-sm border border-sage/30">
-              <h3 className="font-display text-xl font-semibold text-dark-forest mb-8 text-center">
+            <div className="relative bg-card rounded-3xl p-8 md:p-12 shadow-sm border border-border">
+              <h3 className="font-display text-xl font-semibold text-foreground mb-8 text-center">
                 The Clarity Impact
               </h3>
               <div className="grid grid-cols-3 gap-6">
@@ -76,7 +76,7 @@ export default function PhilosophySection() {
                   delay={0.4}
                 />
               </div>
-              <p className="font-body text-xs text-olive text-center mt-8">
+              <p className="font-body text-xs text-muted-foreground text-center mt-8">
                 Based on feedback from workshop participants and advisory clients
               </p>
             </div>

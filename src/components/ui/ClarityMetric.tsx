@@ -33,14 +33,14 @@ export default function ClarityMetric({ value, label, suffix = '', delay = 0 }: 
             fill="none"
             stroke="currentColor"
             strokeWidth="4"
-            className="text-sage/30"
+            className="text-muted"
           />
           <motion.circle
             cx="50"
             cy="50"
             r="45"
             fill="none"
-            stroke="url(#terracottaGradient)"
+            stroke="url(#goldGradient)"
             strokeWidth="4"
             strokeLinecap="round"
             strokeDasharray={circumference}
@@ -49,16 +49,16 @@ export default function ClarityMetric({ value, label, suffix = '', delay = 0 }: 
             transition={{ duration: 1.5, delay: delay + 0.3, ease: 'easeOut' }}
           />
           <defs>
-            <linearGradient id="terracottaGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="hsl(14, 33%, 40%)" />
-              <stop offset="100%" stopColor="hsl(14, 33%, 50%)" />
+            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="hsl(42, 75%, 55%)" />
+              <stop offset="100%" stopColor="hsl(45, 80%, 70%)" />
             </linearGradient>
           </defs>
         </svg>
         {/* Value text */}
         <div className="absolute inset-0 flex items-center justify-center">
           <motion.span
-            className="font-display text-2xl md:text-3xl font-semibold text-dark-forest"
+            className="font-display text-2xl md:text-3xl font-semibold text-foreground"
             initial={{ opacity: 0 }}
             animate={isVisible ? { opacity: 1 } : {}}
             transition={{ duration: 0.4, delay: delay + 0.5 }}
@@ -67,7 +67,7 @@ export default function ClarityMetric({ value, label, suffix = '', delay = 0 }: 
           </motion.span>
         </div>
       </div>
-      <p className="mt-3 font-body text-sm text-olive text-center">{label}</p>
+      <p className="mt-3 font-body text-sm text-muted-foreground text-center">{label}</p>
     </motion.div>
   );
 }
