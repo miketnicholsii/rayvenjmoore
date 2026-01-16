@@ -17,7 +17,7 @@ const cardVariants = {
 
 export default function LeadershipSection() {
   return (
-    <section id="leadership" className="section-padding bg-[#E6CFB8]/20">
+    <section id="leadership" className="section-padding bg-warm-beige/20">
       <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
@@ -32,7 +32,7 @@ export default function LeadershipSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-body text-sm font-semibold tracking-widest uppercase text-[#7D5C4E] mb-4 block"
+              className="font-body text-sm font-semibold tracking-widest uppercase text-gold-orange mb-4 block"
             >
               Leadership & Service
             </motion.span>
@@ -41,7 +41,7 @@ export default function LeadershipSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-[#4B544A] mb-6 leading-tight"
+              className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-deep-forest mb-6 leading-tight"
             >
               Leadership Beyond Business
             </motion.h2>
@@ -50,7 +50,7 @@ export default function LeadershipSection() {
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="w-12 h-1 bg-[#7D5C4E] rounded-full mb-8 origin-left" 
+              className="w-12 h-1 bg-gold-orange rounded-full mb-8 origin-left" 
             />
 
             <motion.div 
@@ -58,20 +58,20 @@ export default function LeadershipSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="space-y-6 font-body text-[#6C7463] leading-relaxed text-lg"
+              className="space-y-6 font-body text-dark-forest leading-relaxed text-lg"
             >
               <p>
                 Rayven believes leadership extends beyond the workplace.
               </p>
               
               <p>
-                As <span className="text-[#4B544A] font-semibold">President of the Riverside Civic Association</span>, 
+                As <span className="text-deep-forest font-semibold">President of the Riverside Civic Association</span>, 
                 he leads a 501(c)(3) nonprofit serving a historic Houston neighborhood — working with city leaders, 
                 law enforcement, and residents to improve safety, infrastructure, and quality of life.
               </p>
               
               <p>
-                Earlier in his career, Rayven served as a <span className="text-[#4B544A] font-medium">Volunteer Tax Preparer</span> through 
+                Earlier in his career, Rayven served as a <span className="text-deep-forest font-medium">Volunteer Tax Preparer</span> through 
                 Notre Dame's Tax Assistance Program, helping families understand and navigate the tax system.
               </p>
             </motion.div>
@@ -81,9 +81,9 @@ export default function LeadershipSection() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-8 p-6 bg-[#FAF7F2] border border-[#959D8D]/30 rounded-xl"
+              className="mt-8 p-6 bg-off-white border border-sage/30 rounded-xl shadow-sm"
             >
-              <p className="font-display text-xl font-semibold text-[#4B544A] italic">
+              <p className="font-display text-xl font-semibold text-deep-forest italic">
                 "For Rayven, finance is a tool — people and communities are the purpose."
               </p>
             </motion.div>
@@ -99,24 +99,25 @@ export default function LeadershipSection() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="group bg-[#FAF7F2] border border-[#959D8D]/30 rounded-xl p-6 hover:border-[#7D5C4E]/50 transition-all duration-300"
+              className="group bg-off-white border border-sage/30 rounded-xl p-6 hover:border-gold-orange/50 transition-all duration-300 shadow-sm hover:shadow-md"
             >
               <div className="flex items-start gap-4">
+                {/* Icon container - Solid dark background */}
                 <motion.div 
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.5, type: "spring", stiffness: 200 }}
-                  className="w-12 h-12 rounded-xl bg-[#6C7463] flex items-center justify-center flex-shrink-0 group-hover:bg-[#6C7463]/80 transition-colors duration-300"
+                  className="w-12 h-12 rounded-xl bg-deep-forest flex items-center justify-center flex-shrink-0 group-hover:bg-moss-green transition-colors duration-300 shadow-sm"
                 >
-                  <Users className="w-6 h-6 text-[#FAF7F2]" />
+                  <Users className="w-6 h-6 text-off-white group-hover:text-gold-orange transition-colors" />
                 </motion.div>
                 <div>
-                  <h3 className="font-display text-lg font-semibold text-[#4B544A] mb-1 group-hover:text-[#7D5C4E] transition-colors duration-300">
+                  <h3 className="font-display text-lg font-semibold text-deep-forest mb-1 group-hover:text-gold-orange transition-colors duration-300">
                     Riverside Civic Association
                   </h3>
-                  <p className="text-sm text-[#7D5C4E] font-medium mb-2">President · 501(c)(3) Nonprofit</p>
-                  <p className="text-sm text-[#6C7463]">
+                  <p className="text-sm text-gold-orange font-medium mb-2">President · 501(c)(3) Nonprofit</p>
+                  <p className="text-sm text-dark-forest">
                     Leading community initiatives in Houston's historic Third Ward
                   </p>
                 </div>
@@ -131,24 +132,25 @@ export default function LeadershipSection() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="group bg-[#FAF7F2] border border-[#959D8D]/30 rounded-xl p-6 hover:border-[#7D5C4E]/50 transition-all duration-300"
+              className="group bg-off-white border border-sage/30 rounded-xl p-6 hover:border-gold-orange/50 transition-all duration-300 shadow-sm hover:shadow-md"
             >
               <div className="flex items-start gap-4">
+                {/* Icon container - Gold orange for emphasis */}
                 <motion.div 
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.65, type: "spring", stiffness: 200 }}
-                  className="w-12 h-12 rounded-xl bg-[#7D5C4E] flex items-center justify-center flex-shrink-0 group-hover:bg-[#7D5C4E]/80 transition-colors duration-300"
+                  className="w-12 h-12 rounded-xl bg-gold-orange flex items-center justify-center flex-shrink-0 group-hover:bg-warm-orange transition-colors duration-300 shadow-sm"
                 >
-                  <Heart className="w-6 h-6 text-[#FAF7F2]" />
+                  <Heart className="w-6 h-6 text-deep-forest" />
                 </motion.div>
                 <div>
-                  <h3 className="font-display text-lg font-semibold text-[#4B544A] mb-1 group-hover:text-[#7D5C4E] transition-colors duration-300">
+                  <h3 className="font-display text-lg font-semibold text-deep-forest mb-1 group-hover:text-gold-orange transition-colors duration-300">
                     Volunteer Tax Preparer
                   </h3>
-                  <p className="text-sm text-[#7D5C4E] font-medium mb-2">Notre Dame Tax Assistance Program</p>
-                  <p className="text-sm text-[#6C7463]">
+                  <p className="text-sm text-gold-orange font-medium mb-2">Notre Dame Tax Assistance Program</p>
+                  <p className="text-sm text-dark-forest">
                     Helping families navigate the tax system with clarity
                   </p>
                 </div>
@@ -163,24 +165,25 @@ export default function LeadershipSection() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="group bg-[#FAF7F2] border border-[#959D8D]/30 rounded-xl p-6 hover:border-[#7D5C4E]/50 transition-all duration-300"
+              className="group bg-off-white border border-sage/30 rounded-xl p-6 hover:border-gold-orange/50 transition-all duration-300 shadow-sm hover:shadow-md"
             >
               <div className="flex items-start gap-4">
+                {/* Icon container - Moss green variety */}
                 <motion.div 
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.8, type: "spring", stiffness: 200 }}
-                  className="w-12 h-12 rounded-xl bg-[#959D8D] flex items-center justify-center flex-shrink-0 group-hover:bg-[#959D8D]/80 transition-colors duration-300"
+                  className="w-12 h-12 rounded-xl bg-moss-green flex items-center justify-center flex-shrink-0 group-hover:bg-deep-forest transition-colors duration-300 shadow-sm"
                 >
-                  <Award className="w-6 h-6 text-[#FAF7F2]" />
+                  <Award className="w-6 h-6 text-off-white group-hover:text-gold-orange transition-colors" />
                 </motion.div>
                 <div>
-                  <h3 className="font-display text-lg font-semibold text-[#4B544A] mb-1 group-hover:text-[#7D5C4E] transition-colors duration-300">
+                  <h3 className="font-display text-lg font-semibold text-deep-forest mb-1 group-hover:text-gold-orange transition-colors duration-300">
                     Community Impact
                   </h3>
-                  <p className="text-sm text-[#7D5C4E] font-medium mb-2">Safety · Infrastructure · Quality of Life</p>
-                  <p className="text-sm text-[#6C7463]">
+                  <p className="text-sm text-gold-orange font-medium mb-2">Safety · Infrastructure · Quality of Life</p>
+                  <p className="text-sm text-dark-forest">
                     Working with city leaders and residents for lasting change
                   </p>
                 </div>
