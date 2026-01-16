@@ -52,23 +52,21 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Brand Colors - Navy Blue Palette
+        // Brand Colors - RJM Palette
         navy: {
-          DEFAULT: "hsl(var(--deep-navy))",
+          DEFAULT: "hsl(var(--navy))",
           deep: "hsl(var(--deep-navy))",
           medium: "hsl(var(--navy))",
           steel: "hsl(var(--steel-blue))",
         },
-        // Gold Accents
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          bright: "hsl(var(--gold))",
-          warm: "hsl(var(--warm-gold))",
-          amber: "hsl(var(--amber))",
+        // Silver/Gray Tones
+        silver: {
+          DEFAULT: "hsl(var(--silver))",
         },
         charcoal: {
           DEFAULT: "hsl(var(--charcoal))",
           light: "hsl(var(--charcoal-light))",
+          gray: "hsl(var(--charcoal-gray))",
         },
         cream: "hsl(var(--cream))",
         slate: "hsl(var(--slate))",
@@ -118,9 +116,9 @@ export default {
           "0%": { opacity: "0", transform: "scale(0.95)" },
           "100%": { opacity: "1", transform: "scale(1)" },
         },
-        "pulse-gold": {
-          "0%, 100%": { boxShadow: "0 0 0 0 hsl(45 100% 50% / 0.4)" },
-          "50%": { boxShadow: "0 0 0 12px hsl(45 100% 50% / 0)" },
+        "pulse-blue": {
+          "0%, 100%": { boxShadow: "0 0 0 0 hsl(200 68% 28% / 0.4)" },
+          "50%": { boxShadow: "0 0 0 12px hsl(200 68% 28% / 0)" },
         },
         "gentle-float": {
           "0%, 100%": { transform: "translateY(0)" },
@@ -139,15 +137,15 @@ export default {
         "slide-in-left": "slide-in-left 0.8s ease-out forwards",
         "slide-in-right": "slide-in-right 0.8s ease-out forwards",
         "scale-in": "scale-in 0.6s ease-out forwards",
-        "pulse-gold": "pulse-gold 2s ease-in-out infinite",
+        "pulse-blue": "pulse-blue 2s ease-in-out infinite",
         "gentle-float": "gentle-float 6s ease-in-out infinite",
         "shimmer": "shimmer 0.8s ease-out",
       },
       boxShadow: {
-        'soft': '0 4px 20px -4px hsl(210 50% 25% / 0.08)',
-        'elevated': '0 12px 40px -8px hsl(210 50% 25% / 0.12)',
-        'gold': '0 8px 30px -6px hsl(45 100% 50% / 0.25)',
-        'card': '0 1px 3px hsl(210 50% 25% / 0.05), 0 4px 12px hsl(210 50% 25% / 0.08)',
+        'soft': '0 4px 20px -4px hsl(205 70% 8% / 0.1)',
+        'elevated': '0 12px 40px -8px hsl(205 70% 8% / 0.15)',
+        'blue': '0 8px 30px -6px hsl(200 68% 28% / 0.25)',
+        'card': '0 1px 3px hsl(205 70% 8% / 0.05), 0 4px 12px hsl(205 70% 8% / 0.08)',
       },
     },
   },
