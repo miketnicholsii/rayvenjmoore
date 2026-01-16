@@ -41,17 +41,17 @@ export default function SkillsVisualization() {
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-3">
                 <motion.div 
-                  className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300"
+                  className="w-10 h-10 rounded-lg bg-olive/10 flex items-center justify-center group-hover:bg-olive/20 transition-colors duration-300"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                 >
-                  <IconComponent className="w-5 h-5 text-primary" />
+                  <IconComponent className="w-5 h-5 text-olive" />
                 </motion.div>
-                <span className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                <span className="font-semibold text-dark-forest group-hover:text-terracotta transition-colors duration-300">
                   {category.name}
                 </span>
               </div>
               <motion.span 
-                className="text-sm font-medium text-primary"
+                className="text-sm font-medium text-terracotta"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -62,10 +62,10 @@ export default function SkillsVisualization() {
             </div>
             
             {/* Progress Bar */}
-            <div className="relative h-3 bg-secondary rounded-full overflow-hidden">
+            <div className="relative h-3 bg-sage/30 rounded-full overflow-hidden">
               {/* Animated fill */}
               <motion.div
-                className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary via-primary to-gold rounded-full"
+                className="absolute inset-y-0 left-0 bg-gradient-to-r from-olive via-olive to-terracotta rounded-full"
                 initial={{ width: 0 }}
                 whileInView={{ width: `${proficiency}%` }}
                 viewport={{ once: true }}
@@ -100,13 +100,13 @@ export default function SkillsVisualization() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 + skillIndex * 0.05 + 0.4 }}
                   whileHover={{ scale: 1.05, y: -1 }}
-                  className="px-2 py-0.5 text-xs bg-muted text-muted-foreground rounded-full hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-default"
+                  className="px-2 py-0.5 text-xs bg-warm-beige text-olive rounded-full hover:bg-terracotta/10 hover:text-terracotta transition-all duration-200 cursor-default"
                 >
                   {skill}
                 </motion.span>
               ))}
               {category.skills.length > 4 && (
-                <span className="px-2 py-0.5 text-xs text-muted-foreground">
+                <span className="px-2 py-0.5 text-xs text-sage">
                   +{category.skills.length - 4} more
                 </span>
               )}

@@ -27,7 +27,7 @@ export default function StoriesSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="stories" className="section-padding bg-muted/30">
+    <section id="stories" className="section-padding bg-warm-beige/30">
       <div className="container-wide" ref={ref}>
         {/* Header */}
         <motion.div
@@ -36,13 +36,13 @@ export default function StoriesSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <span className="font-body text-sm font-semibold tracking-widest uppercase text-gold mb-4 block">
+          <span className="font-body text-sm font-semibold tracking-widest uppercase text-terracotta mb-4 block">
             Transformations
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-dark-forest">
             Stories of Clarity
           </h2>
-          <p className="font-body text-muted-foreground mt-4">
+          <p className="font-body text-olive mt-4">
             Real transformations from confusion to confidence, fear to freedom.
           </p>
         </motion.div>
@@ -56,26 +56,26 @@ export default function StoriesSection() {
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               whileHover={{ y: -6, scale: 1.02 }}
-              className="bg-card rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 group cursor-pointer border border-transparent hover:border-gold/20"
+              className="bg-cream rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 group cursor-pointer border border-transparent hover:border-terracotta/20"
             >
               <motion.div 
-                className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center mb-6"
+                className="w-10 h-10 rounded-full bg-terracotta/10 flex items-center justify-center mb-6"
                 whileHover={{ rotate: 12 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <Quote className="w-5 h-5 text-gold transition-transform group-hover:scale-110" />
+                <Quote className="w-5 h-5 text-terracotta transition-transform group-hover:scale-110" />
               </motion.div>
-              <blockquote className="font-body text-foreground leading-relaxed mb-6">
+              <blockquote className="font-body text-dark-forest leading-relaxed mb-6">
                 "{story.quote}"
               </blockquote>
-              <div className="border-t border-border pt-6">
-                <p className="font-body text-xs font-semibold tracking-wider uppercase text-gold mb-2 transition-all duration-300 group-hover:tracking-widest">
+              <div className="border-t border-sage/30 pt-6">
+                <p className="font-body text-xs font-semibold tracking-wider uppercase text-terracotta mb-2 transition-all duration-300 group-hover:tracking-widest">
                   {story.transformation}
                 </p>
-                <p className="font-display text-lg font-semibold text-foreground">
+                <p className="font-display text-lg font-semibold text-dark-forest">
                   {story.author}
                 </p>
-                <p className="font-body text-sm text-muted-foreground">
+                <p className="font-body text-sm text-olive">
                   {story.role}
                 </p>
               </div>
