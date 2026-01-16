@@ -52,14 +52,14 @@ export default function WealthCarePillars({ className = '', showDescriptions = t
             transition={{ delay: index * 0.08 }}
             className={`group text-center ${showDescriptions ? 'p-4' : 'p-3'}`}
           >
-            <div className={`${showDescriptions ? 'w-14 h-14' : 'w-10 h-10'} mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300`}>
-              <pillar.icon className={`${showDescriptions ? 'w-7 h-7' : 'w-5 h-5'} text-primary`} />
+            <div className={`${showDescriptions ? 'w-14 h-14' : 'w-10 h-10'} mx-auto rounded-xl bg-olive/10 flex items-center justify-center mb-3 group-hover:bg-olive/20 group-hover:scale-110 transition-all duration-300`}>
+              <pillar.icon className={`${showDescriptions ? 'w-7 h-7' : 'w-5 h-5'} text-olive`} />
             </div>
-            <h4 className={`${showDescriptions ? 'text-sm' : 'text-xs'} font-semibold text-foreground mb-1`}>
+            <h4 className={`${showDescriptions ? 'text-sm' : 'text-xs'} font-semibold text-dark-forest mb-1`}>
               {pillar.title}
             </h4>
             {showDescriptions && (
-              <p className="text-xs text-muted-foreground leading-relaxed">
+              <p className="text-xs text-olive leading-relaxed">
                 {pillar.description}
               </p>
             )}

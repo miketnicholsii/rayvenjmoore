@@ -23,7 +23,7 @@ const manifestoHighlights = [
 
 export default function ManifestoPreview() {
   return (
-    <section id="manifesto" className="py-20 md:py-28 bg-gradient-to-b from-background via-primary/5 to-background">
+    <section id="manifesto" className="py-20 md:py-28 bg-gradient-to-b from-cream via-warm-beige/20 to-cream">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div
@@ -32,13 +32,13 @@ export default function ManifestoPreview() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-2 bg-olive/10 text-olive rounded-full text-sm font-medium mb-4">
             What I Believe
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            The <span className="text-primary">Universal Wealth Care</span> Manifesto
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-forest mb-4">
+            The <span className="text-terracotta">Universal Wealth Care</span> Manifesto
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-olive max-w-2xl mx-auto">
             These principles guide every decision, every venture, and every conversation.
           </p>
         </motion.div>
@@ -50,15 +50,15 @@ export default function ManifestoPreview() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto mb-16"
         >
-          <div className="relative bg-card border border-border rounded-2xl p-8 md:p-12">
-            <Quote className="absolute top-6 left-6 w-8 h-8 text-primary/20" />
-            <blockquote className="text-xl md:text-2xl font-medium text-foreground text-center leading-relaxed italic">
+          <div className="relative bg-cream border border-sage/30 rounded-2xl p-8 md:p-12">
+            <Quote className="absolute top-6 left-6 w-8 h-8 text-terracotta/20" />
+            <blockquote className="text-xl md:text-2xl font-medium text-dark-forest text-center leading-relaxed italic">
               "A world where financial wellness is not a privilege of the few, but a right of the many. 
               Where every person has access to the knowledge, tools, and support they need to build 
               the future they deserve."
             </blockquote>
             <div className="mt-6 text-center">
-              <p className="text-primary font-semibold">— The Universal Wealth Care Vision</p>
+              <p className="text-terracotta font-semibold">— The Universal Wealth Care Vision</p>
             </div>
           </div>
         </motion.div>
@@ -73,18 +73,18 @@ export default function ManifestoPreview() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -4, scale: 1.01 }}
-              className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all duration-300 group cursor-pointer hover:shadow-lg"
+              className="bg-cream border border-sage/30 rounded-xl p-6 hover:border-terracotta/30 transition-all duration-300 group cursor-pointer hover:shadow-lg"
             >
-              <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center gap-2 group-hover:text-primary transition-colors">
+              <h3 className="text-lg font-semibold text-dark-forest mb-2 flex items-center gap-2 group-hover:text-terracotta transition-colors">
                 <motion.span 
-                  className="w-2 h-2 bg-primary rounded-full"
+                  className="w-2 h-2 bg-terracotta rounded-full"
                   whileHover={{ scale: 1.5 }}
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 />
                 {item.title}
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-foreground/80 transition-colors">
+              <p className="text-olive text-sm leading-relaxed group-hover:text-dark-forest/80 transition-colors">
                 {item.text}
               </p>
             </motion.div>
@@ -100,9 +100,9 @@ export default function ManifestoPreview() {
         >
           <Link
             to="/manifesto"
-            className="inline-flex items-center gap-2 text-primary font-medium text-lg group"
+            className="inline-flex items-center gap-2 text-terracotta font-medium text-lg group"
           >
-            <span className="relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-primary after:origin-right after:scale-x-0 group-hover:after:origin-left group-hover:after:scale-x-100 after:transition-transform after:duration-300">
+            <span className="relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-terracotta after:origin-right after:scale-x-0 group-hover:after:origin-left group-hover:after:scale-x-100 after:transition-transform after:duration-300">
               Read the Full Manifesto
             </span>
             <ChevronRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
