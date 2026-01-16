@@ -179,8 +179,14 @@ export default function SpeakingSection() {
               <h4 className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4">
                 What I'm Listening To
               </h4>
-              <div className="aspect-[3/1] bg-primary-foreground/5 rounded-xl flex items-center justify-center text-primary-foreground/50 text-sm">
-                <span>Spotify Playlist Embed</span>
+              <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
+                <iframe
+                  src="https://open.spotify.com/embed/playlist/6MptPHpTE9KRwh4KczLfEW?utm_source=generator"
+                  className="absolute top-0 left-0 w-full h-full rounded-xl"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                />
               </div>
             </motion.div>
 
