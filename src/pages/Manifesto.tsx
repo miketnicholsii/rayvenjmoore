@@ -45,13 +45,13 @@ export default function Manifesto() {
       <BreakoutNav title="Manifesto" backLabel="Back to Home" sectionId="manifesto" />
       <main className="pt-16">
         {/* Hero */}
-        <section className="pt-32 pb-20 bg-gradient-to-b from-cream to-background">
+        <section className="pt-32 pb-20 bg-gradient-to-b from-primary/5 to-background">
           <div className="container-narrow text-center">
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="font-body text-sm font-semibold tracking-widest uppercase text-gold mb-4 block"
+              className="font-body text-sm font-semibold tracking-widest uppercase text-primary mb-4 block"
             >
               A Personal Manifesto
             </motion.span>
@@ -87,7 +87,7 @@ export default function Manifesto() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="mb-16 last:mb-0"
               >
-                <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4 gold-underline inline-block">
+                <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4 border-b-2 border-primary pb-2 inline-block">
                   {section.title}
                 </h2>
                 <p className="font-body text-lg text-muted-foreground leading-relaxed mt-6">
@@ -108,7 +108,7 @@ export default function Manifesto() {
                 "Converting complexity into clarity, one person at a time."
               </p>
               <p className="font-display text-2xl font-semibold text-foreground">
-                — Rayven J. Moore<span className="text-gold">,</span> CPA
+                — Rayven J. Moore<span className="text-primary">,</span> CPA
               </p>
             </motion.div>
           </div>

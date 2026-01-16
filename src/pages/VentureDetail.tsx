@@ -22,7 +22,7 @@ export default function VentureDetail() {
       <BreakoutNav title={venture.title} backLabel="Back to Ventures" backTo="/ventures" />
       <main className="pt-16">
         {/* Hero */}
-        <section className="pt-32 pb-16 bg-gradient-to-b from-cream to-background">
+        <section className="pt-32 pb-16 bg-gradient-to-b from-primary/5 to-background">
           <div className="container-wide">
             {/* Back Link */}
             <motion.div
@@ -33,7 +33,7 @@ export default function VentureDetail() {
             >
               <Link 
                 to="/ventures" 
-                className="inline-flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-gold transition-colors"
+                className="inline-flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <ArrowLeft size={16} />
                 Back to Ventures
@@ -50,15 +50,15 @@ export default function VentureDetail() {
               >
                 {/* Icon & Category */}
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-gold/10 flex items-center justify-center">
-                    <venture.icon className="w-8 h-8 text-gold" />
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
+                    <venture.icon className="w-8 h-8 text-primary" />
                   </div>
                   <div>
-                    <span className="font-body text-sm font-semibold tracking-widest uppercase text-gold">
+                    <span className="font-body text-sm font-semibold tracking-widest uppercase text-primary">
                       {venture.category}
                     </span>
                     {venture.featured && (
-                      <span className="ml-3 font-body text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full bg-gold/10 text-gold">
+                      <span className="ml-3 font-body text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full bg-primary/10 text-primary">
                         Featured Venture
                       </span>
                     )}
@@ -71,7 +71,7 @@ export default function VentureDetail() {
                 </h1>
 
                 {/* Tagline */}
-                <p className="font-body text-xl text-gold italic mb-8">
+                <p className="font-body text-xl text-primary italic mb-8">
                   {venture.tagline}
                 </p>
 
@@ -100,15 +100,15 @@ export default function VentureDetail() {
               >
                 <div className="sticky top-32 space-y-6">
                   {/* CTA Card */}
-                  <div className="bg-primary text-primary-foreground rounded-2xl p-8">
+                  <div className="bg-accent text-accent-foreground rounded-2xl p-8">
                     <h3 className="font-display text-xl font-semibold mb-4">
                       Ready to Connect?
                     </h3>
-                    <p className="font-body text-sm text-primary-foreground/70 mb-6">
+                    <p className="font-body text-sm text-accent-foreground/70 mb-6">
                       Take the next step and explore what {venture.title} has to offer.
                     </p>
                     <Button 
-                      variant="gold" 
+                      variant="secondary" 
                       size="lg" 
                       className="w-full"
                       asChild
@@ -133,7 +133,7 @@ export default function VentureDetail() {
                       <ul className="space-y-3">
                         {venture.highlights.map((highlight, index) => (
                           <li key={index} className="flex items-start gap-3">
-                            <CheckCircle className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                            <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                             <span className="font-body text-sm text-muted-foreground">{highlight}</span>
                           </li>
                         ))}
@@ -147,7 +147,7 @@ export default function VentureDetail() {
         </section>
 
         {/* Related Ventures */}
-        <section className="section-padding bg-muted/30">
+        <section className="section-padding bg-secondary/30">
           <div className="container-wide">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -170,17 +170,17 @@ export default function VentureDetail() {
                 >
                   <Link 
                     to={`/ventures/${related.id}`}
-                    className="block bg-card rounded-xl p-6 border border-border hover:border-gold/30 transition-all duration-300 group"
+                    className="block bg-card rounded-xl p-6 border border-border hover:border-primary/30 transition-all duration-300 group"
                   >
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center">
-                        <related.icon className="w-5 h-5 text-gold" />
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <related.icon className="w-5 h-5 text-primary" />
                       </div>
-                      <span className="font-body text-xs font-semibold tracking-wider uppercase text-gold">
+                      <span className="font-body text-xs font-semibold tracking-wider uppercase text-primary">
                         {related.category}
                       </span>
                     </div>
-                    <h3 className="font-display text-lg font-semibold text-foreground mb-2 group-hover:text-gold transition-colors">
+                    <h3 className="font-display text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                       {related.title}
                     </h3>
                     <p className="font-body text-sm text-muted-foreground line-clamp-2">
