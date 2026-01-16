@@ -52,14 +52,24 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Brand Colors - RJM Palette
+        // Brand Colors - RJM Blue Palette
         navy: {
           DEFAULT: "hsl(var(--navy))",
           deep: "hsl(var(--deep-navy))",
-          medium: "hsl(var(--navy))",
+          marian: "hsl(var(--marian-blue))",
           steel: "hsl(var(--steel-blue))",
         },
-        // Silver/Gray Tones
+        royal: {
+          DEFAULT: "hsl(var(--royal-blue))",
+          hover: "hsl(var(--royal-blue-hover))",
+        },
+        jet: "hsl(var(--jet))",
+        battleship: "hsl(var(--battleship))",
+        platinum: {
+          DEFAULT: "hsl(var(--platinum))",
+          light: "hsl(var(--platinum-light))",
+        },
+        // Legacy mappings
         silver: {
           DEFAULT: "hsl(var(--silver))",
           light: "hsl(var(--silver-light))",
@@ -72,6 +82,7 @@ export default {
         cream: "hsl(var(--cream))",
         slate: "hsl(var(--slate))",
         steel: "hsl(var(--steel))",
+        forest: "hsl(var(--forest))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -118,8 +129,8 @@ export default {
           "100%": { opacity: "1", transform: "scale(1)" },
         },
         "pulse-blue": {
-          "0%, 100%": { boxShadow: "0 0 0 0 hsl(200 68% 28% / 0.4)" },
-          "50%": { boxShadow: "0 0 0 12px hsl(200 68% 28% / 0)" },
+          "0%, 100%": { boxShadow: "0 0 0 0 hsl(220 90% 55% / 0.4)" },
+          "50%": { boxShadow: "0 0 0 12px hsl(220 90% 55% / 0)" },
         },
         "gentle-float": {
           "0%, 100%": { transform: "translateY(0)" },
@@ -143,10 +154,11 @@ export default {
         "shimmer": "shimmer 0.8s ease-out",
       },
       boxShadow: {
-        'soft': '0 4px 20px -4px hsl(205 70% 8% / 0.1)',
-        'elevated': '0 12px 40px -8px hsl(205 70% 8% / 0.15)',
-        'blue': '0 8px 30px -6px hsl(200 68% 28% / 0.25)',
-        'card': '0 1px 3px hsl(205 70% 8% / 0.05), 0 4px 12px hsl(205 70% 8% / 0.08)',
+        'soft': '0 4px 20px -4px hsl(220 7% 20% / 0.1)',
+        'elevated': '0 12px 40px -8px hsl(220 7% 20% / 0.15)',
+        'blue': '0 8px 30px -6px hsl(220 90% 55% / 0.3)',
+        'card': '0 1px 3px hsl(220 7% 20% / 0.05), 0 4px 12px hsl(220 7% 20% / 0.08)',
+        'royal': '0 8px 30px -6px hsl(220 90% 55% / 0.35)',
       },
     },
   },

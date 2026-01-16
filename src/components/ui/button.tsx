@@ -9,25 +9,27 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-forest-moss",
+        default: "bg-primary text-primary-foreground hover:bg-royal-hover",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-input bg-background hover:bg-secondary hover:text-secondary-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-secondary hover:text-secondary-foreground",
-        link: "text-primary underline-offset-4 hover:underline hover:text-accent",
-        // Premium Brand Variants - Forest Green + Orange Accent
-        hero: "bg-primary text-primary-foreground font-semibold shadow-lg hover:shadow-orange hover:bg-forest-moss hover:-translate-y-0.5 btn-glow",
-        heroOutline: "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground hover:border-accent",
-        accent: "bg-accent text-accent-foreground font-semibold shadow-md hover:bg-orange-warm hover:shadow-lg hover:-translate-y-0.5",
+        link: "text-primary underline-offset-4 hover:underline hover:text-primary",
+        // Premium Brand Variants - Royal Blue + Marian Blue
+        hero: "bg-primary text-primary-foreground font-semibold shadow-lg shadow-blue hover:shadow-royal hover:bg-royal-hover hover:-translate-y-0.5",
+        heroOutline: "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground",
+        accent: "bg-accent text-accent-foreground font-semibold shadow-md hover:bg-accent/90 hover:shadow-lg hover:-translate-y-0.5",
         accentOutline: "border-2 border-accent bg-transparent text-accent hover:bg-accent hover:text-accent-foreground",
-        forest: "bg-forest text-primary-foreground font-semibold shadow-md hover:bg-forest-moss hover:shadow-lg hover:-translate-y-0.5",
-        forestOutline: "border-2 border-forest bg-transparent text-forest hover:bg-forest hover:text-primary-foreground",
-        minimal: "text-foreground hover:text-accent underline-offset-4 hover:underline decoration-accent",
-        // Legacy support
-        gold: "bg-accent text-accent-foreground font-semibold shadow-md hover:bg-orange-warm hover:shadow-lg hover:-translate-y-0.5",
-        goldOutline: "border-2 border-accent bg-transparent text-accent hover:bg-accent hover:text-accent-foreground",
-        evergreen: "bg-forest-evergreen text-primary-foreground font-semibold shadow-md hover:bg-forest-moss hover:shadow-lg hover:-translate-y-0.5",
-        evergreenOutline: "border-2 border-forest-evergreen bg-transparent text-forest-evergreen hover:bg-forest-evergreen hover:text-primary-foreground",
+        navy: "bg-accent text-accent-foreground font-semibold shadow-md hover:bg-accent/90 hover:shadow-lg hover:-translate-y-0.5",
+        navyOutline: "border-2 border-accent bg-transparent text-accent hover:bg-accent hover:text-accent-foreground",
+        minimal: "text-foreground hover:text-primary underline-offset-4 hover:underline decoration-primary",
+        // Legacy support (mapped to new colors)
+        gold: "bg-primary text-primary-foreground font-semibold shadow-md hover:bg-royal-hover hover:shadow-lg hover:-translate-y-0.5",
+        goldOutline: "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground",
+        forest: "bg-accent text-accent-foreground font-semibold shadow-md hover:bg-accent/90 hover:shadow-lg hover:-translate-y-0.5",
+        forestOutline: "border-2 border-accent bg-transparent text-accent hover:bg-accent hover:text-accent-foreground",
+        evergreen: "bg-accent text-accent-foreground font-semibold shadow-md hover:bg-accent/90 hover:shadow-lg hover:-translate-y-0.5",
+        evergreenOutline: "border-2 border-accent bg-transparent text-accent hover:bg-accent hover:text-accent-foreground",
       },
       size: {
         default: "h-10 px-5 py-2",

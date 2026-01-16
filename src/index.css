@@ -8,43 +8,43 @@
   :root {
     /* ========================================
        RJM - BRAND COLOR SYSTEM
-       Deep Blue + Silver Gray Palette
+       Marian Blue + Royal Blue + Jet Palette
        Optimized for Contrast & Accessibility
        ======================================== */
     
-    /* Clean White Background */
+    /* Clean Platinum/White Background */
     --background: 0 0% 100%;
-    --foreground: 205 70% 8%;
+    --foreground: 220 7% 20%;  /* Jet #2F3136 - high contrast text */
 
-    --card: 0 0% 100%;
-    --card-foreground: 205 70% 8%;
+    --card: 0 0% 98%;
+    --card-foreground: 220 7% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 205 70% 8%;
+    --popover-foreground: 220 7% 20%;
 
-    /* Deep Blue - Primary (great contrast on white) */
-    --primary: 200 68% 28%;
+    /* Royal Blue - Primary (vibrant, excellent contrast) */
+    --primary: 220 90% 55%;  /* #2764F3 */
     --primary-foreground: 0 0% 100%;
 
-    /* Silver Gray Secondary - for subtle backgrounds */
-    --secondary: 200 5% 94%;
-    --secondary-foreground: 205 70% 8%;
+    /* Platinum Secondary - for subtle backgrounds */
+    --secondary: 0 0% 90%;  /* #E5E5E5 */
+    --secondary-foreground: 220 7% 20%;
 
     /* Muted - Light gray for backgrounds */
-    --muted: 200 5% 96%;
-    --muted-foreground: 200 10% 35%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 220 2% 54%;  /* #8A8B8E - Battleship gray */
 
-    /* Accent - Deep Navy for emphasis (high contrast) */
-    --accent: 205 70% 8%;
+    /* Accent - Marian Blue for emphasis (deep navy) */
+    --accent: 220 75% 33%;  /* #163C90 */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
     /* Borders */
-    --border: 200 8% 82%;
-    --input: 200 8% 82%;
-    --ring: 200 68% 28%;
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 220 90% 55%;
 
     --radius: 0.5rem;
 
@@ -53,90 +53,100 @@
        ======================================== */
     
     /* Blues - Primary palette */
-    --deep-navy: 205 70% 8%;          /* #071527 - Darkest, for text */
-    --navy: 200 68% 28%;              /* #175676 - Primary Blue */
-    --steel-blue: 200 45% 42%;        /* Lighter blue for hover states */
+    --marian-blue: 220 75% 33%;       /* #163C90 - Deep navy accent */
+    --royal-blue: 220 90% 55%;        /* #2764F3 - Vibrant primary */
+    --royal-blue-hover: 220 85% 48%;  /* Darker hover state */
     
-    /* Silver/Gray Tones */
-    --silver: 200 6% 65%;             /* #A3A9AC - Silver accent */
-    --silver-light: 200 5% 88%;       /* Light silver for backgrounds */
-    --charcoal-gray: 190 5% 38%;      /* #5D6566 - Dark gray */
+    /* Neutrals */
+    --jet: 220 7% 20%;                /* #2F3136 - Text color */
+    --battleship: 220 2% 54%;         /* #8A8B8E - Muted text */
+    --platinum: 0 0% 90%;             /* #E5E5E5 - Light bg */
+    --platinum-light: 0 0% 95%;       /* Lighter platinum */
     
-    /* Neutral Extensions */
-    --charcoal: 205 70% 8%;
-    --charcoal-light: 200 10% 25%;
-    --cream: 40 20% 98%;
-    --warm-white: 40 15% 99%;
-    --slate: 200 8% 88%;
-    --steel: 200 6% 55%;
+    /* Legacy mappings for compatibility */
+    --deep-navy: 220 75% 33%;
+    --navy: 220 90% 55%;
+    --steel-blue: 220 70% 45%;
+    --silver: 220 2% 54%;
+    --silver-light: 0 0% 90%;
+    --charcoal-gray: 220 7% 35%;
+    --charcoal: 220 7% 20%;
+    --charcoal-light: 220 7% 30%;
+    --cream: 0 0% 98%;
+    --warm-white: 0 0% 99%;
+    --slate: 0 0% 88%;
+    --steel: 220 2% 54%;
+
+    /* Forest alias for components that use it */
+    --forest: 220 75% 33%;
 
     /* ========================================
        GRADIENTS
        ======================================== */
-    --gradient-navy: linear-gradient(135deg, hsl(205 70% 8%), hsl(200 68% 28%));
-    --gradient-blue: linear-gradient(135deg, hsl(200 68% 28%), hsl(200 45% 42%));
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(200 5% 96%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(200 5% 98%) 100%);
+    --gradient-navy: linear-gradient(135deg, hsl(220 75% 33%), hsl(220 90% 55%));
+    --gradient-blue: linear-gradient(135deg, hsl(220 90% 55%), hsl(220 70% 45%));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 95%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
 
     /* ========================================
        SHADOWS
        ======================================== */
-    --shadow-soft: 0 4px 20px -4px hsl(205 70% 8% / 0.08);
-    --shadow-elevated: 0 12px 40px -8px hsl(205 70% 8% / 0.12);
-    --shadow-blue: 0 8px 30px -6px hsl(200 68% 28% / 0.2);
-    --shadow-card: 0 1px 3px hsl(205 70% 8% / 0.04), 0 4px 12px hsl(205 70% 8% / 0.06);
+    --shadow-soft: 0 4px 20px -4px hsl(220 7% 20% / 0.08);
+    --shadow-elevated: 0 12px 40px -8px hsl(220 7% 20% / 0.12);
+    --shadow-blue: 0 8px 30px -6px hsl(220 90% 55% / 0.25);
+    --shadow-card: 0 1px 3px hsl(220 7% 20% / 0.04), 0 4px 12px hsl(220 7% 20% / 0.06);
 
     /* Sidebar */
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 205 70% 8%;
-    --sidebar-primary: 200 68% 28%;
+    --sidebar-foreground: 220 7% 20%;
+    --sidebar-primary: 220 90% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 200 5% 94%;
-    --sidebar-accent-foreground: 205 70% 8%;
-    --sidebar-border: 200 8% 82%;
-    --sidebar-ring: 200 68% 28%;
+    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent-foreground: 220 7% 20%;
+    --sidebar-border: 0 0% 85%;
+    --sidebar-ring: 220 90% 55%;
   }
 
   .dark {
-    /* Dark mode - Deep navy background */
-    --background: 205 70% 6%;
-    --foreground: 200 5% 95%;
+    /* Dark mode - Jet/Dark background with Royal Blue accents */
+    --background: 220 7% 12%;
+    --foreground: 0 0% 95%;
 
-    --card: 205 60% 10%;
-    --card-foreground: 200 5% 95%;
+    --card: 220 7% 16%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 205 60% 10%;
-    --popover-foreground: 200 5% 95%;
+    --popover: 220 7% 16%;
+    --popover-foreground: 0 0% 95%;
 
-    /* Primary becomes lighter blue for dark mode */
-    --primary: 200 55% 55%;
-    --primary-foreground: 205 70% 6%;
+    /* Primary - Royal Blue stays vibrant */
+    --primary: 220 90% 60%;
+    --primary-foreground: 220 7% 12%;
 
-    --secondary: 200 20% 18%;
-    --secondary-foreground: 200 5% 90%;
+    --secondary: 220 7% 22%;
+    --secondary-foreground: 0 0% 90%;
 
-    --muted: 205 40% 14%;
-    --muted-foreground: 200 5% 65%;
+    --muted: 220 7% 18%;
+    --muted-foreground: 220 2% 65%;
 
-    /* Accent - Silver for dark mode emphasis */
-    --accent: 200 6% 75%;
-    --accent-foreground: 205 70% 8%;
+    /* Accent - Royal Blue for dark mode */
+    --accent: 220 90% 60%;
+    --accent-foreground: 220 7% 12%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 200 20% 22%;
-    --input: 200 20% 22%;
-    --ring: 200 55% 55%;
+    --border: 220 7% 25%;
+    --input: 220 7% 25%;
+    --ring: 220 90% 60%;
 
-    --sidebar-background: 205 60% 10%;
-    --sidebar-foreground: 200 5% 95%;
-    --sidebar-primary: 200 55% 55%;
-    --sidebar-primary-foreground: 205 70% 8%;
-    --sidebar-accent: 205 40% 14%;
-    --sidebar-accent-foreground: 200 5% 90%;
-    --sidebar-border: 200 20% 22%;
-    --sidebar-ring: 200 55% 55%;
+    --sidebar-background: 220 7% 16%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 220 90% 60%;
+    --sidebar-primary-foreground: 220 7% 12%;
+    --sidebar-accent: 220 7% 22%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 220 7% 25%;
+    --sidebar-ring: 220 90% 60%;
   }
 }
 
