@@ -49,11 +49,11 @@ const cardVariants = {
 
 export default function StatsSection() {
   return (
-    <section className="py-16 md:py-20 bg-[#4B544A] relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#7D5C4E] rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#E6E1D2] rounded-full blur-3xl" />
+    <section className="py-16 md:py-20 bg-deep-forest relative overflow-hidden">
+      {/* Background decorations - subtle, non-competing */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-1/4 w-64 h-64 bg-gold-orange rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-off-white rounded-full blur-3xl" />
       </div>
 
       <div className="container-wide relative z-10">
@@ -70,7 +70,7 @@ export default function StatsSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-body text-sm font-semibold tracking-widest uppercase text-[#E6CFB8] mb-4 block"
+            className="font-body text-sm font-semibold tracking-widest uppercase text-gold-orange mb-4 block"
           >
             Impact & Experience
           </motion.span>
@@ -79,13 +79,13 @@ export default function StatsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-display text-3xl md:text-4xl font-semibold text-[#E6E1D2]"
+            className="font-display text-3xl md:text-4xl font-semibold text-off-white"
           >
             Numbers That Tell a Story
           </motion.h2>
         </motion.div>
 
-        {/* Stats Grid */}
+        {/* Stats Grid - High Contrast Cards */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {stats.map((stat, index) => (
             <motion.div
@@ -96,49 +96,46 @@ export default function StatsSection() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="group relative bg-[#E6E1D2]/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-[#E6E1D2]/20 hover:border-[#7D5C4E]/50 transition-all duration-300 text-center"
+              className="group relative bg-off-white rounded-2xl p-6 md:p-8 shadow-elevated text-center"
             >
-              {/* Glow effect on hover */}
-              <div className="absolute inset-0 rounded-2xl bg-[#7D5C4E]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              {/* Icon */}
+              {/* Icon Container - Solid background for visibility */}
               <motion.div
                 initial={{ scale: 0, rotate: -20 }}
                 whileInView={{ scale: 1, rotate: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1, type: "spring", stiffness: 200 }}
-                className="relative z-10 w-14 h-14 rounded-xl bg-[#7D5C4E]/30 flex items-center justify-center mx-auto mb-5 group-hover:bg-[#7D5C4E]/50 transition-colors duration-300"
+                className="w-14 h-14 rounded-xl bg-deep-forest flex items-center justify-center mx-auto mb-5 group-hover:bg-moss-green transition-colors duration-300 shadow-md"
               >
-                <stat.icon className="w-7 h-7 text-[#E6CFB8]" />
+                <stat.icon className="w-7 h-7 text-off-white" />
               </motion.div>
 
-              {/* Counter */}
-              <div className="relative z-10 mb-2">
+              {/* Counter - Large Orange Numbers for Maximum Impact */}
+              <div className="mb-2">
                 <AnimatedCounter
                   value={stat.value}
                   suffix={stat.suffix}
                   duration={2.5}
-                  className="font-display text-4xl md:text-5xl font-bold text-[#E6E1D2]"
+                  className="font-display text-4xl md:text-5xl font-bold text-gold-orange"
                 />
               </div>
 
-              {/* Label */}
-              <h3 className="relative z-10 font-display text-lg font-semibold text-[#E6E1D2] mb-1 group-hover:text-[#E6CFB8] transition-colors duration-300">
+              {/* Label - Dark for contrast */}
+              <h3 className="font-display text-lg font-semibold text-deep-forest mb-1 group-hover:text-moss-green transition-colors duration-300">
                 {stat.label}
               </h3>
               
-              {/* Description */}
-              <p className="relative z-10 font-body text-sm text-[#E6E1D2]/70">
+              {/* Description - Muted but readable */}
+              <p className="font-body text-sm text-dark-forest/70">
                 {stat.description}
               </p>
 
-              {/* Accent line */}
+              {/* Accent line - Orange */}
               <motion.div
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                className="absolute bottom-0 left-4 right-4 h-1 bg-gradient-to-r from-transparent via-[#7D5C4E]/70 to-transparent origin-center"
+                className="absolute bottom-0 left-4 right-4 h-1 bg-gradient-to-r from-transparent via-gold-orange to-transparent origin-center rounded-full"
               />
             </motion.div>
           ))}

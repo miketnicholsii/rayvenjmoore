@@ -34,7 +34,7 @@ export default function SpeakingSection() {
     <section id="speaking" className="section-padding bg-terracotta">
       <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Content */}
+          {/* Content - All text is off-white/cream for WCAG AA contrast */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -46,7 +46,7 @@ export default function SpeakingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-body text-sm font-semibold tracking-widest uppercase text-cream/80 mb-4 block"
+              className="font-body text-sm font-semibold tracking-widest uppercase text-off-white/90 mb-4 block"
             >
               Speaking & Media
             </motion.span>
@@ -55,7 +55,7 @@ export default function SpeakingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-cream mb-6 leading-tight"
+              className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-off-white mb-6 leading-tight"
             >
               Conversations That Matter
             </motion.h2>
@@ -64,7 +64,7 @@ export default function SpeakingSection() {
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="w-12 h-1 rounded-full bg-cream/60 mb-8 origin-left" 
+              className="w-12 h-1 rounded-full bg-gold-orange mb-8 origin-left" 
             />
 
             <motion.p 
@@ -72,13 +72,13 @@ export default function SpeakingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.35 }}
-              className="font-body text-cream/90 text-lg leading-relaxed mb-8"
+              className="font-body text-off-white text-lg leading-relaxed mb-8"
             >
               Rayven brings clarity and insight to conversations about finance, business, and community. 
               Available for keynotes, panels, podcasts, and workshops.
             </motion.p>
 
-            {/* Speaking Topics */}
+            {/* Speaking Topics - Icon containers with solid backgrounds */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
               {speakingTopics.map((topic, index) => (
                 <motion.div
@@ -91,30 +91,36 @@ export default function SpeakingSection() {
                   whileHover={{ x: 4, transition: { duration: 0.2 } }}
                   className="flex items-center gap-3 group"
                 >
+                  {/* Icon with solid dark container for contrast */}
                   <motion.div 
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.4 + index * 0.1, type: "spring", stiffness: 200 }}
-                    className="w-10 h-10 rounded-lg bg-cream/10 flex items-center justify-center group-hover:bg-cream/20 transition-colors duration-300"
+                    className="w-10 h-10 rounded-lg bg-deep-forest flex items-center justify-center group-hover:bg-moss-green transition-colors duration-300 shadow-md"
                   >
-                    <topic.icon className="w-5 h-5 text-cream" />
+                    <topic.icon className="w-5 h-5 text-off-white" />
                   </motion.div>
-                  <span className="font-body text-sm font-medium text-cream/90">
+                  <span className="font-body text-sm font-medium text-off-white">
                     {topic.label}
                   </span>
                 </motion.div>
               ))}
             </div>
 
-            {/* CTA */}
+            {/* CTA - High contrast button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <Button variant="secondary" size="lg" asChild>
+              <Button 
+                variant="secondary" 
+                size="lg" 
+                asChild 
+                className="bg-off-white text-deep-forest hover:bg-near-white border-0 shadow-lg"
+              >
                 <Link to="/speaking" className="group">
                   Invite Rayven to Speak
                   <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -123,7 +129,7 @@ export default function SpeakingSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right Side - Spotify + Social */}
+          {/* Right Side - Speaker Card */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -131,14 +137,14 @@ export default function SpeakingSection() {
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
             className="space-y-8"
           >
-            {/* Speaker Card */}
+            {/* Speaker Card - Off-white background for readability */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="bg-cream/10 backdrop-blur-sm rounded-2xl p-8 border border-cream/20"
+              className="bg-off-white rounded-2xl p-8 shadow-elevated"
             >
               <div className="flex items-center gap-4 mb-6">
                 <motion.div 
@@ -146,29 +152,41 @@ export default function SpeakingSection() {
                   whileInView={{ scale: 1, rotate: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.4, type: "spring", stiffness: 200 }}
-                  className="w-16 h-16 rounded-full bg-cream/20 flex items-center justify-center"
+                  className="w-16 h-16 rounded-full bg-deep-forest flex items-center justify-center shadow-md"
                 >
-                  <Mic className="w-8 h-8 text-cream" />
+                  <Mic className="w-8 h-8 text-gold-orange" />
                 </motion.div>
                 <div>
-                  <h3 className="font-display text-xl font-semibold text-cream">
+                  <h3 className="font-display text-xl font-semibold text-deep-forest">
                     Book a Speaking Engagement
                   </h3>
-                  <p className="text-sm text-cream/70">
+                  <p className="text-sm text-dark-forest/70">
                     Keynotes · Panels · Podcasts · Workshops
                   </p>
                 </div>
               </div>
 
-              <div className="space-y-3 text-sm text-cream/80">
-                <p>✓ Financial strategy for executives and business owners</p>
-                <p>✓ Community leadership and civic engagement</p>
-                <p>✓ Navigating digital assets and emerging technologies</p>
-                <p>✓ Building confidence through financial clarity</p>
+              <div className="space-y-3 text-sm text-dark-forest">
+                <p className="flex items-start gap-2">
+                  <span className="text-gold-orange font-bold">✓</span>
+                  Financial strategy for executives and business owners
+                </p>
+                <p className="flex items-start gap-2">
+                  <span className="text-gold-orange font-bold">✓</span>
+                  Community leadership and civic engagement
+                </p>
+                <p className="flex items-start gap-2">
+                  <span className="text-gold-orange font-bold">✓</span>
+                  Navigating digital assets and emerging technologies
+                </p>
+                <p className="flex items-start gap-2">
+                  <span className="text-gold-orange font-bold">✓</span>
+                  Building confidence through financial clarity
+                </p>
               </div>
             </motion.div>
 
-            {/* Social Links */}
+            {/* Social Links - On terracotta, use off-white with dark hover */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -187,7 +205,7 @@ export default function SpeakingSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.55 + index * 0.1 }}
                   whileHover={{ y: -2, scale: 1.05 }}
-                  className="px-4 py-2 rounded-lg bg-cream/10 text-cream/90 font-body text-sm font-medium hover:bg-cream/20 hover:text-cream transition-all duration-300"
+                  className="px-4 py-2 rounded-lg bg-off-white text-deep-forest font-body text-sm font-medium hover:bg-near-white transition-all duration-300 shadow-md"
                 >
                   {link.name}
                 </motion.a>

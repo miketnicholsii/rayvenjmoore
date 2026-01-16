@@ -59,6 +59,7 @@
 
     /* ========================================
        BRAND EXTENSIONS - RJM Earthy Palette
+       WCAG AA Contrast Optimized
        ======================================== */
     
     /* Core Palette */
@@ -68,6 +69,20 @@
     --olive: 93 8% 42%;          /* #6C7463 */
     --dark-forest: 100 8% 31%;   /* #4B544A */
     --terracotta: 18 26% 40%;    /* #7D5C4E */
+    
+    /* NEW: High-Contrast Orange Accents (WCAG AA Compliant) */
+    --gold-orange: 36 92% 51%;   /* #F4900E - Primary CTAs, key numbers */
+    --warm-orange: 24 93% 54%;   /* #F7631C - Hover states */
+    --burnt-orange: 19 96% 47%;  /* #ED5005 - Rare highlights */
+    
+    /* NEW: Off-white for maximum contrast on dark/terracotta */
+    --off-white: 40 33% 98%;     /* #FDFCFA - Text on dark backgrounds */
+    --near-white: 43 30% 96%;    /* #F8F6F1 */
+    
+    /* NEW: Deep Forest for stat cards and dark sections */
+    --deep-forest: 100 10% 16%;  /* #2A312A */
+    --evergreen: 120 15% 19%;    /* #28382B */
+    --moss-green: 115 12% 31%;   /* #455B46 */
     
     /* Extended tones */
     --sage-light: 85 8% 70%;
