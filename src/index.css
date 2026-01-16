@@ -8,145 +8,164 @@
   :root {
     /* ========================================
        RJM - BRAND COLOR SYSTEM
-       Marian Blue + Royal Blue + Jet Palette
+       Earthy Sage & Terracotta Palette
        Optimized for Contrast & Accessibility
+       
+       Palette:
+       #959D8D - Sage (muted green)
+       #E6E1D2 - Cream (light background)
+       #E6CFB8 - Warm Beige (soft accent)
+       #6C7463 - Olive (primary green)
+       #4B544A - Dark Forest (high contrast text)
+       #7D5C4E - Terracotta (warm CTA accent)
        ======================================== */
     
-    /* Clean Platinum/White Background */
-    --background: 0 0% 100%;
-    --foreground: 220 7% 20%;  /* Jet #2F3136 - high contrast text */
+    /* Cream Background - Warm & Inviting */
+    --background: 43 30% 92%;  /* #E6E1D2 */
+    --foreground: 100 8% 31%;  /* #4B544A - Dark forest for high contrast */
 
-    --card: 0 0% 98%;
-    --card-foreground: 220 7% 20%;
+    --card: 43 25% 95%;  /* Slightly lighter cream */
+    --card-foreground: 100 8% 31%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 7% 20%;
+    --popover: 43 30% 92%;
+    --popover-foreground: 100 8% 31%;
 
-    /* Royal Blue - Primary (vibrant, excellent contrast) */
-    --primary: 220 90% 55%;  /* #2764F3 */
-    --primary-foreground: 0 0% 100%;
+    /* Olive Primary - Natural & Grounded */
+    --primary: 93 8% 42%;  /* #6C7463 */
+    --primary-foreground: 43 30% 92%;
 
-    /* Platinum Secondary - for subtle backgrounds */
-    --secondary: 0 0% 90%;  /* #E5E5E5 */
-    --secondary-foreground: 220 7% 20%;
+    /* Cream Secondary */
+    --secondary: 43 25% 88%;  /* Slightly darker cream */
+    --secondary-foreground: 100 8% 31%;
 
-    /* Muted - Light gray for backgrounds */
-    --muted: 0 0% 95%;
-    --muted-foreground: 220 2% 54%;  /* #8A8B8E - Battleship gray */
+    /* Sage Muted */
+    --muted: 85 8% 59%;  /* #959D8D */
+    --muted-foreground: 100 8% 38%;
 
-    /* Accent - Marian Blue for emphasis (deep navy) */
-    --accent: 220 75% 33%;  /* #163C90 */
-    --accent-foreground: 0 0% 100%;
+    /* Terracotta Accent - Warm & Actionable */
+    --accent: 18 26% 40%;  /* #7D5C4E */
+    --accent-foreground: 43 30% 95%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Borders */
-    --border: 0 0% 85%;
-    --input: 0 0% 85%;
-    --ring: 220 90% 55%;
+    /* Borders - Subtle sage */
+    --border: 85 8% 75%;
+    --input: 85 8% 75%;
+    --ring: 18 26% 40%;
 
     --radius: 0.5rem;
 
     /* ========================================
-       BRAND EXTENSIONS - RJM Palette
+       BRAND EXTENSIONS - RJM Earthy Palette
        ======================================== */
     
-    /* Blues - Primary palette */
-    --marian-blue: 220 75% 33%;       /* #163C90 - Deep navy accent */
-    --royal-blue: 220 90% 55%;        /* #2764F3 - Vibrant primary */
-    --royal-blue-hover: 220 85% 48%;  /* Darker hover state */
+    /* Core Palette */
+    --sage: 85 8% 59%;           /* #959D8D */
+    --cream: 43 30% 92%;         /* #E6E1D2 */
+    --warm-beige: 30 42% 81%;    /* #E6CFB8 */
+    --olive: 93 8% 42%;          /* #6C7463 */
+    --dark-forest: 100 8% 31%;   /* #4B544A */
+    --terracotta: 18 26% 40%;    /* #7D5C4E */
     
-    /* Neutrals */
-    --jet: 220 7% 20%;                /* #2F3136 - Text color */
-    --battleship: 220 2% 54%;         /* #8A8B8E - Muted text */
-    --platinum: 0 0% 90%;             /* #E5E5E5 - Light bg */
-    --platinum-light: 0 0% 95%;       /* Lighter platinum */
+    /* Extended tones */
+    --sage-light: 85 8% 70%;
+    --sage-dark: 85 10% 45%;
+    --olive-light: 93 8% 52%;
+    --olive-dark: 93 10% 32%;
+    --terracotta-light: 18 26% 50%;
+    --terracotta-dark: 18 30% 32%;
+    --forest-deep: 100 10% 22%;
     
     /* Legacy mappings for compatibility */
-    --deep-navy: 220 75% 33%;
-    --navy: 220 90% 55%;
-    --steel-blue: 220 70% 45%;
-    --silver: 220 2% 54%;
-    --silver-light: 0 0% 90%;
-    --charcoal-gray: 220 7% 35%;
-    --charcoal: 220 7% 20%;
-    --charcoal-light: 220 7% 30%;
-    --cream: 0 0% 98%;
-    --warm-white: 0 0% 99%;
-    --slate: 0 0% 88%;
-    --steel: 220 2% 54%;
-
-    /* Forest alias for components that use it */
-    --forest: 220 75% 33%;
+    --deep-navy: 100 8% 31%;
+    --navy: 93 8% 42%;
+    --steel-blue: 85 8% 59%;
+    --silver: 85 8% 65%;
+    --silver-light: 43 25% 88%;
+    --charcoal-gray: 100 8% 38%;
+    --charcoal: 100 8% 31%;
+    --charcoal-light: 100 6% 45%;
+    --warm-white: 43 30% 95%;
+    --slate: 85 8% 75%;
+    --steel: 85 8% 59%;
+    --forest: 100 8% 31%;
+    --marian-blue: 100 8% 31%;
+    --royal-blue: 93 8% 42%;
+    --royal-blue-hover: 93 10% 35%;
+    --jet: 100 8% 31%;
+    --battleship: 85 8% 50%;
+    --platinum: 43 25% 88%;
+    --platinum-light: 43 30% 92%;
 
     /* ========================================
        GRADIENTS
        ======================================== */
-    --gradient-navy: linear-gradient(135deg, hsl(220 75% 33%), hsl(220 90% 55%));
-    --gradient-blue: linear-gradient(135deg, hsl(220 90% 55%), hsl(220 70% 45%));
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 95%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
+    --gradient-sage: linear-gradient(135deg, hsl(85 8% 59%), hsl(93 8% 42%));
+    --gradient-olive: linear-gradient(135deg, hsl(93 8% 42%), hsl(100 8% 31%));
+    --gradient-terracotta: linear-gradient(135deg, hsl(18 26% 40%), hsl(18 30% 32%));
+    --gradient-hero: linear-gradient(180deg, hsl(43 30% 92%) 0%, hsl(43 25% 88%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(43 25% 95%) 0%, hsl(43 30% 92%) 100%);
 
     /* ========================================
-       SHADOWS
+       SHADOWS - Warm tones
        ======================================== */
-    --shadow-soft: 0 4px 20px -4px hsl(220 7% 20% / 0.08);
-    --shadow-elevated: 0 12px 40px -8px hsl(220 7% 20% / 0.12);
-    --shadow-blue: 0 8px 30px -6px hsl(220 90% 55% / 0.25);
-    --shadow-card: 0 1px 3px hsl(220 7% 20% / 0.04), 0 4px 12px hsl(220 7% 20% / 0.06);
+    --shadow-soft: 0 4px 20px -4px hsl(100 8% 31% / 0.08);
+    --shadow-elevated: 0 12px 40px -8px hsl(100 8% 31% / 0.12);
+    --shadow-terracotta: 0 8px 30px -6px hsl(18 26% 40% / 0.25);
+    --shadow-card: 0 1px 3px hsl(100 8% 31% / 0.04), 0 4px 12px hsl(100 8% 31% / 0.06);
 
     /* Sidebar */
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 220 7% 20%;
-    --sidebar-primary: 220 90% 55%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 95%;
-    --sidebar-accent-foreground: 220 7% 20%;
-    --sidebar-border: 0 0% 85%;
-    --sidebar-ring: 220 90% 55%;
+    --sidebar-background: 43 30% 92%;
+    --sidebar-foreground: 100 8% 31%;
+    --sidebar-primary: 93 8% 42%;
+    --sidebar-primary-foreground: 43 30% 92%;
+    --sidebar-accent: 43 25% 88%;
+    --sidebar-accent-foreground: 100 8% 31%;
+    --sidebar-border: 85 8% 75%;
+    --sidebar-ring: 18 26% 40%;
   }
 
   .dark {
-    /* Dark mode - Jet/Dark background with Royal Blue accents */
-    --background: 220 7% 12%;
-    --foreground: 0 0% 95%;
+    /* Dark mode - Deep Forest with Terracotta accents */
+    --background: 100 10% 12%;
+    --foreground: 43 30% 92%;
 
-    --card: 220 7% 16%;
-    --card-foreground: 0 0% 95%;
+    --card: 100 10% 16%;
+    --card-foreground: 43 30% 92%;
 
-    --popover: 220 7% 16%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 100 10% 16%;
+    --popover-foreground: 43 30% 92%;
 
-    /* Primary - Royal Blue stays vibrant */
-    --primary: 220 90% 60%;
-    --primary-foreground: 220 7% 12%;
+    /* Sage Primary in dark mode */
+    --primary: 85 12% 55%;
+    --primary-foreground: 100 10% 12%;
 
-    --secondary: 220 7% 22%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 100 8% 22%;
+    --secondary-foreground: 43 25% 85%;
 
-    --muted: 220 7% 18%;
-    --muted-foreground: 220 2% 65%;
+    --muted: 100 6% 25%;
+    --muted-foreground: 85 8% 60%;
 
-    /* Accent - Royal Blue for dark mode */
-    --accent: 220 90% 60%;
-    --accent-foreground: 220 7% 12%;
+    /* Terracotta Accent */
+    --accent: 18 30% 55%;
+    --accent-foreground: 100 10% 12%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 7% 25%;
-    --input: 220 7% 25%;
-    --ring: 220 90% 60%;
+    --border: 100 8% 25%;
+    --input: 100 8% 25%;
+    --ring: 18 30% 55%;
 
-    --sidebar-background: 220 7% 16%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 220 90% 60%;
-    --sidebar-primary-foreground: 220 7% 12%;
-    --sidebar-accent: 220 7% 22%;
-    --sidebar-accent-foreground: 0 0% 90%;
-    --sidebar-border: 220 7% 25%;
-    --sidebar-ring: 220 90% 60%;
+    --sidebar-background: 100 10% 16%;
+    --sidebar-foreground: 43 30% 92%;
+    --sidebar-primary: 85 12% 55%;
+    --sidebar-primary-foreground: 100 10% 12%;
+    --sidebar-accent: 100 8% 22%;
+    --sidebar-accent-foreground: 43 25% 85%;
+    --sidebar-border: 100 8% 25%;
+    --sidebar-ring: 18 30% 55%;
   }
 }
 
@@ -164,7 +183,7 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
 
-  /* Improved focus states - Gold ring for accessibility */
+  /* Improved focus states - Terracotta ring for accessibility */
   *:focus-visible {
     @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
   }
@@ -172,22 +191,30 @@
   /* Typography hierarchy - Modern, authoritative */
   h1 {
     font-family: 'Montserrat', system-ui, sans-serif;
-    @apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-tight uppercase;
+    @apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-tight;
+    color: hsl(var(--dark-forest));
   }
 
   h2 {
     font-family: 'Cormorant Garamond', Georgia, serif;
     @apply text-3xl md:text-4xl lg:text-5xl font-semibold tracking-wide;
+    color: hsl(var(--dark-forest));
   }
 
   h3 {
     font-family: 'Montserrat', system-ui, sans-serif;
     @apply text-xl md:text-2xl font-semibold tracking-tight;
+    color: hsl(var(--dark-forest));
   }
 
   h4, h5, h6 {
     font-family: 'Montserrat', system-ui, sans-serif;
     @apply font-semibold tracking-tight;
+    color: hsl(var(--dark-forest));
+  }
+
+  p {
+    color: hsl(var(--olive));
   }
 }
 
@@ -207,17 +234,17 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
 
-  /* Gradient Text - Gold accent */
+  /* Gradient Text - Terracotta accent */
   .text-gradient-gold {
-    background: linear-gradient(135deg, hsl(45 100% 50%), hsl(40 95% 48%));
+    background: linear-gradient(135deg, hsl(18 26% 40%), hsl(18 30% 32%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Gradient Text - Navy */
+  /* Gradient Text - Olive */
   .text-gradient-forest {
-    background: linear-gradient(135deg, hsl(100 8% 18%), hsl(115 12% 31%));
+    background: linear-gradient(135deg, hsl(93 8% 42%), hsl(100 8% 31%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -284,7 +311,7 @@
     box-shadow: var(--shadow-elevated);
   }
 
-  /* Interactive Card - Enhanced with orange glow on hover */
+  /* Interactive Card - Enhanced with terracotta glow on hover */
   .interactive-card {
     @apply relative overflow-hidden transition-all duration-300 ease-out bg-card border border-border rounded-xl;
   }
@@ -292,14 +319,14 @@
   .interactive-card::before {
     content: '';
     @apply absolute inset-0 opacity-0 transition-opacity duration-300;
-    background: linear-gradient(135deg, hsl(38 92% 50% / 0.03), hsl(100 8% 18% / 0.02));
+    background: linear-gradient(135deg, hsl(18 26% 40% / 0.03), hsl(93 8% 42% / 0.02));
     pointer-events: none;
   }
 
   .interactive-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-elevated);
-    border-color: hsl(38 92% 50% / 0.3);
+    border-color: hsl(18 26% 40% / 0.3);
   }
 
   .interactive-card:hover::before {
@@ -307,14 +334,14 @@
   }
 
   /* ========================================
-     BUTTON GLOW - Orange accent
+     BUTTON GLOW - Terracotta accent
      ======================================== */
   .btn-glow {
     @apply transition-all duration-300;
   }
 
   .btn-glow:hover {
-    box-shadow: 0 0 20px hsl(38 92% 50% / 0.35), 0 4px 20px hsl(100 8% 18% / 0.15);
+    box-shadow: 0 0 20px hsl(18 26% 40% / 0.35), 0 4px 20px hsl(100 8% 31% / 0.15);
   }
 
   /* ========================================
@@ -322,7 +349,7 @@
      ======================================== */
   .divider-orange {
     @apply h-px w-full;
-    background: linear-gradient(90deg, transparent, hsl(38 92% 50% / 0.5), transparent);
+    background: linear-gradient(90deg, transparent, hsl(18 26% 40% / 0.5), transparent);
   }
 
   .accent-bar {
@@ -333,7 +360,7 @@
     @apply w-1 h-12 rounded-full bg-accent;
   }
 
-  /* Orange underline */
+  /* Terracotta underline */
   .orange-underline {
     position: relative;
   }
@@ -345,7 +372,7 @@
     left: 0;
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, hsl(38 92% 50%), hsl(20 92% 54%));
+    background: linear-gradient(90deg, hsl(18 26% 40%), hsl(18 30% 32%));
     border-radius: 2px;
   }
 
@@ -360,10 +387,10 @@
   .card-elevated:hover {
     box-shadow: var(--shadow-elevated);
     transform: translateY(-4px);
-    border-color: hsl(38 92% 50% / 0.25);
+    border-color: hsl(18 26% 40% / 0.25);
   }
 
-  /* Card with orange accent on hover */
+  /* Card with terracotta accent on hover */
   .card-accent {
     @apply bg-card rounded-xl border border-border transition-all duration-300 relative overflow-hidden;
   }
@@ -420,7 +447,7 @@
     background: linear-gradient(
       90deg,
       transparent 0%,
-      hsl(45 20% 98% / 0.5) 50%,
+      hsl(43 30% 95% / 0.5) 50%,
       transparent 100%
     );
     transform: translateX(-100%);
@@ -491,44 +518,46 @@
   /* ========================================
      PULSE EFFECTS
      ======================================== */
-  .pulse-orange {
+  .pulse-terracotta {
     @apply relative;
   }
 
-  .pulse-orange::before {
+  .pulse-terracotta::before {
     content: '';
     @apply absolute inset-0 rounded-full opacity-0;
-    background: hsl(38 92% 50% / 0.4);
-    animation: pulseRing 2s ease-out infinite;
+    background: hsl(18 26% 40%);
+    animation: pulse-ring 2s ease-in-out infinite;
   }
 
-  @keyframes pulseRing {
-    0% {
+  @keyframes pulse-ring {
+    0%, 100% {
       transform: scale(1);
-      opacity: 0.4;
-    }
-    100% {
-      transform: scale(1.5);
       opacity: 0;
+    }
+    50% {
+      transform: scale(1.15);
+      opacity: 0.3;
     }
   }
 
   /* ========================================
-     FOREST ACCENT BAR
+     HIGH CONTRAST TEXT UTILITIES
      ======================================== */
-  .forest-bar {
-    @apply h-1 w-16 rounded-full transition-all duration-300;
-    background: hsl(var(--deep-forest));
+  .text-high-contrast {
+    color: hsl(var(--dark-forest));
   }
 
-  .group:hover .forest-bar {
-    @apply w-24;
-    background: hsl(var(--accent));
+  .text-medium-contrast {
+    color: hsl(var(--olive));
+  }
+
+  .text-low-contrast {
+    color: hsl(var(--sage));
   }
 }
 
 /* ========================================
-   KEYFRAMES
+   KEYFRAME DEFINITIONS
    ======================================== */
 @keyframes fadeUp {
   from {
@@ -579,40 +608,37 @@
   }
 }
 
-@keyframes gentleFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
 /* ========================================
    SCROLLBAR STYLING
    ======================================== */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(var(--secondary));
+  background: hsl(var(--cream));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted-foreground) / 0.3);
-  border-radius: 4px;
+  background: hsl(var(--sage));
+  border-radius: 5px;
+  border: 2px solid hsl(var(--cream));
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--muted-foreground) / 0.5);
+  background: hsl(var(--olive));
 }
 
 /* ========================================
    SELECTION STYLING
    ======================================== */
 ::selection {
-  background: hsl(38 92% 50% / 0.2);
-  color: hsl(var(--foreground));
+  background: hsl(18 26% 40% / 0.2);
+  color: hsl(var(--dark-forest));
+}
+
+::-moz-selection {
+  background: hsl(18 26% 40% / 0.2);
+  color: hsl(var(--dark-forest));
 }

@@ -52,7 +52,26 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Brand Colors - RJM Blue Palette
+        // Brand Colors - RJM Earthy Palette
+        sage: {
+          DEFAULT: "hsl(var(--sage))",
+          light: "hsl(var(--sage-light))",
+          dark: "hsl(var(--sage-dark))",
+        },
+        olive: {
+          DEFAULT: "hsl(var(--olive))",
+          light: "hsl(var(--olive-light))",
+          dark: "hsl(var(--olive-dark))",
+        },
+        terracotta: {
+          DEFAULT: "hsl(var(--terracotta))",
+          light: "hsl(var(--terracotta-light))",
+          dark: "hsl(var(--terracotta-dark))",
+        },
+        "dark-forest": "hsl(var(--dark-forest))",
+        "warm-beige": "hsl(var(--warm-beige))",
+        cream: "hsl(var(--cream))",
+        // Legacy mappings for compatibility
         navy: {
           DEFAULT: "hsl(var(--navy))",
           deep: "hsl(var(--deep-navy))",
@@ -69,7 +88,6 @@ export default {
           DEFAULT: "hsl(var(--platinum))",
           light: "hsl(var(--platinum-light))",
         },
-        // Legacy mappings
         silver: {
           DEFAULT: "hsl(var(--silver))",
           light: "hsl(var(--silver-light))",
@@ -79,7 +97,6 @@ export default {
           light: "hsl(var(--charcoal-light))",
           gray: "hsl(var(--charcoal-gray))",
         },
-        cream: "hsl(var(--cream))",
         slate: "hsl(var(--slate))",
         steel: "hsl(var(--steel))",
         forest: "hsl(var(--forest))",
@@ -128,9 +145,9 @@ export default {
           "0%": { opacity: "0", transform: "scale(0.95)" },
           "100%": { opacity: "1", transform: "scale(1)" },
         },
-        "pulse-blue": {
-          "0%, 100%": { boxShadow: "0 0 0 0 hsl(220 90% 55% / 0.4)" },
-          "50%": { boxShadow: "0 0 0 12px hsl(220 90% 55% / 0)" },
+        "pulse-terracotta": {
+          "0%, 100%": { boxShadow: "0 0 0 0 hsl(18 26% 40% / 0.4)" },
+          "50%": { boxShadow: "0 0 0 12px hsl(18 26% 40% / 0)" },
         },
         "gentle-float": {
           "0%, 100%": { transform: "translateY(0)" },
@@ -149,16 +166,16 @@ export default {
         "slide-in-left": "slide-in-left 0.8s ease-out forwards",
         "slide-in-right": "slide-in-right 0.8s ease-out forwards",
         "scale-in": "scale-in 0.6s ease-out forwards",
-        "pulse-blue": "pulse-blue 2s ease-in-out infinite",
+        "pulse-terracotta": "pulse-terracotta 2s ease-in-out infinite",
         "gentle-float": "gentle-float 6s ease-in-out infinite",
         "shimmer": "shimmer 0.8s ease-out",
       },
       boxShadow: {
-        'soft': '0 4px 20px -4px hsl(220 7% 20% / 0.1)',
-        'elevated': '0 12px 40px -8px hsl(220 7% 20% / 0.15)',
-        'blue': '0 8px 30px -6px hsl(220 90% 55% / 0.3)',
-        'card': '0 1px 3px hsl(220 7% 20% / 0.05), 0 4px 12px hsl(220 7% 20% / 0.08)',
-        'royal': '0 8px 30px -6px hsl(220 90% 55% / 0.35)',
+        'soft': '0 4px 20px -4px hsl(100 8% 31% / 0.1)',
+        'elevated': '0 12px 40px -8px hsl(100 8% 31% / 0.15)',
+        'terracotta': '0 8px 30px -6px hsl(18 26% 40% / 0.3)',
+        'card': '0 1px 3px hsl(100 8% 31% / 0.05), 0 4px 12px hsl(100 8% 31% / 0.08)',
+        'warm': '0 8px 30px -6px hsl(18 26% 40% / 0.35)',
       },
     },
   },
